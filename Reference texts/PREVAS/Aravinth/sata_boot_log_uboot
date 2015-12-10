@@ -1,0 +1,24 @@
+
+U-Boot 2014.04 (Dec 08 2015 - 12:37:13)
+
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz
+CPU:   Temperature 26 C, calibration data: 0x55a4ab7d
+Reset cause: POR
+Board: MOVIS-PREVAS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Warning: failed to set MAC address
+
+Normal Boot
+Hit any key to stop autoboot:  0 
+mmc0(part 0) is current device
+=> p
+

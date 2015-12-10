@@ -1,0 +1,109 @@
+//////////////////////////////////////////////////ZS:GSM Testing///////////////////////////////////////
+For sending message
+
+=> AT+CMGF=1 
+OK
+
+=>AT+CMGS="MOB.NO"
+>"TYPE MESSAGE"
+>(Ctrl+z)
+
++CMGS: 111
+
+OK
+//////////////////////////////////Message will send/////////////////////////////////////
+**********************************************
+//////////////////////////////////MSG receive indication/////////////////////////////////
++CMTI: "SM",1
+
+////////////////////////////////// READ ALL MSG //////////////////////////////////////////
+=> AT+CMGL="ALL"
+
++CMGL: 0,"REC READ","+919741247836",,"13/04/30,13:04:26+00"
+No.19/470, such nilaya, 4th cross, 3rd main, dollars colony, btm 2 nd stage, Bangalore 560076
++CMGL: 1,"REC READ","687745545048524857",,"15/12/04,12:00:40+22"
+BBMP flats at Vidyaranyapura, BBMP aprvd. at just 26 lacs with all luxury amenities.Extra free offers and win  Fridge, TV or Washing Machine.7353422111
++CMGL: 2,"REC READ","867745485248564848",,"15/12/04,11:26:31+22"
+Dear Thulasidhar, you have a pre-approved Personal Loan of 514938 from Bajaj Finserv with minimal documentation. SMS PLP to 9773633633 to apply. T&C apply.
++CMGL: 3,"REC READ","867545485248564848",,"15/12/04,10:41:03+22"
+Dear Thulasidhar, you have a Personal Loan offer of Rs. 514938 from Bajaj Finserv. SMS PLP to 9773633633. T&C apply
++CMGL: 4,"REC READ","+919886994841",,"15/12/04,12:19:32+22"
+Hi
++CMGL: 5,"REC READ","+919886994841",,"15/12/04,12:20:13+22"
+Hi
++CMGL: 6,"REC READ","+919886994841",,"15/12/04,12:20:17+22"
+Hi
++CMGL: 7,"REC READ","+919886994841",,"15/12/04,12:20:21+22"
+
+///////////////////////////////////////////////////////////////////
+*******************************************************************
+///////////////////////GSM status /////////////////////////////////
+=> AT!GSTATUS?
+
+!GSTATUS: 
+Current Time:  1160             Temperature: 26
+Bootup Time:   0                Mode:        ONLINE         
+System mode:   GSM              PS state:    Attached     
+GSM band:      GSM900     
+GSM channel:   103
+GMM (PS) state:REGISTERED       NORMAL SERVICE 
+MM (CS) state: IDLE             NORMAL SERVICE 
+
+Serving cell:  110 (GSM 900    )
+RX level (dBm):-63.3125         LAC:         61FD (25085)
+GPRS state:    GPRS STANDBY     Cell ID:     0000A0C9 (41161)
+
+
+OK
+/////////////////////////////////////////////signal strength////////////////////
+
+=> AT+CSQ
++CSQ: 26,99
+
+OK
+///////////////////////////////Operator Name/////////////////////////////////////
+=> AT+COPS?
++COPS: 0,0,"airtel",0
+
+OK
+////////////////////////////////////////////////////////////////////////////////
+
+=> AT+ICCID
+ICCID: 89914500050166812970
+
+OK
+//////////////////////////////////////////////////////////////////////////////////
+=> AT+CFUN=0
+OK
+///////////////////////////////////////////////////////////////////////////////////
+=> AT+CFUN=1
+OK
+///////////////////////////////////////////////////////////////////////////////////
+AT!ENTERCND="A710"
+OK
+//////////////////////////////////////////////////////////////////////////////////
+=> AT!CUSTOM="SIMLPM", 2
+OK
+
+////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////SIM serial number/////////////////////////////////////////
+
+=> AT+GSN
+356853051353995
+
+///////////////////////////check if SIM is unlocked////////////////////////////////////
+=> AT+CPIN?
++CPIN: READY
+
+//////////////////////////////////SIM is registered or not//////////////////////////////
+=> AT+CREG?
++CREG: 0,1			//SIM is registered
+
+/////////////////////GPRS is attached or not////////////////////////////////////////////
+=> AT+CGATT?
++CGATT: 1			//GPRS is attached
+///////////////////////////////Dial access point/////////////////////////////////////////
+=> ATD*99#
+CONNECT 100000000
+//////////////////////////////////////////////Hanged/////////////////////////////////////

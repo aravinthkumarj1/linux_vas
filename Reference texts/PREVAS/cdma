@@ -1,0 +1,17 @@
+AT!GSTATUS?
+!GSTATUS: 
+Current Time:  257              Temperature: 26
+Bootup Time:   0                Mode:        ONLINE         
+System mode:   WCDMA            PS state:    Attached     
+WCDMA band:    WCDMA 2100 
+WCDMA channel: 10833
+GMM (PS) state:REGISTERED       NORMAL SERVICE 
+MM (CS) state: IDLE             NORMAL SERVICE 
+
+WCDMA L1 state:L1M_PCH_SLEEP    LAC:         85CD (34253)
+RRC state:   DISCONNECTED       Cell ID:     01A907A2 (27854754)
+RxM RSSI C0:   -62              RxD RSSI C0: -106
+RxM RSSI C1:   -106             RxD RSSI C1: -106
+
+
+OK

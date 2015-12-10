@@ -1,0 +1,8 @@
+sudo dd if=u-boot.bin of=/dev/mtdblock0 bs=512 seek=2
+
+CCSR[STEP_SEL]
+CCSR[PLL1_SW_CLK_SEL]
+
+
+
+export ARCH=arm

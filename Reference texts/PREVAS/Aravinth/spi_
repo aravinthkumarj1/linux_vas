@@ -1,0 +1,30 @@
+=> setenv rdfile zImage
+=> setenv kernel_file zImage
+=> setenv fdtfile imx6q-sabresd.dtb
+=> saveenv
+Saving Environment to SPI Flash...
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Erasing SPI flash...Writing to SPI flash...done
+=> boot
+mmc0(part 0) is current device
+Unknown command 'dboot' - try 'help'
+## Error: "dbootcmd" not defined
+=> bootz
+Bad Linux ARM zImage magic!
+=> setenv rd_addr 0x12000000
+=> setenv rd_addr 0x12000000
+=> setenv fdt_addr 0x1A000000
+=> saveenv
+Saving Environment to SPI Flash...
+Erasing SPI flash...Writing to SPI flash...done
+=> bootz
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> reboot
+Unknown command 'reboot' - try 'help'
+

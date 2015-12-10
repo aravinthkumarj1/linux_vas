@@ -1,0 +1,47 @@
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs=console=ttymxc0,115200 rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storage.iSerialNumber= enable_wait_mf
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_sata=setenv bootargs ${bootargs} root=/dev/sda2 rw rootwait
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=run bootcmd_sata
+bootcmd_mfg=run mfgtool_args
+bootcmd_sata=run bootargs_sata; sata init ; fatload sata 0:1 0x11200000 imx6q-movis.dtb; fatload sata 0:1 0x12800000 uImage; bootm 0x12800000 - 0x11200000
+bootdelay=1
+bootscript=echo Running bootscript from mmc ...
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+fdt_addr=0x1A000000
+fdt_file=imx6q-sabresd.dtb
+fdt_high=0xffffffff
+fdtfile=imx6q-sabresd.dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+image=zImage
+initrd_addr=0x12C00000
+initrd_file=uInitrd
+initrd_high=0xffffffff
+ip_dyn=yes
+kernel_file=zImage
+kernel_file_dl=uImage-dl
+loadaddr=0x12000000
+loadbootscript=fatload mmc 0:1 0x12000000
+loadfdt=fatload mmc 0:1 0x1A000000 imx6q-sabresd.dtb
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcboot=echo Booting from mmc ...
+mmcdev=0
+mmcpart=1
+panel=HDMI
+rd_addr=0x12000000
+rdfile=zImage
+verify=n
+
+Environment size: 1604/8188 bytes

@@ -1,0 +1,201 @@
+**************************enet***********************************************
+iomux_v3_cfg_t const enet_pads1[] = {
+        MX6_PAD_ENET_MDIO__ENET_MDIO            | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_ENET_MDC__ENET_MDC              | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TXC__RGMII_TXC    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TD0__RGMII_TD0    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TD1__RGMII_TD1    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TD2__RGMII_TD2    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TD3__RGMII_TD3    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_TX_CTL__RGMII_TX_CTL      | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_ENET_REF_CLK__ENET_TX_CLK       | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RXC__GPIO6_IO30   | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_RGMII_RD0__GPIO6_IO25   | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_RGMII_RD1__GPIO6_IO27   | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_RGMII_RD2__GPIO6_IO28   | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_RGMII_RD3__GPIO6_IO29   | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_RGMII_RX_CTL__GPIO6_IO24        | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_GPIO_0__GPIO1_IO00              | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_ENET_TX_EN__GPIO1_IO28          | MUX_PAD_CTRL(ENET_PAD_CTRL),
+};
+
+iomux_v3_cfg_t const enet_pads2[] = {
+        MX6_PAD_RGMII_RXC__RGMII_RXC    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RD0__RGMII_RD0    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RD1__RGMII_RD1    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RD2__RGMII_RD2    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RD3__RGMII_RD3    | MUX_PAD_CTRL(ENET_PAD_CTRL),
+        MX6_PAD_RGMII_RX_CTL__RGMII_RX_CTL      | MUX_PAD_CTRL(ENET_PAD_CTRL),
+};
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+static void setup_iomux_enet(void)
+{
+        imx_iomux_v3_setup_multiple_pads(enet_pads1, ARRAY_SIZE(enet_pads1));
+
+        gpio_direction_output(IMX_GPIO_NR(1, 0) , 0);
+        gpio_direction_output(IMX_GPIO_NR(6, 30), 1);
+        gpio_direction_output(IMX_GPIO_NR(6, 25), 1);
+        gpio_direction_output(IMX_GPIO_NR(6, 27), 1);
+        gpio_direction_output(IMX_GPIO_NR(6, 28), 1);
+        gpio_direction_output(IMX_GPIO_NR(6, 29), 1);
+        udelay(1000*15);
+        gpio_set_value(IMX_GPIO_NR(1, 0), 1);
+
+        imx_iomux_v3_setup_multiple_pads(enet_pads2, ARRAY_SIZE(enet_pads2));	// ### Need config for enet2
+}
+
+************************************************************************************
+iomux_v3_cfg_t const usdhc2_pads[] = {
+        MX6_PAD_SD2_CLK__SD2_CLK        | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD2_CMD__SD2_CMD        | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD2_DAT0__SD2_DATA0     | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD2_DAT1__SD2_DATA1     | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD2_DAT2__SD2_DATA2     | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD2_DAT3__SD2_DATA3     | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_GPIO_4__GPIO1_IO04      | MUX_PAD_CTRL(NO_PAD_CTRL), /* CD */
+        MX6_PAD_KEY_ROW1__GPIO4_IO09    | MUX_PAD_CTRL(NO_PAD_CTRL),
+};
+
+iomux_v3_cfg_t const usdhc4_pads[] = {
+        MX6_PAD_SD4_CLK__SD4_CLK   | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_CMD__SD4_CMD   | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT0__SD4_DATA0 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT1__SD4_DATA1 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT2__SD4_DATA2 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT3__SD4_DATA3 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT4__SD4_DATA4 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT5__SD4_DATA5 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT6__SD4_DATA6 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_SD4_DAT7__SD4_DATA7 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+        MX6_PAD_NANDF_ALE__GPIO6_IO08 | MUX_PAD_CTRL(USDHC_PAD_CTRL),
+};
+
+/////////////////////////////////////////////////////////////////////////////////////
+ for (i = 0; i < CONFIG_SYS_FSL_USDHC_NUM; i++) {
+                switch (i) {
+                case 0:
+                        imx_iomux_v3_setup_multiple_pads(
+                                usdhc2_pads, ARRAY_SIZE(usdhc2_pads));
+                        gpio_direction_input(USDHC2_CD_GPIO);
+                        gpio_direction_output(IMX_GPIO_NR(4, 9), 0);
+                        usdhc_cfg[0].sdhc_clk = mxc_get_clock(MXC_ESDHC2_CLK);
+                        break;
+                case 1:
+                        gpio_direction_output(IMX_GPIO_NR(6, 8), 1);
+                        imx_iomux_v3_setup_multiple_pads(
+                                usdhc4_pads, ARRAY_SIZE(usdhc4_pads));
+                        usdhc_cfg[1].sdhc_clk = mxc_get_clock(MXC_ESDHC4_CLK);
+                        break;
+
+**********************************HDMI**************************************************
+
+{
+        .bus    = -1,
+        .addr   = 0,
+        .pixfmt = IPU_PIX_FMT_RGB24,
+        .detect = NULL,
+        .enable = do_enable_hdmi,
+        .mode   = {
+                .name           = "HDMI",
+                .refresh        = 60,
+                .xres           = 640,
+                .yres           = 480,
+                .pixclock       = 39721,
+                .left_margin    = 48,
+                .right_margin   = 16,
+                .upper_margin   = 33,
+                .lower_margin   = 10,
+                .hsync_len      = 96,
+                .vsync_len      = 2,
+                .sync           = 0,
+                .vmode          = FB_VMODE_NONINTERLACED
+} 
+
+////////////////////////////////////////////////////////////////////////////////////////
+tatic void setup_display(void)
+{
+        struct mxc_ccm_reg *mxc_ccm = (struct mxc_ccm_reg *)CCM_BASE_ADDR;
+        struct iomuxc *iomux = (struct iomuxc *)IOMUXC_BASE_ADDR;
+        int reg;
+
+        /* Setup HSYNC, VSYNC, DISP_CLK for debugging purposes */
+        imx_iomux_v3_setup_multiple_pads(di0_pads, ARRAY_SIZE(di0_pads));
+
+        enable_ipu_clock();
+        imx_setup_hdmi();
+
+        /* Turn on LDB0, LDB1, IPU,IPU DI0 clocks */
+        reg = readl(&mxc_ccm->CCGR3);
+        reg |=  MXC_CCM_CCGR3_LDB_DI0_MASK | MXC_CCM_CCGR3_LDB_DI1_MASK;
+        writel(reg, &mxc_ccm->CCGR3);
+
+        /* set LDB0, LDB1 clk select to 011/011 */
+        reg = readl(&mxc_ccm->cs2cdr);
+        reg &= ~(MXC_CCM_CS2CDR_LDB_DI0_CLK_SEL_MASK
+                 | MXC_CCM_CS2CDR_LDB_DI1_CLK_SEL_MASK);
+        reg |= (3 << MXC_CCM_CS2CDR_LDB_DI0_CLK_SEL_OFFSET)
+              | (3 << MXC_CCM_CS2CDR_LDB_DI1_CLK_SEL_OFFSET);
+        writel(reg, &mxc_ccm->cs2cdr);
+
+        reg = readl(&mxc_ccm->cscmr2);
+        reg |= MXC_CCM_CSCMR2_LDB_DI0_IPU_DIV | MXC_CCM_CSCMR2_LDB_DI1_IPU_DIV;
+        writel(reg, &mxc_ccm->cscmr2);
+
+        reg = readl(&mxc_ccm->chsccdr);
+        reg |= (CHSCCDR_CLK_SEL_LDB_DI0
+                << MXC_CCM_CHSCCDR_IPU1_DI0_CLK_SEL_OFFSET);
+        reg |= (CHSCCDR_CLK_SEL_LDB_DI0
+                << MXC_CCM_CHSCCDR_IPU1_DI1_CLK_SEL_OFFSET);
+        writel(reg, &mxc_ccm->chsccdr);
+
+        reg = IOMUXC_GPR2_BGREF_RRMODE_EXTERNAL_RES
+  | IOMUXC_GPR2_DI1_VS_POLARITY_ACTIVE_LOW
+             | IOMUXC_GPR2_DI0_VS_POLARITY_ACTIVE_LOW
+             | IOMUXC_GPR2_BIT_MAPPING_CH1_SPWG
+             | IOMUXC_GPR2_DATA_WIDTH_CH1_18BIT
+             | IOMUXC_GPR2_BIT_MAPPING_CH0_SPWG
+             | IOMUXC_GPR2_DATA_WIDTH_CH0_18BIT
+             | IOMUXC_GPR2_LVDS_CH0_MODE_DISABLED
+             | IOMUXC_GPR2_LVDS_CH1_MODE_ENABLED_DI0;
+        writel(reg, &iomux->gpr[2]);
+
+        reg = readl(&iomux->gpr[3]);
+        reg = (reg & ~(IOMUXC_GPR3_LVDS1_MUX_CTL_MASK
+                        | IOMUXC_GPR3_HDMI_MUX_CTL_MASK))
+            | (IOMUXC_GPR3_MUX_SRC_IPU1_DI0
+               << IOMUXC_GPR3_LVDS1_MUX_CTL_OFFSET);
+        writel(reg, &iomux->gpr[3]);
+}
+********************************USB-OTG*****************************************
+iomux_v3_cfg_t const usb_otg_pads[] = {
+        MX6_PAD_EIM_D22__USB_OTG_PWR | MUX_PAD_CTRL(NO_PAD_CTRL),
+        MX6_PAD_ENET_RX_ER__USB_OTG_ID | MUX_PAD_CTRL(NO_PAD_CTRL),
+};
+
+iomux_v3_cfg_t const usb_hc1_pads[] = {
+        MX6_PAD_EIM_D31__GPIO3_IO31 | MUX_PAD_CTRL(NO_PAD_CTRL),
+};
+//////////////////////////////////////////////////////////////////////////
+        case 0:
+                imx_iomux_v3_setup_multiple_pads(usb_otg_pads,
+                        ARRAY_SIZE(usb_otg_pads));
+
+                /*set daisy chain for otg_pin_id on 6q. for 6dl, this bit is reserved*/
+                mxc_iomux_set_gpr_register(1, 13, 1, 0);
+                break;
+        case 1:
+                imx_iomux_v3_setup_multiple_pads(usb_hc1_pads,
+                        ARRAY_SIZE(usb_hc1_pads));
+                break;
+
+		/////////////////////////////////
+                if (on) {
+                        gpio_direction_output(IMX_GPIO_NR(3, 31), 0);
+                } else {
+                        gpio_direction_output(IMX_GPIO_NR(3, 31), 1);
+                }
+                break;
+*********************************************************************************
+

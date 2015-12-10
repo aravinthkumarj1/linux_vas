@@ -1,0 +1,9 @@
+################################## Build U-Boot ###########################################
+
+export ARCH=arm  
+export PATH=$PATH:/opt/freescale/usr/local/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12/fsl-linaro-toolchain/bin  
+export CROSS_COMPILE=arm-none-linux-gnueabi-
+make esip_config
+make
+
+sudo dd if=u-boot.imx of=/dev/sdd bs=1k seek=1

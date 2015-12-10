@@ -1,0 +1,29 @@
+Device contains neither a valid DOS partition table, nor Sun, SGI, OSF or GPT disklabel
+Building a new DOS disklabel. Changes will remain in memory only,
+until you decide to write them. After that the previous content
+won't be recoverable.
+
+
+The number of cylinders for this disk is set to 118016.
+There is nothing wrong with that, but this is larger than 1024,
+and could in certain setups cause problems with:
+1) software that runs at boot time (e.g., old versions of LILO)
+2) booting and partitioning software from other OSs
+   (e.g., DOS FDISK, OS/2 FDISK)
+
+Command (m for help): p
+
+Disk /dev/mmcblk3: 3867 MB, 3867148288 bytes
+4 heads, 16 sectors/track, 118016 cylinders
+Units = cylinders of 64 * 512 = 32768 bytes
+
+        Device Boot      Start         End      Blocks  Id System
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-118016, default 1): 1024
+

@@ -1,0 +1,43 @@
+root@freescale ~$ random: nonblocking pool is initialized
+dmesg |grep ata
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Memory policy: Data cache writealloc
+Memory: 700072K/1048576K available (7237K kernel code, 407K rwdata, 2472K rodata, 383K init, 431K bss)
+      .data : 0x809e4000 - 0x80a49f40   ( 408 kB)
+libata version 3.00 loaded.
+ahci-imx 2200000.sata: fsl,transmit-level-mV not specified, using 00000024
+ahci-imx 2200000.sata: fsl,transmit-boost-mdB not specified, using 00000480
+ahci-imx 2200000.sata: fsl,transmit-atten-16ths not specified, using 00002000
+ahci-imx 2200000.sata: fsl,receive-eq-mdB not specified, using 05000000
+ahci-imx 2200000.sata: SSS flag set, parallel bus scan disabled
+ahci-imx 2200000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+ahci-imx 2200000.sata: flags: ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+ata1: SATA max UDMA/133 mmio [mem 0x02200000-0x02203fff] port 0x100 irq 71
+ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+ata1.00: ATA-9: SanDisk SD6SB1M-032G-1006, X231706, max UDMA/100
+ata1.00: 62533296 sectors, multi 1: LBA48 NCQ (depth 31/32)
+ata1.00: configured for UDMA/100
+mxc_vdoa 21e4000.vdoa: i.MX Video Data Order Adapter(VDOA) driver probed
+EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+
+......................................................................................
+root@freescale ~$ dmesg |grep ata
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Memory policy: Data cache writealloc
+Memory: 700072K/1048576K available (7237K kernel code, 407K rwdata, 2472K rodata, 383K init, 431K bss)
+      .data : 0x809e4000 - 0x80a49f40   ( 408 kB)
+libata version 3.00 loaded.
+ahci-imx 2200000.sata: fsl,transmit-level-mV not specified, using 00000024
+ahci-imx 2200000.sata: fsl,transmit-boost-mdB not specified, using 00000480
+ahci-imx 2200000.sata: fsl,transmit-atten-16ths not specified, using 00002000
+ahci-imx 2200000.sata: fsl,receive-eq-mdB not specified, using 05000000
+ahci-imx 2200000.sata: SSS flag set, parallel bus scan disabled
+ahci-imx 2200000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+ahci-imx 2200000.sata: flags: ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+ata1: SATA max UDMA/133 mmio [mem 0x02200000-0x02203fff] port 0x100 irq 71
+ata1: SATA link down (SStatus 0 SControl 300)
+ahci-imx 2200000.sata: no device found, disabling link.
+ahci-imx 2200000.sata: pass ahci_imx..hotplug=1 to enable hotplug
+mxc_vdoa 21e4000.vdoa: i.MX Video Data Order Adapter(VDOA) driver probed
+EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+

@@ -1,0 +1,112 @@
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ umount /dev/mmcblk3*
+umount: can't umount /dev/mmcblk3: Invalid argument
+umount: can't umount /dev/mmcblk3boot0: Invalid argument
+umount: can't umount /dev/mmcblk3boot1: Invalid argument
+umount: can't umount /dev/mmcblk3rpmb: Invalid argument
+root@freescale /$ umount /dev/mmcblk3p1
+umount: can't umount /dev/mmcblk3p1: Invalid argument
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ fdisk /dev/mmcblk3
+
+The number of cylinders for this disk is set to 118016.
+There is nothing wrong with that, but this is larger than 1024,
+and could in certain setups cause problems with:
+1) software that runs at boot time (e.g., old versions of LILO)
+2) booting and partitioning software from other OSs
+   (e.g., DOS FDISK, OS/2 FDISK)
+
+Command (m for help): p
+
+Disk /dev/mmcblk3: 3867 MB, 3867148288 bytes
+4 heads, 16 sectors/track, 118016 cylinders
+Units = cylinders of 64 * 512 = 32768 bytes
+
+        Device Boot      Start         End      Blocks  Id System
+/dev/mmcblk3p1            1024      118016     3743776  83 Linux
+
+Command (m for help): d
+Selected partition 1
+
+Command (m for help): d
+No partition is defined yet!
+
+Command (m for help): 
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+p
+Partition number (1-4): 1
+First cylinder (1-118016, default 1): 10240
+Last cylinder or +size or +sizeM or +sizeK (10240-118016, default 118016): 112640
+
+Command (m for help): p
+
+Disk /dev/mmcblk3: 3867 MB, 3867148288 bytes
+4 heads, 16 sectors/track, 118016 cylinders
+Units = cylinders of 64 * 512 = 32768 bytes
+
+        Device Boot      Start         End      Blocks  Id System
+/dev/mmcblk3p1           10240      112640     3276832  83 Linux
+
+Command (m for help): n
+Command action
+   e   extended
+   p   primary partition (1-4)
+2                                                                                                                                       
+Invalid partition number for type '2'                                                                                                   
+Command action                                                                                                                          
+   e   extended                                                                                                                         
+   p   primary partition (1-4)                                                                                                          
+p                                                                                                                                       
+Partition number (1-4): 2                                                                                                               
+First cylinder (1-118016, default 1): 113640                                                                                            
+Last cylinder or +size or +sizeM or +sizeK (113640-118016, default 118016): Using default value 118016                                  
+                                                                                                                                        
+Command (m for help): p                                                                                                                 
+                                                                                                                                        
+Disk /dev/mmcblk3: 3867 MB, 3867148288 bytes                                                                                            
+4 heads, 16 sectors/track, 118016 cylinders                                                                                             
+Units = cylinders of 64 * 512 = 32768 bytes                                                                                             
+                                                                                                                                        
+        Device Boot      Start         End      Blocks  Id System                                                                       
+/dev/mmcblk3p1           10240      112640     3276832  83 Linux                                                                        
+/dev/mmcblk3p2          113640      118016      140064  83 Linux                                                                        
+
+Command (m for help): 
+Command (m for help): 
+Command (m for help): 
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table
+ mmcblk3: p1 p2
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/root               204152     76201    113103  40% /
+devtmpfs               1032132        40   1032092   0% /dev
+tmpfs                  1032132        40   1032092   0% /dev
+shm                    1032132         0   1032132   0% /dev/shm
+rwfs                       512       512         0 100% /mnt/rwfs
+rwfs                       512       512         0 100% /tmp
+rwfs                       512       512         0 100% /var
+/dev/sda1                51084      6446     44638  13% /mnt/sata
+/dev/sda2               204152     76201    113103  40% /mnt/mmc
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ mkfs.vfat /dev/mmcblk3p1 
+-sh: mkfs.vfat: command not found
+root@freescale /$ mk
+mkdir       mkfifo      mkfs.minix  mkswap      
+mke2fs      mkfs.ext2   mknod       mktemp      
+root@freescale /$ mk
+mkdir       mkfifo      mkfs.minix  mkswap      
+mke2fs      mkfs.ext2   mknod       mktemp      
+root@freescale /$ mkfs.
+mkfs.ext2   mkfs.minix  

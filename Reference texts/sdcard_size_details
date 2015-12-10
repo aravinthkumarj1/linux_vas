@@ -1,0 +1,30 @@
+Filesystem     1K-blocks      Used Available Use% Mounted on
+
+/dev/sdc2         194241    135099     44806  76% /media/rootfs
+/dev/sdc3        1617160      2464   1514500   1% /media/appfs
+/dev/sdc1          48380     14762     33619  31% /media/WP
+
+
+/dev/sdc2 on /media/rootfs type ext4 (rw,nosuid,nodev,uhelper=udisks)
+/dev/sdc3 on /media/appfs type ext4 (rw,nosuid,nodev,uhelper=udisks)
+/dev/sdc1 on /media/WP type vfat (rw)
+
+
+
+51200
+
+10240 -- + 102400 = > 112640
+
+122640 -- => 552720
+
+10240
+112640
+122640
+552720
+562720
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdc1           10240      112640       51200+  83  Linux
+/dev/sdc2          122640      552720      215040+  83  Linux
+/dev/sdc3          562720     3862527     1649904   83  Linux
+

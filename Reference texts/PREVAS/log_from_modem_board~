@@ -1,0 +1,50 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+********************************************Error log from prevas modem board*****************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[ 5598.745796] usb 3-9: new high-speed USB device number 9 using xhci_hcd
+[ 5598.745897] usb 3-9: Device not responding to set address.
+[ 5598.949887] usb 3-9: Device not responding to set address.
+[ 5599.153823] usb 3-9: device not accepting address 9, error -71
+[ 5599.265794] usb 3-9: new high-speed USB device number 10 using xhci_hcd
+[ 5599.265911] usb 3-9: Device not responding to set address.
+[ 5599.469876] usb 3-9: Device not responding to set address.
+[ 5599.673753] usb 3-9: device not accepting address 10, error -71
+[ 5599.785751] usb 3-9: new high-speed USB device number 11 using xhci_hcd
+[ 5599.785875] usb 3-9: Device not responding to set address.
+[ 5599.989821] usb 3-9: Device not responding to set address.
+[ 5600.193749] usb 3-9: device not accepting address 11, error -71
+[ 5600.305743] usb 3-9: new high-speed USB device number 12 using xhci_hcd
+[ 5600.305860] usb 3-9: Device not responding to set address.
+[ 5600.509772] usb 3-9: Device not responding to set address.
+[ 5600.713672] usb 3-9: device not accepting address 12, error -71
+[ 5600.713725] hub 3-0:1.0: unable to enumerate USB device on port 9
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+************************************************Working log from mouse************************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[ 6826.777030] usb 3-9: new low-speed USB device number 13 using xhci_hcd
+[ 6826.797785] usb 3-9: New USB device found, idVendor=0461, idProduct=4d51
+[ 6826.797795] usb 3-9: New USB device strings: Mfr=0, Product=2, SerialNumber=0
+[ 6826.797800] usb 3-9: Product: DELL Laser Mouse
+[ 6826.798054] usb 3-9: ep 0x81 - rounding interval to 64 microframes, ep desc says 80 microframes
+[ 6826.801556] input: DELL Laser Mouse as /devices/pci0000:00/0000:00:14.0/usb3/3-9/3-9:1.0/input/input14
+[ 6826.801986] hid-generic 0003:0461:4D51.0004: input,hidraw0: USB HID v1.11 Mouse [DELL Laser Mouse] on usb-0000:00:14.0-9/input0
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*********************************************Espected output from Modem board*****************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+[ 2.277029] usb 1-4: New USB device found, idVendor=1199, idProduct=a001
+[ 2.277031] usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[ 2.277033] usb 1-4: Product: Sierra Wireless EM7345 4G LTE
+[ 2.277034] usb 1-4: Manufacturer: Sierra Wireless Inc.
+[ 2.277035] usb 1-4: SerialNumber: 013937003691337
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+

@@ -1,0 +1,33 @@
+=> RTC
+date -s 2015.12.09-03:00:45  	-- set time
+date -R  			-- view time
+hwclock -w			-- set to hardware
+
+=> Temperature Sensor
+cat /sys/devices/virtual/thermal/thermal_zone0/temp
+
+root@freescale /zumi$ cat /sys/devices/virtual/thermal/thermal_zone0/temp
+43176
+
+root@freescale /$ cat /sys/devices/virtual/thermal/thermal_zone0/temp
+36360
+
+
+sata -- done
+
+
+emmc done
+
+
+ 
+root@freescale /$ date -R
+Thu, 01 Jan 1970 00:02:23 +0000
+root@freescale /$ date -s 2015.12.09-03:00:45
+Wed Dec  9 03:00:45 UTC 2015
+root@freescale /$ date -R  
+Wed, 09 Dec 2015 03:00:52 +0000
+root@freescale /$ hwclock -w
+root@freescale /$ date -R   
+Wed, 09 Dec 2015 03:01:01 +0000
+root@freescale /$ 
+
