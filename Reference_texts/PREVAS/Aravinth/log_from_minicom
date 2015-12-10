@@ -1,0 +1,311 @@
+U-Boot 2014.04-08651-ge005447-dirty (Dec 08 2015 - 10:53:14)                                                       
+                                                                             
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz                                    
+CPU:   Temperature 36 C, calibration data: 0x55a4ab7d
+Reset cause: POR                        
+Board: MX6-SabreSD                      
+I2C:   ready                            
+DRAM:  2 GiB                            
+MMC:   FSL_SDHC: 0, FSL_SDHC: 1         
+SF: Unsupported flash IDs: manuf 00, jedec 0000, ext_jedec 0000
+*** Warning - spi_flash_probe() failed, using default environment
+
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Warning: failed to set MAC address
+
+Boop from USB for mfgtools
+Use default environment for mfgtools
+����
+
+U-Boot 2014.04 (Dec 08 2015 - 10:08:28)
+
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz
+CPU:   Temperature 36 C, calibration data: 0x55a4ab7d
+Reset cause: POR
+Board: MOVIS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+*** Warning - bad CRC, using default environment
+
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Warning: failed to set MAC address
+
+Normal Boot
+Run bootcmd_mfg: <NULL>
+=> 
+=> 
+=> 
+=> 
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=mmc dev ${mmcdev};if mmc rescan; then dboot; run dbootcmd; fi
+bootdelay=1
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+initrd_file=uInitrd
+initrd_high=0xffffffff
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=HDMI
+rd_addr=0x11200000
+rdfile=uInitrd
+verify=n
+
+Environment size: 962/8188 bytes
+=> boot
+mmc0(part 0) is current device
+Unknown command 'dboot' - try 'help'
+## Error: "dbootcmd" not defined
+=> 
+
+U-Boot 2014.04 (Dec 08 2015 - 10:08:28)
+
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz
+CPU:   Temperature 41 C, calibration data: 0x55a4ab7d
+Reset cause: POR
+Board: MOVIS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+*** Warning - bad CRC, using default environment
+
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Warning: failed to set MAC address
+
+Normal Boot
+Run bootcmd_mfg: <NULL>
+=> 
+=> 
+=> 
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=mmc dev ${mmcdev};if mmc rescan; then dboot; run dbootcmd; fi
+bootdelay=1
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+initrd_file=uInitrd
+initrd_high=0xffffffff
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=HDMI
+rd_addr=0x11200000
+rdfile=uInitrd
+verify=n
+
+Environment size: 962/8188 bytes
+=> setenv mmcboot echo Booting from mmc ...; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; th;
+## Error: "mmcargs" not defined
+** No partition table - mmc 0 **
+Bad Linux ARM zImage magic!
+=> setenv mmcboot echo Booting from mmc ...; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; th;
+## Error: "mmcargs" not defined
+** No partition table - mmc 0 **
+Bad Linux ARM zImage magic!
+=> mmcinfo 
+Device: FSL_SDHC
+Manufacturer ID: fe
+OEM: 14e
+Name: P1XXX 
+Tran Speed: 52000000
+Rd Block Len: 512
+MMC version 4.5
+High Capacity: Yes
+Capacity: 3.6 GiB
+Bus Width: 8-bit
+=> mmc dev 0
+mmc0(part 0) is current device
+=> mmcinfo  
+Device: FSL_SDHC
+Manufacturer ID: fe
+OEM: 14e
+Name: P1XXX 
+Tran Speed: 52000000
+Rd Block Len: 512
+MMC version 4.5
+High Capacity: Yes
+Capacity: 3.6 GiB
+Bus Width: 8-bit
+=> mmc dev 1
+MMC Device 1 not found
+no mmc device at slot 1
+=> setenv rdfile zImage
+=> setenv kernel_file zImage
+=> setenv fdtfile imx6q-sabresd.dtb
+=> saveenv
+Saving Environment to SPI Flash...
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Erasing SPI flash...Writing to SPI flash...done
+=> boot
+mmc0(part 0) is current device
+Unknown command 'dboot' - try 'help'
+## Error: "dbootcmd" not defined
+=> bootz
+Bad Linux ARM zImage magic!
+=> setenv rd_addr 0x12000000
+=> setenv rd_addr 0x12000000
+=> setenv fdt_addr 0x1A000000
+=> saveenv
+Saving Environment to SPI Flash...
+Erasing SPI flash...Writing to SPI flash...done
+=> bootz
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> 
+Bad Linux ARM zImage magic!
+=> reboot
+Unknown command 'reboot' - try 'help'
+=> 
+
+U-Boot 2014.04 (Dec 08 2015 - 10:08:28)
+
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz
+CPU:   Temperature 42 C, calibration data: 0x55a4ab7d
+Reset cause: POR
+Board: MOVIS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Warning: failed to set MAC address
+
+Normal Boot
+Run bootcmd_mfg: <NULL>
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=mmc dev ${mmcdev};if mmc rescan; then dboot; run dbootcmd; fi
+bootdelay=1
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+fdt_addr=0x1A000000
+fdt_high=0xffffffff
+fdtfile=imx6q-sabresd.dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+initrd_file=uInitrd
+initrd_high=0xffffffff
+kernel_file=zImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcboot=echo Booting from mmc ...
+mmcdev=0
+mmcpart=1
+panel=HDMI
+rd_addr=0x12000000
+rdfile=zImage
+verify=n
+
+Environment size: 1011/8188 bytes
+=> setenv bootargs console=ttymxc0,115200 rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storage.iSerialNumber= enaf
+=> setenv bootcmd mmc dev ${mmcdev};if mmc rescan; then if run loadbootscript; then run bootscript; else if run loadimage; then run mmcboot; else run netboot; fi; fi; else run netboot; fi
+## Error: "loadbootscript" not defined
+## Error: "loadimage" not defined
+## Error: "netboot" not defined
+=> setenv bootcmd_mfg run mfgtool_args;bootz ${loadaddr} ${initrd_addr} ${fdt_addr};
+Bad Linux ARM zImage magic!
+=> setenv bootscript echo Running bootscript from mmc ...; source
+## Executing script at 10008000
+Wrong image format for "source" command
+=> setenv fdt_addr 0x1A000000
+=> setenv fdt_file imx6q-sabresd.dtb
+=> setenv fdt_high 0xffffffff
+=> setenv image zImage
+=> setenv initrd_addr 0x12C00000
+=> setenv initrd_high 0xffffffff
+=> setenv ip_dyn yes
+=> setenv loadaddr 0x12000000
+=> setenv loadbootscript fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};
+=> setenv loadfdt fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}
+=> saveenv
+Saving Environment to SPI Flash...
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Erasing SPI flash...Writing to SPI flash...done
+=> setenv loadimage fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image}
+=> setenv mfgtool_args setenv bootargs console=ttymxc0,115200 rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storagf
+=> setenv mmcargs setenv bootargs console=${console},${baudrate} ${smp} root=${mmcroot}
+=> setenv mmcautodetect yes
+=> setenv mmcboot echo Booting from mmc ...; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; th;
+** No partition table - mmc 0 **
+Kernel image @ 0x12000000 [ 0x000000 - 0x5b6380 ]
+No gpc device node -9, force to ldo-enable.
+
+Starting kernel ...
+

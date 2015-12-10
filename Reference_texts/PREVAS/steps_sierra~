@@ -1,0 +1,106 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+**********************************************ZS:Steps for Modem board test*******************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+=> modprobe sierra
+=> modprobe sierra_net
+
+///////////////////////////////////////////////////////**Output**/////////////////////////////////////////////////////////////////
+
+root@bans4:/# modprobe sierra
+root@bans4:/# modprobe sierra_net
+root@bans4:/# lsmod | grep sierra
+sierra_net             18823  0 
+usbnet                 43913  1 sierra_net
+sierra                 19332  0 
+usbserial              45014  1 sierra
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+***************************************Connect the Modem board into linux machine*************************************************
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+=> dmesg
+
+///////////////////////////////////////////////////////**Output**/////////////////////////////////////////////////////////////////
+root@bans4:/# dmesg
+[12181.955082] usb 3-10: new high-speed USB device number 23 using xhci_hcd
+[12181.972081] usb 3-10: config 1 has an invalid interface number: 8 but max is 5
+[12181.972092] usb 3-10: config 1 has an invalid interface number: 10 but max is 5
+[12181.972096] usb 3-10: config 1 has an invalid interface number: 11 but max is 5
+[12181.972100] usb 3-10: config 1 has no interface number 1
+[12181.972104] usb 3-10: config 1 has no interface number 4
+[12181.972107] usb 3-10: config 1 has no interface number 5
+[12181.972707] usb 3-10: New USB device found, idVendor=1199, idProduct=68c0
+[12181.972716] usb 3-10: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[12181.972720] usb 3-10: Product: MC7304
+[12181.972724] usb 3-10: Manufacturer: Sierra Wireless, Incorporated
+[12182.001402] usbcore: registered new interface driver cdc_wdm
+[12182.022912] usbcore: registered new interface driver option
+[12182.022919] usbserial: USB Serial support registered for GSM modem (1-port)
+[12182.022999] option 3-10:1.0: GSM modem (1-port) converter detected
+[12182.023051] usb 3-10: GSM modem (1-port) converter now attached to ttyUSB0
+[12182.023066] option 3-10:1.2: GSM modem (1-port) converter detected
+[12182.023096] usb 3-10: GSM modem (1-port) converter now attached to ttyUSB1
+[12182.023109] option 3-10:1.3: GSM modem (1-port) converter detected
+[12182.023157] usb 3-10: GSM modem (1-port) converter now attached to ttyUSB2
+[12182.036854] qmi_wwan 3-10:1.8: cdc-wdm1: USB WDM device
+[12182.036970] qmi_wwan 3-10:1.8 wwan0: register 'qmi_wwan' at usb-0000:00:14.0-10, WWAN/QMI device, 5a:1d:c6:a4:ea:f6
+[12182.037365] qmi_wwan 3-10:1.10: cdc-wdm2: USB WDM device
+[12182.037425] qmi_wwan 3-10:1.10 wwan1: register 'qmi_wwan' at usb-0000:00:14.0-10, WWAN/QMI device, 5a:1d:c6:a4:ea:f6
+[12182.037820] qmi_wwan 3-10:1.11: cdc-wdm3: USB WDM device
+[12182.037872] qmi_wwan 3-10:1.11 wwan2: register 'qmi_wwan' at usb-0000:00:14.0-10, WWAN/QMI device, 5a:1d:c6:a4:ea:f6
+[12182.037891] usbcore: registered new interface driver qmi_wwan
+root@bans4:/# 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+=> lsusb
+
+///////////////////////////////////////////////////////**Output**/////////////////////////////////////////////////////////////////
+
+root@bans4:/home/extinremo# lsusb
+Bus 002 Device 002: ID 8087:8000 Intel Corp. 
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 8087:8008 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 022: ID 0461:4d51 Primax Electronics, Ltd 0Y357C PMX-MMOCZUL (B) [Dell Laser Mouse]
+Bus 003 Device 004: ID 413c:2110 Dell Computer Corp. 
+Bus 003 Device 002: ID 413c:1010 Dell Computer Corp. 
+Bus 003 Device 030: ID 1199:68c0 Sierra Wireless, Inc. 
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+=> sudo minicom -s
+		=> Serial port setup
+				=> Serial Device      : /dev/ttyUSB2
+				=> Enter (twice)
+
+		=> Save setup as..
+		=> Exit
+
+/////////////////////////////////////Minicom///////////////////////////////////////////////////////////////////////////////////
+Welcome to minicom 2.7
+
+OPTIONS: I18n 
+Compiled on Jan  1 2014, 17:13:19.
+Port /dev/ttyUSB2, 13:51:17
+
+Press CTRL-A Z for help on special keys   
+
+=> ATI
+Manufacturer: Sierra Wireless, Incorporated
+Model: MC7304
+Revision: SWI9X15C_05.05.58.00 r27038 carmd-fwbuild1 2015/03/04 21:30:23
+IMEI: 356853051353995
+IMEI SV: 18
+FSN: J3538611060410
++GCAP: +CGSM
+
+
+OK
+
+
+

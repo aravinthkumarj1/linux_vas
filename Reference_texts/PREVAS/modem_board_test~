@@ -1,0 +1,153 @@
+=> Display the firmware version:
+ATI
+
+=> Test the LED—Set the LED in blinking mode using this command, then 
+visually verify that the LED turns off and on:
+
+AT!LDTEST=0,0	(LED on)
+AT!LDTEST=0,1	(LED off)
+
+=> Unlock the extended AT command set:
+AT!ENTERCND
+
+=> Put the module in diagnostic/factory test mode:
+AT!DAFTMACT
+
+
+AT!DAFTMACT
+AT!GSTATUS
+
+For call:-
+
+ATD+918508139500
+
+AT+CIMI
+404450920703907
+
+OK
+
+
+AT+CPIN
+		AT+CIMI ATDT9886994841;
+
+AT!SETCND
+
+
+AT+CGMI
+AT+CGMM
+AT+CGMR
+AT+CGSN ---> IMEI -- 
+AT+CSCS
+AT+CIMI ----> IMSI --> 404450516681297 -- 404450516681297
+AT+WS46
+
+
+.................
+
+404450920703907
+
+
+AT+CMGS="+919886994841" <hELLO>
+404421756083561
+
+AT!DAGGRSSI
+
+AT!GSTATUS
+AT!DAGINFO
+AT!GRESET
+
+
+ AT+CMGR
+AT+COPS?
+AT+PREG?
+
+AT+CNUM=?
+
+AT+COPN
+
+AT+CSQ=?
+AT+CPBR
+AT+CMGL
+
+
+AT+CMGS="9886994841"
+AT+CMGS="+919632677116"
+AT+CMGS="12017572673"
+ATD 9886994841;
+
+
+AT+CMGL="ALL"
+
++CMGL: 0,"REC READ","+919741247836",,"13/04/30,13:04:26+00"
+No.19/470, such nilaya, 4th cross, 3rd main, dollars colony, btm 2 nd stage, Bangalore 560076
++CMGL: 1,"REC READ","687745545048524857",,"15/12/04,12:00:40+22"
+BBMP flats at Vidyaranyapura, BBMP aprvd. at just 26 lacs with all luxury amenities.Extra free offers and win  Fridge, TV or Washing Machine.7353422111
++CMGL: 2,"REC READ","867745485248564848",,"15/12/04,11:26:31+22"
+Dear Thulasidhar, you have a pre-approved Personal Loan of 514938 from Bajaj Finserv with minimal documentation. SMS PLP to 9773633633 to apply. T&C apply.
++CMGL: 3,"REC READ","867545485248564848",,"15/12/04,10:41:03+22"
+Dear Thulasidhar, you have a Personal Loan offer of Rs. 514938 from Bajaj Finserv. SMS PLP to 9773633633. T&C apply
++CMGL: 4,"REC READ","+919886994841",,"15/12/04,12:19:32+22"
+Hi
++CMGL: 5,"REC READ","+919886994841",,"15/12/04,12:20:13+22"
+Hi
++CMGL: 6,"REC READ","+919886994841",,"15/12/04,12:20:17+22"
+Hi
++CMGL: 7,"REC READ","+919886994841",,"15/12/04,12:20:21+22"
+Hi
+
+OK
+
+
+3.5.1.1.8   &N - Display Internal
+ Phonebook Stored Numbers 
+&N - Display Internal Phonebook Stored Numbers 
+AT&N[2] 
+
+
+
+
+3.5.1.1.13 +GSN - Serial Number 
++GSN - Serial Number 
+AT+GSN 
+
+
+AT+CGATT 
+AT+CGATT?
+
+AT+CSTT="airtelgprs.com"
+AT+CSTT=”CMNET"
+
+AT+CIICR 
+AT+CIPPING="www.google.com"
+
+
+at+cgdcont=1,"IP","airtelgprs.com"
+
+AT+CIPCSGP=1,"","airtelgprs.com"
+AT$GPSP=1
+AT$GPSP?
+AT$GPSP=?
+
+AT!ENTERCND
+
+AT!DASBAND=800
+
+AT!GSTATUS
+
+AT!DAGSRXCONT
+
+
+AT+CGDCONT=1,"IP","airtelgprs.com"
+
+AT+CIPCSGP=1,"airtelgprs.com"
+ATD*#06#
+
+AT#SGACT=1,1
+
+
+106.200.48.1 IP
+
+
+ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+
+AT+CIPCSGP=1,"AIRTEL"

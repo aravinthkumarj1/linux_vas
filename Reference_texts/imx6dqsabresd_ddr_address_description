@@ -1,0 +1,303 @@
++/* DDR script */
++.macro imx6dqsabresd_ddr_setting
++	ldr r0, =IOMUXC_BASE_ADDR
++	ldr r1, =0x000c0000
++	str r1, [r0, #0x798]            // DDR Select Field              -- DDR3 mode   
+	-- DRAM_ADDR00, DRAM_ADDR01, DRAM_ADDR02, DRAM_ADDR03, DRAM_ADDR04,DRAM_ADDR05, DRAM_ADDR06, DRAM_ADDR07, DRAM_ADDR08, DRAM_ADDR09,DRAM_ADDR10, DRAM_ADDR11, DRAM_ADDR12, DRAM_ADDR13, DRAM_ADDR14, DRAM_ADDR15, DRAM_CAS_B, DRAM_CS0_B, DRAM_CS1_B, DRAM_DATA00, DRAM_DATA01,DRAM_DATA02, DRAM_DATA03, DRAM_DATA04, DRAM_DATA05, DRAM_DATA06, DRAM_DATA07,DRAM_DATA08, DRAM_DATA09, DRAM_DATA10, DRAM_DATA11, DRAM_DATA12, DRAM_DATA13, DRAM_DATA14, DRAM_DATA15, DRAM_DATA16, DRAM_DATA17, DRAM_DATA18, DRAM_DATA19,DRAM_DATA20, DRAM_DATA21, DRAM_DATA22, DRAM_DATA23, DRAM_DATA24, DRAM_DATA25, DRAM_DATA26, DRAM_DATA27, DRAM_DATA28, DRAM_DATA29, DRAM_DATA30, DRAM_DATA31, DRAM_DATA32, DRAM_DATA33, DRAM_DATA34, DRAM_DATA35, DRAM_DATA36, DRAM_DATA37, DRAM_DATA38, DRAM_DATA39, DRAM_DATA40, DRAM_DATA41, DRAM_DATA42, DRAM_DATA43, DRAM_DATA44, DRAM_DATA45, DRAM_DATA46, DRAM_DATA47, DRAM_DATA48, DRAM_DATA49, DRAM_DATA50, DRAM_DATA51, DRAM_DATA52, DRAM_DATA53, DRAM_DATA54, DRAM_DATA55,DRAM_DATA56, DRAM_DATA57, DRAM_DATA58, DRAM_DATA59, DRAM_DATA60, DRAM_DATA61, DRAM_DATA62, DRAM_DATA63, DRAM_DQM0, DRAM_DQM1, DRAM_DQM2, DRAM_DQM3,DRAM_DQM4, DRAM_DQM5, DRAM_DQM6, DRAM_DQM7, DRAM_ODT0, DRAM_ODT1, DRAM_RAS_B, DRAM_SDBA0, DRAM_SDBA1, DRAM_SDBA2, DRAM_SDCKE0, DRAM_SDCKE1,DRAM_SDCLK0_P, DRAM_SDCLK1_P, DRAM_SDQS0_P, DRAM_SDQS1_P,DRAM_SDQS2_P, DRAM_SDQS3_P, DRAM_SDQS4_P, DRAM_SDQS5_P, DRAM_SDQS6_P, DRAM_SDQS7_P,DRAM_SDWE_B
+
++	ldr r1, =0x00000000
++	str r1, [r0, #0x758]
++
++	ldr r1, =0x00000030
++	str r1, [r0, #0x588]		// Drive Strength Field          -- DRAM_SDCLK_0 -- 40 Ohm
++	str r1, [r0, #0x594]		// Drive Strength Field          -- DRAM_SDCLK_1 -- 40 Ohm
++	str r1, [r0, #0x56c]		// Drive Strength Field          -- DRAM_CAS     -- 40 Ohm
++	str r1, [r0, #0x578]		// Drive Strength Field          -- DRAM_RAS     -- 40 Ohm
++	str r1, [r0, #0x74c]		// Drive Strength Field          -- DRAM_ADDR00, DRAM_ADDR01, DRAM_ADDR02, DRAM_ADDR03, DRAM_ADDR04,
+				DRAM_ADDR05, DRAM_ADDR06, DRAM_ADDR07, DRAM_ADDR08, DRAM_ADDR09, DRAM_ADDR10, DRAM_ADDR11, DRAM_ADDR12, 				DRAM_ADDR13, DRAM_ADDR14, DRAM_ADDR15, DRAM_SDBA0, DRAM_SDBA1   -- 40 Ohm
++	str r1, [r0, #0x57c]		// Drive Strength Field          -- DRAM_RESET   -- 40 Ohm
++
++	ldr r1, =0x00000000
++	str r1, [r0, #0x58c]
++
++	ldr r1, =0x00000030
++	str r1, [r0, #0x59c]		// Drive Strength Field          -- DRAM_SDODT0   -- 40 Ohm
++	str r1, [r0, #0x5a0]		// Drive Strength Field          -- DRAM_SDODT1   -- 40 Ohm
++	str r1, [r0, #0x78c]		// Drive Strength Field          -- DRAM_CS0_B, DRAM_CS1_B, DRAM_SDBA2, DRAM_SDCKE0, DRAM_SDCKE1,
+									    DRAM_SDWE_B   -- 40 Ohm
++
++	ldr r1, =0x00020000
++	str r1, [r0, #0x750]		// DDR / CMOS Input Mode Field   -- ***		  -- Differential input mode
++
++	ldr r1, =0x00000030
++	str r1, [r0, #0x5a8]		// Drive Strength Field          -- DRAM_SDQS0   -- 40 Ohm
++	str r1, [r0, #0x5b0]		// Drive Strength Field          -- DRAM_SDQS1   -- 40 Ohm
++	str r1, [r0, #0x524]		// Drive Strength Field          -- DRAM_SDQS2   -- 40 Ohm
++	str r1, [r0, #0x51c]		// Drive Strength Field          -- DRAM_SDQS3   -- 40 Ohm
++	str r1, [r0, #0x518]		// Drive Strength Field          -- DRAM_SDQS4   -- 40 Ohm
++	str r1, [r0, #0x50c]		// Drive Strength Field          -- DRAM_SDQS5   -- 40 Ohm
++	str r1, [r0, #0x5b8]		// Drive Strength Field          -- DRAM_SDQS6   -- 40 Ohm
++	str r1, [r0, #0x5c0]		// Drive Strength Field          -- DRAM_SDQS7   -- 40 Ohm
++
++	ldr r1, =0x00020000
++	str r1, [r0, #0x774]		// DDR / CMOS Input Mode Field	 -- *** 	 -- Differential input mode
++
++	ldr r1, =0x00000030
++	str r1, [r0, #0x784]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x788]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x794]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x79c]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x7a0]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x7a4]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x7a8]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x748]		// Drive Strength Field          -- ***           -- 40 Ohm
++	str r1, [r0, #0x5ac]		// Drive Strength Field          -- DRAM_DQM0     -- 40 Ohm
++	str r1, [r0, #0x5b4]		// Drive Strength Field          -- DRAM_DQM1     -- 40 Ohm
++	str r1, [r0, #0x528]		// Drive Strength Field          -- DRAM_DQM2     -- 40 Ohm
++	str r1, [r0, #0x520]		// Drive Strength Field          -- DRAM_DQM3     -- 40 Ohm
++	str r1, [r0, #0x514]		// Drive Strength Field          -- DRAM_DQM4     -- 40 Ohm
++	str r1, [r0, #0x510]		// Drive Strength Field          -- DRAM_DQM5     -- 40 Ohm
++	str r1, [r0, #0x5bc]		// Drive Strength Field          -- DRAM_DQM6     -- 40 Ohm
++	str r1, [r0, #0x5c4]		// Drive Strength Field          -- DRAM_DQM7     -- 40 Ohm
++
++	ldr r0, =MMDC_P0_BASE_ADDR
++	ldr r2, =0xa1390003		
++	str r2, [r0, #0x800]	// -3-   <ZQ_MODE> - ZQ calibration mode: ZQ calibration is issued to i.MX ZQ calibration pad together with ZQ 		calibration command long/short to the external DDR device periodically and when exiting self refresh 
+	-9- <ZQ_HW_FOR>- Force ZQ automatic calibration process with the i.MX ZQ calibration pad. When this bit is asserted then the MMDC will 		issue one ZQ automatic calibration process with the i.MX ZQ calibration pad. It is the user responsibility to make sure that all the 		accesses to DDR will be finished before asserting this bit using CON_REQ/CON_ACK mechanism. HW will negate this bit upon completion of 		the ZQ calibration process.Upon negation of this bit the ZQ HW calibration pull-up and pull-down results (ZQ_HW_PU_RES and 		ZQ_HW_PD_RES respectively) are valid NOTE: In order to enable this bit ZQ_MODE must be set to either "1" or "3"
+		// <with> // <TZQ_INIT> Device ZQ long/init time. -- 512 cycles - Default (JEDEC value for DDR3)
+	-3-   <TZQ_OPER> Device ZQ long/init time -- 256 cycles - Default (JEDEC value for DDR3)
+	-1-   <TZQ_CS >  Device ZQ short time  -- 128 cycles (Default)
+	-a-   <ZQ_EARLY_COMPARATOR_EN_TIMER>   -- ZQ early comparator enable timer -- 21 cycles (Default)
++
++	ldr r2, =0x001F001F
++	str r2, [r0, #0x80c] 	// //  -001F- WL_DL_ABS_OFFSET0 // //  -001F- WL_DL_ABS_OFFSET1
++	str r2, [r0, #0x810]	// -001F- WL_DL_ABS_OFFSET2    // // -001F00-  WL_DL_ABS_OFFSET3
++	ldr r1, =MMDC_P1_BASE_ADDR
++	str r2, [r1, #0x80c]	// //  -001F- WL_DL_ABS_OFFSET0 // //  -001F- WL_DL_ABS_OFFSET1
++	str r2, [r1, #0x810]	// -001F- WL_DL_ABS_OFFSET2    // // -001F00-  WL_DL_ABS_OFFSET3
++
++	ldr r2, =0x43270338
++	str r2, [r0, #0x83c]	// Absolute read DQS gating delay offset for Byte0 // ***
+
++	ldr r2, =0x03200314
++	str r2, [r0, #0x840]	// Absolute read DQS gating delay offset for Byte2 // ***
++
++	ldr r2, =0x431A032F
++	str r2, [r1, #0x83c]	// Absolute read DQS gating delay offset for Byte0 // ***
++	ldr r2, =0x03200263
++	str r2, [r1, #0x840]	// Absolute read DQS gating delay offset for Byte2 // ***
++
++	ldr r2, =0x4B434748
++	str r2, [r0, #0x848]	// **Absolute read delay offset for Byte0 
+				Absolute read delay offset for Byte1
+				Absolute read delay offset for Byte2
+				Absolute read delay offset for Byte3
+
++	ldr r2, =0x4445404C
++	str r2, [r1, #0x848]	// **Absolute read delay offset for Byte0 
+				Absolute read delay offset for Byte1
+				Absolute read delay offset for Byte2
+				Absolute read delay offset for Byte3
++
++	ldr r2, =0x38444542
++	str r2, [r0, #0x850]	// **Absolute write delay offset for Byte0
+				Absolute write delay offset for Byte1
+				Absolute write delay offset for Byte2
+				Absolute write delay offset for Byte3
++	ldr r2, =0x4935493A
++	str r2, [r1, #0x850]	// **Absolute write delay offset for Byte0
+				Absolute write delay offset for Byte1
+				Absolute write delay offset for Byte2
+				Absolute write delay offset for Byte3
++
++	ldr r2, =0x33333333
++	str r2, [r0, #0x81c]	// Read dqs0 to dq0 delay fine-tuning -- Add dq0 delay of 3 delay units 
+				   Read dqs0 to dq1 delay fine-tuning -- Add dq1 delay of 3 delay units.
+				Read dqs0 to dq2 delay fine-tuning -- Add dq2 delay of 3 delay units 
+				Read dqs0 to dq3 delay fine-tuning -- Add dq3 delay of 3 delay units.
+				Read dqs0 to dq4 delay fine-tuning -- Add dq4 delay of 3 delay units 
+				Read dqs0 to dq5 delay fine-tuning -- Add dq5 delay of 3 delay units.
+				Read dqs0 to dq6 delay fine-tuning -- Add dq6 delay of 3 delay units 
+				Read dqs0 to dq7 delay fine-tuning -- Add dq7 delay of 3 delay units.
+
+
++	str r2, [r0, #0x820]	// Read dqs1 to dq8 delay fine-tuning -- Add dq8 delay of 3 delay units 
+				   Read dqs1 to dq9 delay fine-tuning -- Add dq9 delay of 3 delay units.
+				Read dqs1 to dq10 delay fine-tuning -- Add dq10 delay of 3 delay units 
+				Read dqs1 to dq11 delay fine-tuning -- Add dq11 delay of 3 delay units.
+				Read dqs1 to dq12 delay fine-tuning -- Add dq12 delay of 3 delay units 
+				Read dqs1 to dq13 delay fine-tuning -- Add dq13 delay of 3 delay units.
+				Read dqs1 to dq14 delay fine-tuning -- Add dq14 delay of 3 delay units 
+				Read dqs1 to dq15 delay fine-tuning -- Add dq15 delay of 3 delay units.
+
++	str r2, [r0, #0x824]	// Read dqs2 to dq16 delay fine-tuning -- Add dq16 delay of 3 delay units 
+				   Read dqs2 to dq17 delay fine-tuning -- Add dq17 delay of 3 delay units.
+				Read dqs2 to dq18 delay fine-tuning -- Add dq18 delay of 3 delay units 
+				Read dqs2 to dq19 delay fine-tuning -- Add dq19 delay of 3 delay units.
+				Read dqs2 to dq20 delay fine-tuning -- Add dq20 delay of 3 delay units 
+				Read dqs2 to dq21 delay fine-tuning -- Add dq21 delay of 3 delay units.
+				Read dqs2 to dq22 delay fine-tuning -- Add dq22 delay of 3 delay units 
+				Read dqs2 to dq23 delay fine-tuning -- Add dq23 delay of 3 delay units.
+
++	str r2, [r0, #0x828]	// Read dqs3 to dq24 delay fine-tuning -- Add dq24 delay of 3 delay units 
+				   Read dqs3 to dq25 delay fine-tuning -- Add dq25 delay of 3 delay units.
+				Read dqs3 to dq26 delay fine-tuning -- Add dq26 delay of 3 delay units 
+				Read dqs3 to dq27 delay fine-tuning -- Add dq27 delay of 3 delay units.
+				Read dqs3 to dq28 delay fine-tuning -- Add dq28 delay of 3 delay units 
+				Read dqs3 to dq29 delay fine-tuning -- Add dq29 delay of 3 delay units.
+				Read dqs3 to dq30 delay fine-tuning -- Add dq30 delay of 3 delay units 
+				Read dqs3 to dq31 delay fine-tuning -- Add dq31 delay of 3 delay units.
+
++	str r2, [r1, #0x81c]	// Read dqs0 to dq0 delay fine-tuning -- Add dq0 delay of 3 delay units 
+				   Read dqs0 to dq1 delay fine-tuning -- Add dq1 delay of 3 delay units.
+				Read dqs0 to dq2 delay fine-tuning -- Add dq2 delay of 3 delay units 
+				Read dqs0 to dq3 delay fine-tuning -- Add dq3 delay of 3 delay units.
+				Read dqs0 to dq4 delay fine-tuning -- Add dq4 delay of 3 delay units 
+				Read dqs0 to dq5 delay fine-tuning -- Add dq5 delay of 3 delay units.
+				Read dqs0 to dq6 delay fine-tuning -- Add dq6 delay of 3 delay units 
+				Read dqs0 to dq7 delay fine-tuning -- Add dq7 delay of 3 delay units.
+
+
++	str r2, [r1, #0x820]	// Read dqs1 to dq8 delay fine-tuning -- Add dq8 delay of 3 delay units 
+				   Read dqs1 to dq9 delay fine-tuning -- Add dq9 delay of 3 delay units.
+				Read dqs1 to dq10 delay fine-tuning -- Add dq10 delay of 3 delay units 
+				Read dqs1 to dq11 delay fine-tuning -- Add dq11 delay of 3 delay units.
+				Read dqs1 to dq12 delay fine-tuning -- Add dq12 delay of 3 delay units 
+				Read dqs1 to dq13 delay fine-tuning -- Add dq13 delay of 3 delay units.
+				Read dqs1 to dq14 delay fine-tuning -- Add dq14 delay of 3 delay units 
+				Read dqs1 to dq15 delay fine-tuning -- Add dq15 delay of 3 delay units.
+
++	str r2, [r1, #0x824]	// Read dqs2 to dq16 delay fine-tuning -- Add dq16 delay of 3 delay units 
+				   Read dqs2 to dq17 delay fine-tuning -- Add dq17 delay of 3 delay units.
+				Read dqs2 to dq18 delay fine-tuning -- Add dq18 delay of 3 delay units 
+				Read dqs2 to dq19 delay fine-tuning -- Add dq19 delay of 3 delay units.
+				Read dqs2 to dq20 delay fine-tuning -- Add dq20 delay of 3 delay units 
+				Read dqs2 to dq21 delay fine-tuning -- Add dq21 delay of 3 delay units.
+				Read dqs2 to dq22 delay fine-tuning -- Add dq22 delay of 3 delay units 
+				Read dqs2 to dq23 delay fine-tuning -- Add dq23 delay of 3 delay units.
+
++	str r2, [r1, #0x828]	// Read dqs3 to dq24 delay fine-tuning -- Add dq24 delay of 3 delay units 
+				   Read dqs3 to dq25 delay fine-tuning -- Add dq25 delay of 3 delay units.
+				Read dqs3 to dq26 delay fine-tuning -- Add dq26 delay of 3 delay units 
+				Read dqs3 to dq27 delay fine-tuning -- Add dq27 delay of 3 delay units.
+				Read dqs3 to dq28 delay fine-tuning -- Add dq28 delay of 3 delay units 
+				Read dqs3 to dq29 delay fine-tuning -- Add dq29 delay of 3 delay units.
+				Read dqs3 to dq30 delay fine-tuning -- Add dq30 delay of 3 delay units 
+				Read dqs3 to dq31 delay fine-tuning -- Add dq31 delay of 3 delay units.
++	ldr r2, =0x00000800
++	str r2, [r0, #0x8b8]	// Force measuement on delay-lines -- Perform measurement process
++	str r2, [r1, #0x8b8]	// Force measuement on delay-lines -- Perform measurement process
++
++	ldr r2, =0x00020036
++	str r2, [r0, #0x004]	// Valid clock cycles after self-refresh entry -- 6cycles
+				Valid clock cycles before self-refresh exit  -- 6cycles  // ***
+ 
+
++	ldr r2, =0x09444040
++	str r2, [r0, #0x008]	// ***
+
++
++	ldr r2, =0x555A7975
++	str r2, [r0, #0x00c]	// CAS Read Latency -- 8 cycles // ***
+
+
++	ldr r2, =0xFF538F64
++	str r2, [r0, #0x010]	// CAS Write Latency -- 6cycles ( DDR3) , 5 cycles (LPDDR2) // ***
+
+
++
++	ldr r2, =0x01FF00DB
++	str r2, [r0, #0x014]	//  Active to Active command period (all banks) -- 4cycles
+				Internal WRITE to READ command delay (same bank) -- 4cycles
+				Internal READ command to Precharge command delay (same bank) - 4cycles
+				DLL locking time -- 512 cycles (JEDEC value for DDR3)
+
++	ldr r2, =0x00001740
++	str r2, [r0, #0x018]	// Read Additional Latency -- 5 cycles additional latency
+				Command prediction working mode -- Enable prediction based on: Valid access on first pipe line stage, Valid 					access on axi bus, Next miss access from access queue.
+				Bank Interleaving On -- Banks are interleaved, and address will be decoded as row-bank-column
++
++	ldr r2, =0x00008000
++	str r2, [r0, #0x01c]	//Configuration request.
+				When this bit is set then the MMDC will clean the pending AXI accesses and will prevent from further AXI
+				accesses to be acknowledged. This field guarantee safe configuration (or change configuration) of the
+				MMDC while no access is in process and prevents an unexpected behaviour.
+				After setting this bit, it is needed to poll on CON_ACK until it is set to "1". When CON_ACK is asserted
+				then configuration is permitted. After configuration is completed then this bit must be deasserted in order
+				to process further AXI accesses. <1 A request to configure MMDC is valid>
+
++	ldr r2, =0x000026d2
++	str r2, [r0, #0x02c]	// Read to read delay for different chip-select -- 2 cycles (Default) --total delay calculated = BL/2 + RTR_DIF
+				Read to write delay for different chip-select  -- 2 cycles --total delay = BL/2+RTW_DIFF+(tCL - tCWL)+RALAT
+				Write to write delay for different chip-select -- 3 cycles -- total delay =BL/2 + WTW_DIFF
+
++	ldr r2, =0x005A1023
++	str r2, [r0, #0x030]	//***// DDR3: Time from SDE enable until DDR reset is high --14 cycles(Jedec value for DDR3)-total 200 us//**
+
+
++	ldr r2, =0x00000027
++	str r2, [r0, #0x040]	// ** CS0_END. Defines the absolute last address associated with CS0 with increments of 256Mb. 					CS0_END=AXI_ADDRESS[31:25] bits.
+
++
++	ldr r2, =0x831A0000
++	str r2, [r0, #0x000]	// DDR data bus size -- 64-bit data bus
+				In DDR3 mode the MMDC supports burst length 8
+				Column Address Width -- 10 bits column
+				Row Address Width    --  14 bits Row
+				MMDC Enable CS0
++
++	ldr r2, =0x04088032
++	str r2, [r0, #0x01c]	// Bank Address -- bank address 2
+				Command -- Load Mode Register Command ( DDR2/ DDR3, set correct CMD_CS, CMD_BA, CMD_ADDR_LSB,CMD_ADDR_MSB), 					MRW Command (LPDDR2, set correct CMD_CS, MR_OP, MR_ADDR)
+				Configuration request -- A request to configure MMDC is valid
+				Command/Address MSB. This field indicates the MSB of the command/Address
+
++	ldr r2, =0x00008033
++	str r2, [r0, #0x01c]	// **
+				Command -- Load Mode Register Command ( DDR2/ DDR3, set correct CMD_CS, CMD_BA, CMD_ADDR_LSB,CMD_ADDR_MSB), 					MRW Command (LPDDR2, set correct CMD_CS, MR_OP, MR_ADDR)
+				Configuration request -- A request to configure MMDC is valid
++	ldr r2, =0x00048031
++	str r2, [r0, #0x01c]	// Bank Address -- bank address 1
+				Command -- Load Mode Register Command ( DDR2/ DDR3, set correct CMD_CS, CMD_BA, CMD_ADDR_LSB,CMD_ADDR_MSB), 					MRW Command (LPDDR2, set correct CMD_CS, MR_OP, MR_ADDR)
+				Configuration request -- A request to configure MMDC is valid
+				Command/Address LSB. This field indicates the LSB of the command/Address
++	ldr r2, =0x09408030
++	str r2, [r0, #0x01c]	// bank address 0 -- Command -- Load Mode Register Command ( DDR2/ DDR3, set correct CMD_CS, CMD_BA, 					CMD_ADDR_LSB,CMD_ADDR_MSB),MRW Command (LPDDR2, set correct CMD_CS, MR_OP, MR_ADDR)
+				Configuration request -- A request to configure MMDC is valid
+				Command/Address LSB. This field indicates the LSB of the command/Address
+				Command/Address MSB. This field indicates the MSB of the command/Address.
++	ldr r2, =0x04008040
++	str r2, [r0, #0x01c]	// bank address 0 -- ZQ calibration (DDR2/ DDR3,set correct CMD_CS, {CMD_ADDR_MSB,CMD_ADDR_LSB}=0x400 or 0x0 )
+				Configuration request -- A request to configure MMDC is valid
+				Command/Address LSB. This field indicates the LSB of the command/Address
++
++	ldr r2, =0x00005800
++	str r2, [r0, #0x020]	// Refresh Rate -- 4 refreshes
+				Refresh Selector -- Periodic refresh cycles will be triggered in frequency of 32KHz
++	ldr r2, =0x00011117
++	str r2, [r0, #0x818]	// Inactive CS ODT pin is enabled during write accesses to other CS
+				Active CS ODT pin is enabled during write access.
+				Inactive CS ODT pin is enabled during read accesses to other CS
+				On chip ODT byte0 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte1 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte2 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte3 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+
++	str r2, [r1, #0x818]	// Inactive CS ODT pin is enabled during write accesses to other CS
+				Active CS ODT pin is enabled during write access.
+				Inactive CS ODT pin is enabled during read accesses to other CS
+				On chip ODT byte0 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte1 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte2 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+				On chip ODT byte3 resistor -- Rtt_Nom 120 Ohm /75 Ohm(ddr2)
+
++	ldr r2, =0x00025576
++	str r2, [r0, #0x004]	// **
++	ldr r2, =0x00011006
++	str r2, [r0, #0x404]	// This field is reserved
+				Automatic Power saving timer -- 1024 clock cycles
+				This field is reserved.
++	ldr r2, =0x00000000
++	str r2, [r0, #0x01c]
++.endm
++

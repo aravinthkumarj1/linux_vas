@@ -1,0 +1,11 @@
+
+ip link set can0 up type can bitrate 
+
+ip -details -statistics link show can0
+
+cantest can0 100#1122334455667788
+
+
+ifconfig can0 down
+
+cantest can0 123#AABBCCDD

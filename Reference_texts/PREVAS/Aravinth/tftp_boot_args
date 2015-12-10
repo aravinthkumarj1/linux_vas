@@ -1,0 +1,15 @@
+14:10:14] Kasper Holtze: 
+bootcmd=run bootcmd_movis; bootm 0x10008000 0x12000000 0x14000000
+bootcmd_movis=setenv ipaddr 10.0.0.187; setenv serverip 10.0.0.40; setenv ethaddr 70:B3:D5:B6:D0:01; tftpboot 0x10008000 movis/uImage; tftpboot 0x14000000 movis/imx6q-movis.dtb; tftpboot 0x12000000 movis/initramfs.cpio.gz.uboot; setenv bootargs console=ttymxc0,115200 rw
+sorry, not SPI
+TFTP
+
+setenv bootcmd 'run bootcmd_movis; bootm 0x10008000 0x14000000 0x12000000'
+setenv bootargs 'console=ttyS0,115200n8 root=/dev/ram0 rw initrd=0x82000000,13M rootfs=ext2 rw mem=128M'
+
+
+U-Boot> tftpboot 0x14000000 movis/imx6q-movis.dtb
+U-Boot> tftpboot 0x12000000 movis/initramfs.cpio.gz.uboot
+U-Boot> tftpboot 0x10008000 movis/uImage
+
+U-Boot> bootm 0x10008000 0x12000000 0x14000000

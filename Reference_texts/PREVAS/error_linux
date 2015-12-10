@@ -1,0 +1,12 @@
+export ARCH=arm
+export CROSS_COMPILE=/home/extinremo/Movis/SourceCode/freescale/usr/local/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12/fsl-linaro-toolchain/bin/arm-none-linux-gnueabi-
+
+
+  LD      init/built-in.o
+  HOSTCC  usr/gen_init_cpio
+  GEN     usr/initramfs_data.cpio.gz
+  LD      usr/built-in.o
+/home/extinremo/Movis/SourceCode/freescale/usr/local/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.12/fsl-linaro-toolchain/bin/arm-none-linux-gnueabi-ld: cannot find usr/initramfs_data.o: No such file or directory
+make[1]: *** [usr/built-in.o] Error 1
+make: *** [usr] Error 2
+

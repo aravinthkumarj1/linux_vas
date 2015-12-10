@@ -1,0 +1,68 @@
+root@freescale /$ mount /dev/sdb1 /mnt/
+cdrom   emmc    floppy  mmc     nfs     rwfs    sata    src     udisk
+root@freescale /$ mount /dev/sdb1 /mnt/sata/
+mount: mounting /dev/sdb1 on /mnt/sata/ failed: No such file or directory
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ mount /dev/sda1 /mnt/sata/
+FAT-fs (sda1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ cd /mnt/sata/
+root@freescale /mnt/sata$ ls
+imx6q-movis.dtb  u-boot.bin       u-boot.imx       uImage
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ dd if=u-boot.bin of=/dev/mmcblk3 bs=512 seek=2
+662+1 records in
+662+1 records out
+339200 bytes (331.3KB) copied, 0.397419 seconds, 833.5KB/s
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ 
+root@freescale /mnt/sata$ cd ../..
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ cd /dev/mmcblk3
+mmcblk3       mmcblk3boot1  mmcblk3p2     
+mmcblk3boot0  mmcblk3p1     mmcblk3rpmb   
+root@freescale /$ mkf            
+mkfifo      mkfs.ext2   mkfs.minix  
+root@freescale /$ mkf
+mkfifo      mkfs.ext2   mkfs.minix  
+root@freescale /$ mkfs.ext2 /dev/mmcblk3
+mmcblk3       mmcblk3boot1  mmcblk3p2     
+mmcblk3boot0  mmcblk3p1     mmcblk3rpmb   
+root@freescale /$ mkfs.ext2 /dev/mmcblk3p1 
+warning: 8 blocks unused
+
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+205200 inodes, 819200 blocks
+40960 blocks (5%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4194304
+25 block groups
+32768 blocks per group, 32768 fragments per group
+8208 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912
+root@freescale /$ mkfs.ext2 /dev/mmcblk3p2 
+Filesystem label=
+OS type: Linux
+Block size=1024 (log=0)
+Fragment size=1024 (log=0)
+35136 inodes, 140064 blocks
+7003 blocks (5%) reserved for the super user
+First data block=1
+Maximum filesystem blocks=262144
+18 block groups
+8192 blocks per group, 8192 fragments per group
+1952 inodes per group
+Superblock backups stored on blocks:
+        8193, 24577, 40961, 57345, 73729
+root@freescale /$ 

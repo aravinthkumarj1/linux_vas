@@ -1,0 +1,275 @@
+platform caam_sm: [0016] cb 9a 4d 15 8d 3e df 27
+platform caam_sm: [0024] b5 e9 2b d7 a3 64 63 d4
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+wm8962 2-001a: Failed to read ID register
+wm8962: probe of 2-001a failed with error -5
+fsl-asrc 2034000.asrc: driver registered
+imx-wm8962 sound.22: failed to find codec platform device
+imx-wm8962: probe of sound.22 failed with error -22
+imx-audio-hdmi sound-hdmi.23: hdmi-hifi <-> hdmi_audio.3 mapping ok
+
+///////////
+platform caam_sm: [0016] 0f e8 15 5f ed f1 66 48
+platform caam_sm: [0024] 6c 93 cd 1a 4e a3 8e a2
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+sgtl5000 2-000a: sgtl5000 revision 0x11
+fsl-asrc 2034000.asrc: driver registered
+imx-sgtl5000 sound.22: phandle missing or invalid
+imx-sgtl5000: probe of sound.22 failed with error -22
+imx-audio-hdmi sound-hdmi.23: hdmi-hifi <-> hdmi_audio.3 mapping ok
+//////
+platform caam_sm: [0016] 2f 6e d8 46 a5 78 e0 ed
+platform caam_sm: [0024] b8 2e 03 93 b5 60 9d f0
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+fsl-asrc 2034000.asrc: driver registered
+imx-audio-hdmi sound-hdmi.22: hdmi-hifi <-> hdmi_audio.3 mapping ok
+
+//////////////
+
+
+
+
+imx_usb 2184000.usb: Can't register ci_hdrc platform device, err=-517
+ALSA device list:
+  #0: imx-hdmi-soc
+plao�p�2-000a: 1200 mV normal 
+sgtl5000 2-000a: Using internal LDO instead of VDDD
+sgtl5000 2-000a: Failed to get supply 'VDDIO': -517
+EXT3-fs (sda3): error: couldn't mount because of unsupported optional features (240)
+EXT2-fs (sda3): error: couldn't mount because of unsupported optional features (240)
+sgtl5000 2-000a: ASoC: failed to probe CODEC -517
+imx-sgtl5000 sound.22: ASoC: failed to instantiate card -517
+imx-sgtl5000 sound.22: snd_soc_register_card failed (-517)
+platform sound.22: Driver imx-sgtl5000 requests probe deferral
+EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) on device 8:3.
+devtmpfs: mounted
+
+////////////
+
+usbhid: USB HID core driver
+sgtl5000 2-000a: sgtl5000 revision 0x11
+fsl-asrc 2034000.asrc: driver registered
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 1 at fs/sysfs/dir.c:52 sysfs_warn_dup+0x6c/0x88()
+sysfs: cannot create duplicate filename '/bus/platform/devices/snd-soc-imx6q-sabresd.0'
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Tainted: G        W    3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<8012b760>] (sysfs_warn_dup+0x6c/0x88)
+[<8012b760>] (sysfs_warn_dup) from [<8012ba48>] (sysfs_do_create_link_sd.isra.2+0xb0/0xb8)
+[<8012ba48>] (sysfs_do_create_link_sd.isra.2) from [<8034c85c>] (bus_add_device+0xd8/0x160)
+[<8034c85c>] (bus_add_device) from [<8034af28>] (device_add+0x354/0x4d8)
+[<8034af28>] (device_add) from [<8034e94c>] (platform_device_add+0x100/0x22c)
+[<8034e94c>] (platform_device_add) from [<8034f008>] (platform_device_register_full+0xb4/0xdc)
+[<8034f008>] (platform_device_register_full) from [<8056c1c4>] (fsl_ssi_probe+0x4fc/0x6ac)
+[<8056c1c4>] (fsl_ssi_probe) from [<8034e728>] (platform_drv_probe+0x48/0x98)
+[<8034e728>] (platform_drv_probe) from [<8034d3dc>] (driver_probe_device+0x118/0x23c)
+[<8034d3dc>] (driver_probe_device) from [<8034d58c>] (__driver_attach+0x8c/0x90)
+[<8034d58c>] (__driver_attach) from [<8034bcec>] (bus_for_each_dev+0x54/0x88)
+[<8034bcec>] (bus_for_each_dev) from [<8034cb5c>] (bus_add_driver+0xd8/0x1cc)
+[<8034cb5c>] (bus_add_driver) from [<8034dba8>] (driver_register+0x78/0xf4)
+[<8034dba8>] (driver_register) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace a0ad1323375d3890 ]---
+fsl-ssi-dai 202c000.ssi: failed to register platform: -17
+------------[ cut here ]------------
+WARNING: CPU: 2 PID: 1 at fs/proc/generic.c:521 remove_proc_entry+0x14c/0x164()
+remove_proc_entry: removing non-empty directory 'irq/79', leaking at least '202c000.ssi'
+Modules linked in:
+CPU: 2 PID: 1 Comm: swapper/0 Tainted: G        W    3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<80124398>] (remove_proc_entry+0x14c/0x164)
+[<80124398>] (remove_proc_entry) from [<8006bad8>] (unregister_irq_proc+0x8c/0xb0)
+[<8006bad8>] (unregister_irq_proc) from [<80065f50>] (free_desc+0x28/0x58)
+[<80065f50>] (free_desc) from [<80065ff4>] (irq_free_descs+0x44/0x80)
+[<80065ff4>] (irq_free_descs) from [<8056c0d4>] (fsl_ssi_probe+0x40c/0x6ac)
+[<8056c0d4>] (fsl_ssi_probe) from [<8034e728>] (platform_drv_probe+0x48/0x98)
+[<8034e728>] (platform_drv_probe) from [<8034d3dc>] (driver_probe_device+0x118/0x23c)
+[<8034d3dc>] (driver_probe_device) from [<8034d58c>] (__driver_attach+0x8c/0x90)
+[<8034d58c>] (__driver_attach) from [<8034bcec>] (bus_for_each_dev+0x54/0x88)
+[<8034bcec>] (bus_for_each_dev) from [<8034cb5c>] (bus_add_driver+0xd8/0x1cc)
+[<8034cb5c>] (bus_add_driver) from [<8034dba8>] (driver_register+0x78/0xf4)
+[<8034dba8>] (driver_register) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace a0ad1323375d3891 ]---
+fsl-ssi-dai: probe of 202c000.ssi failed with error -17
+2-000a: 1200 mV normal 
+sgtl5000 2-000a: Using internal LDO instead of VDDD
+sgtl5000 2-000a: Failed to get supply 'VDDIO': -517
+sgtl5000 2-000a: ASoC: failed to probe CODEC -517
+imx-sgtl5000 sound.22: ASoC: failed to instantiate card -517
+imx-sgtl5000 sound.22: snd_soc_register_card failed (-517)
+platform sound.22: Driver imx-sgtl5000 requests probe deferral
+imx-audio-hdmi sound-hdmi.23: hdmi-hifi <-> hdmi_audio.3 mapping ok
+
+
+
+///////////////////////
+
+platform caam_sm: [0016] f9 1a 3c 9d 92 d7 e0 06
+platform caam_sm: [0024] c0 7b e2 a8 cf ad 62 f2
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+sgtl5000 2-000a: sgtl5000 revision 0x11
+fsl-asrc 2034000.asrc: driver registered
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 1 at fs/sysfs/dir.c:52 sysfs_warn_dup+0x6c/0x88()
+sysfs: cannot create duplicate filename '/bus/platform/devices/snd-soc-imx6q-sabresd.0'
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Not tainted 3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<8012b760>] (sysfs_warn_dup+0x6c/0x88)
+[<8012b760>] (sysfs_warn_dup) from [<8012ba48>] (sysfs_do_create_link_sd.isra.2+0xb0/0xb8)
+[<8012ba48>] (sysfs_do_create_link_sd.isra.2) from [<8034c85c>] (bus_add_device+0xd8/0x160)
+[<8034c85c>] (bus_add_device) from [<8034af28>] (device_add+0x354/0x4d8)
+[<8034af28>] (device_add) from [<8034e94c>] (platform_device_add+0x100/0x22c)
+[<8034e94c>] (platform_device_add) from [<8034f008>] (platform_device_register_full+0xb4/0xdc)
+[<8034f008>] (platform_device_register_full) from [<8056c1c4>] (fsl_ssi_probe+0x4fc/0x6ac)
+[<8056c1c4>] (fsl_ssi_probe) from [<8034e728>] (platform_drv_probe+0x48/0x98)
+[<8034e728>] (platform_drv_probe) from [<8034d3dc>] (driver_probe_device+0x118/0x23c)
+[<8034d3dc>] (driver_probe_device) from [<8034d58c>] (__driver_attach+0x8c/0x90)
+[<8034d58c>] (__driver_attach) from [<8034bcec>] (bus_for_each_dev+0x54/0x88)
+[<8034bcec>] (bus_for_each_dev) from [<8034cb5c>] (bus_add_driver+0xd8/0x1cc)
+[<8034cb5c>] (bus_add_driver) from [<8034dba8>] (driver_register+0x78/0xf4)
+[<8034dba8>] (driver_register) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace 207d1feabd3a9eb6 ]---
+fsl-ssi-dai 202c000.ssi: failed to register platform: -17
+------------[ cut here ]------------
+WARNING: CPU: 1 PID: 1 at fs/proc/generic.c:521 remove_proc_entry+0x14c/0x164()
+remove_proc_entry: removing non-empty directory 'irq/79', leaking at least '202c000.ssi'
+Modules linked in:
+CPU: 1 PID: 1 Comm: swapper/0 Tainted: G        W    3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<80124398>] (remove_proc_entry+0x14c/0x164)
+[<80124398>] (remove_proc_entry) from [<8006bad8>] (unregister_irq_proc+0x8c/0xb0)
+[<8006bad8>] (unregister_irq_proc) from [<80065f50>] (free_desc+0x28/0x58)
+[<80065f50>] (free_desc) from [<80065ff4>] (irq_free_descs+0x44/0x80)
+[<80065ff4>] (irq_free_descs) from [<8056c0d4>] (fsl_ssi_probe+0x40c/0x6ac)
+[<8056c0d4>] (fsl_ssi_probe) from [<8034e728>] (platform_drv_probe+0x48/0x98)
+[<8034e728>] (platform_drv_probe) from [<8034d3dc>] (driver_probe_device+0x118/0x23c)
+[<8034d3dc>] (driver_probe_device) from [<8034d58c>] (__driver_attach+0x8c/0x90)
+[<8034d58c>] (__driver_attach) from [<8034bcec>] (bus_for_each_dev+0x54/0x88)
+[<8034bcec>] (bus_for_each_dev) from [<8034cb5c>] (bus_add_driver+0xd8/0x1cc)
+[<8034cb5c>] (bus_add_driver) from [<8034dba8>] (driver_register+0x78/0xf4)
+[<8034dba8>] (driver_register) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace 207d1feabd3a9eb7 ]---
+fsl-ssi-dai: probe of 202c000.ssi failed with error -17
+2-000a: 1200 mV normal 
+sgtl5000 2-000a: Using internal LDO instead of VDDD
+sgtl5000 2-000a: Failed to get supply 'VDDIO': -517
+sgtl5000 2-000a: ASoC: failed to probe CODEC -517
+imx-sgtl5000 sound.22: ASoC: failed to instantiate card -517
+imx-sgtl5000 sound.22: snd_soc_register_card failed (-517)
+platform sound.22: Driver imx-sgtl5000 requests probe deferral
+imx-audio-hdmi sound-hdmi.23: hdmi-hifi <-> hdmi_audio.3 mapping ok
+////////////////////////
+
+
+
+
+
+
+
+
+////////////////////
+
+Use WDOG1 as reset source
+syscon 20c8000.anatop: regmap [mem 0x020c8000-0x020c8fff] registered
+vdd1p1: 800 <--> 1375 mV at 1100 mV 
+vdd3p0: 2800 <--> 3150 mV at 3000 mV 
+vdd2p5: 2000 <--> 2750 mV at 2400 mV 
+vddarm: 725 <--> 1450 mV 
+vddpu: 725 <--> 1450 mV 
+vddsoc: 725 <--> 1450 mV 
+syscon 20e0000.iomuxc-gpr: regmap [mem 0x020e0000-0x020e0037] registered
+syscon 21bc000.ocotp-ctrl: regmap [mem 0x021bc000-0x021bffff] registered
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 1 at fs/sysfs/dir.c:52 sysfs_warn_dup+0x6c/0x88()
+sysfs: cannot create duplicate filename '/devices/soc0/regulators.19/0.regulator'
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Not tainted 3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<8012b760>] (sysfs_warn_dup+0x6c/0x88)
+[<8012b760>] (sysfs_warn_dup) from [<8012b800>] (sysfs_create_dir_ns+0x84/0x90)
+[<8012b800>] (sysfs_create_dir_ns) from [<8028dac4>] (kobject_add_internal+0x9c/0x2b8)
+[<8028dac4>] (kobject_add_internal) from [<8028de98>] (kobject_add+0x4c/0x94)
+[<8028de98>] (kobject_add) from [<8034ac8c>] (device_add+0xb8/0x4d8)
+[<8034ac8c>] (device_add) from [<8052fc68>] (of_platform_device_create_pdata+0x70/0x94)
+[<8052fc68>] (of_platform_device_create_pdata) from [<8052fd68>] (of_platform_bus_create+0xdc/0x184)
+[<8052fd68>] (of_platform_bus_create) from [<8052fdcc>] (of_platform_bus_create+0x140/0x184)
+[<8052fdcc>] (of_platform_bus_create) from [<8052fe70>] (of_platform_populate+0x60/0x98)
+[<8052fe70>] (of_platform_populate) from [<80d28460>] (imx6q_init_machine+0x64/0x294)
+[<80d28460>] (imx6q_init_machine) from [<80d1a280>] (customize_machine+0x1c/0x40)
+[<80d1a280>] (customize_machine) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace db9a9317df432dcd ]---
+------------[ cut here ]------------
+WARNING: CPU: 0 PID: 1 at lib/kobject.c:240 kobject_add_internal+0x238/0x2b8()
+kobject_add_internal failed for 0.regulator with -EEXIST, don't try to register things with the same name in the same directory.
+Modules linked in:
+CPU: 0 PID: 1 Comm: swapper/0 Tainted: G        W    3.14.28 #4
+[<80015594>] (unwind_backtrace) from [<80011634>] (show_stack+0x10/0x14)
+[<80011634>] (show_stack) from [<806c1f18>] (dump_stack+0x64/0xb4)
+[<806c1f18>] (dump_stack) from [<8002d614>] (warn_slowpath_common+0x64/0x84)
+[<8002d614>] (warn_slowpath_common) from [<8002d6c8>] (warn_slowpath_fmt+0x30/0x40)
+[<8002d6c8>] (warn_slowpath_fmt) from [<8028dc60>] (kobject_add_internal+0x238/0x2b8)
+[<8028dc60>] (kobject_add_internal) from [<8028de98>] (kobject_add+0x4c/0x94)
+[<8028de98>] (kobject_add) from [<8034ac8c>] (device_add+0xb8/0x4d8)
+[<8034ac8c>] (device_add) from [<8052fc68>] (of_platform_device_create_pdata+0x70/0x94)
+[<8052fc68>] (of_platform_device_create_pdata) from [<8052fd68>] (of_platform_bus_create+0xdc/0x184)
+[<8052fd68>] (of_platform_bus_create) from [<8052fdcc>] (of_platform_bus_create+0x140/0x184)
+[<8052fdcc>] (of_platform_bus_create) from [<8052fe70>] (of_platform_populate+0x60/0x98)
+[<8052fe70>] (of_platform_populate) from [<80d28460>] (imx6q_init_machine+0x64/0x294)
+[<80d28460>] (imx6q_init_machine) from [<80d1a280>] (customize_machine+0x1c/0x40)
+[<80d1a280>] (customize_machine) from [<800087f8>] (do_one_initcall+0x34/0x158)
+[<800087f8>] (do_one_initcall) from [<80d17be8>] (kernel_init_freeable+0xfc/0x1c8)
+[<80d17be8>] (kernel_init_freeable) from [<806bd234>] (kernel_init+0x8/0xe4)
+[<806bd234>] (kernel_init) from [<8000e4f8>] (ret_from_fork+0x14/0x3c)
+---[ end trace db9a9317df432dce ]---
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+imx6q-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+bio: create slab <bio-0> at 0
+mxs-dma 110000.dma-apbh: initialized
+2P5V: 2500 mV 
+usb_h1_vbus: 5000 mV 
+wm8962-supply: no parameters
+mipi_dsi_pwr_on: no parameters
+sensor-supply: 3300 mV 
+sd2_pwr: 3300 mV 
+

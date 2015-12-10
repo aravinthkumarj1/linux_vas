@@ -1,0 +1,25 @@
+No SPI flash selected. Please run `sf probe'
+=> sf probe
+SF: Detected S25FL004K with page size 256 Bytes, erase size 4 KiB, total 512 KiB
+mount –t jffs2 /dev/mtdblock0
+
+
+mmc rescan 0
+mw.b 0x12500000 0xFF 0x100000
+fatload mmc 0:1 0x12500000 u-boot.bin.spi
+sf probe 0
+sf erase 0x30000 0x10000
+sf write 0x12500000 0x0 0x100000
+
+=> 
+=> mw.b 0x12500000 0xFF 0x100000
+=> fatload mmc 0:1 0x12500000 u-boot.bin.spi
+reading u-boot.bin.spi
+332272 bytes read in 34 ms (9.3 MiB/s)
+=> sf probe
+SF: Detected S25FL004K with page size 256 Bytes, erase size 4 KiB, total 512 KiB
+=> sf erase 0x0 0x40000
+SF: 262144 bytes @ 0x0 Erased: OK
+=> sf write 0x12500000 0x0 0x40000
+SF: 262144 bytes @ 0x0 Written: OK
+

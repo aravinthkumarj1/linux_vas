@@ -1,0 +1,37 @@
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=mmc dev ${mmcdev};if mmc rescan; then dboot; run dbootcmd; fi
+bootdelay=1
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+setenv fdt_addr 0x1A000000
+fdt_high=0xffffffff
+setenv fdtfile imx6q-sabresd.dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+initrd_file=uInitrd
+initrd_high=0xffffffff
+setenv kernel_file zImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=HDMI
+setenv rd_addr 0x12000000
+setenv rdfile zImage
+verify=n
+
+Environment size: 962/8188 bytes
+

@@ -1,0 +1,65 @@
+loadx 0x12000000
+go 0x12000000
+
+Timeout waiting for command
+resetting ...
+
+arch/arm/lib/reset.c:	puts ("resetting ...\n");
+arch/x86/cpu/cpu.c:	printf("resetting ...\n");
+
+/////////////////////////////
+
+#ifdef CONFIG_BOOT_RETRY_TIME
+        if (n == -2) {
+          puts("\nTimeout waiting for command\n");
+#  ifdef CONFIG_RESET_TO_RETRY
+          do_reset(NULL, 0, 0, NULL);
+#  else
+#       error "This currently only works with CONFIG_RESET_TO_RETRY enabled"
+#  endif
+
+
+/////////////////////
+
+include/configs/esip.h:#define CONFIG_BOOT_RETRY_TIME          10
+
+include/autoconf.mk:CONFIG_BOOT_RETRY_TIME=10
+
+
+setenv bootdelay -1
+saveenv
+
+////////////////////////////
+
+=> loadx 0x12000000
+## Ready for binary (xmodem) download to 0x12000000 at 115200 bps...                                          
+CCCCxyzModem - CRC mode, 46738(SOH)/0(STX)/0(CAN) packets, 7 retries
+## Total Size      = 0x005b4720 = 5981984 Bytes
+=> go 0x12000000
+## Starting application at 0x12000000 ...
+undefined instruction
+pc : [<12000028>]          lr : [<4ff60918>]
+sp : 4f556da0  ip : 0000001c     fp : 00000000
+r10: 00000002  r9 : 4f41705c     r8 : 4f568b08
+r7 : 4ffa8124  r6 : 12000000     r5 : 13015fb7  r4 : 00000002
+r3 : 12000000  r2 : 12000056     r1 : 4f568b0c  r0 : 10000050
+Flags: nZCv  IRQs off  FIQs off  Mode SVC_32
+Resetting CPU ...
+//////////////////////////
+     I pasted of a simple guide of booting up dtb and kernel from SD/MMC, you can refer to it and have a try:
+
+ 
+
+supposed uImage is flashed to 2M offset of SD, and dtb is flashed to 1M offset of SD.
+
+ 
+
+Boot kernel:
+
+    1) Set dtbaddr and loadaddr, default setting is incorrect, so run command “set dtbaddr 14000000” and “set loadaddr 10800000”;
+    2) Read dtb and uImage from SD to DRAM, command is “mmc dev 0;mmc read 14000000 800 800;mmc read 10800000 1000 8000”;
+    3) Boot up kernel with “bootm ${loadaddr} - ${dtbaddr}”;
+
+ 
+
+My kernel command line is “setenv bootargs console=ttymxc0,115200n8 noinitrd no_console_suspend root=/dev/mmcblk0p1 rw rootwait;mmc dev 0;mmc read 14000000 800 800;mmc read 10800000 1000 8000;bootm ${loadaddr} - ${dtbaddr}”

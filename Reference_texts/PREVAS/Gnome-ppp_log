@@ -1,0 +1,101 @@
+GNOME PPP: STDERR: Modem Port Scan<*1>: USB2 
+GNOME PPP: STDOUT: 
+GNOME PPP: STDOUT: Sorry, no modem was detected!  Is it in use by another program?
+GNOME PPP: STDOUT: Did you configure it properly with setserial?
+GNOME PPP: STDOUT: 
+GNOME PPP: STDOUT: Please read the FAQ at http://alumnit.ca/wiki/?WvDial
+GNOME PPP: Connecting...
+GNOME PPP: STDERR: --> WvDial: Internet dialer version 1.61
+GNOME PPP: STDERR: --> Cannot open /dev/ttyUSB2: Device or resource busy
+GNOME PPP: STDERR: --> Cannot open /dev/ttyUSB2: Device or resource busy
+GNOME PPP: STDERR: --> Cannot open /dev/ttyUSB2: Device or resource busy
+GNOME PPP: Unable to KILL wvdial process!
+GNOME PPP: Connecting...
+GNOME PPP: STDERR: --> WvDial: Internet dialer version 1.61
+GNOME PPP: STDERR: --> Initializing modem.
+GNOME PPP: STDERR: --> Sending: ATZ
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Sending: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Modem initialized.
+GNOME PPP: STDERR: --> Please enter password (or empty password to stop):
+GNOME PPP: STDERR: --> Configuration does not specify a valid phone number.
+GNOME PPP: STDERR: --> Configuration does not specify a valid login name.
+GNOME PPP: Unable to KILL wvdial process!
+GNOME PPP: Connecting...
+GNOME PPP: STDERR: --> WvDial: Internet dialer version 1.61
+GNOME PPP: STDERR: --> Initializing modem.
+GNOME PPP: STDERR: --> Sending: ATZ
+GNOME PPP: STDERR: ATZ
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Sending: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Modem initialized.
+GNOME PPP: STDERR: --> Please enter password (or empty password to stop):
+GNOME PPP: STDERR: --> Configuration does not specify a valid login name.
+GNOME PPP: Unable to KILL wvdial process!
+GNOME PPP: Connecting...
+GNOME PPP: STDERR: --> WvDial: Internet dialer version 1.61
+GNOME PPP: STDERR: --> Initializing modem.
+GNOME PPP: STDERR: --> Sending: ATZ
+GNOME PPP: STDERR: ATZ
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Sending: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Modem initialized.
+GNOME PPP: STDERR: --> Please enter password (or empty password to stop):
+GNOME PPP: STDERR: --> Sending: ATM1L3DP9611890027
+GNOME PPP: STDERR: --> Waiting for carrier.
+GNOME PPP: STDERR: ATM1L3DP9611890027
+GNOME PPP: STDERR: NO CARRIER
+GNOME PPP: STDERR: --> No Carrier!  Trying again.
+GNOME PPP: STDERR: --> Maximum Attempts Exceeded..Aborting!!
+GNOME PPP: STDERR: --> Disconnecting at Fri Dec  4 16:09:40 2015
+GNOME PPP: Connecting...
+GNOME PPP: STDERR: --> WvDial: Internet dialer version 1.61
+GNOME PPP: STDERR: --> Initializing modem.
+GNOME PPP: STDERR: --> Sending: ATZ
+GNOME PPP: STDERR: ATZ
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Sending: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0
+GNOME PPP: STDERR: OK
+GNOME PPP: STDERR: --> Modem initialized.
+GNOME PPP: STDERR: --> Please enter password (or empty password to stop):
+GNOME PPP: STDERR: --> Sending: ATM1L3DP*99#
+GNOME PPP: STDERR: --> Waiting for carrier.
+GNOME PPP: STDERR: ATM1L3DP*99#
+GNOME PPP: STDERR: CONNECT 100000000
+GNOME PPP: STDERR: --> Carrier detected.  Waiting for prompt.
+GNOME PPP: STDERR: --> Don't know what to do!  Starting pppd and hoping for the best.
+GNOME PPP: STDERR: --> Starting pppd at Fri Dec  4 16:10:36 2015
+GNOME PPP: STDERR: --> Pid of pppd: 7241
+GNOME PPP: STDERR: --> Using interface ppp0
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> local  IP address 106.200.48.1
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> remote IP address 10.64.64.64
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> primary   DNS address 125.22.47.102
+GNOME PPP: STDERR: --> pppd: s[7f]
+GNOME PPP: STDERR: --> secondary DNS address 125.22.47.103
+GNOME PPP: STDERR: --> pppd: s[7f]
+
+
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:106.200.48.1  P-t-P:10.64.64.64  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:14 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:778 (778.0 B)  TX bytes:101 (101.0 B)
+

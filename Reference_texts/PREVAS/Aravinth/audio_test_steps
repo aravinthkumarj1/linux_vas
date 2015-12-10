@@ -1,0 +1,8 @@
+http://developer.toradex.com/knowledge-base/audio-%28linux%29
+
+root@freescale /zumi$ aplay sample26.wav 
+Playing WAVE 'sample26.wav' : Signed 16 bit Little Endian, Rate 32000 Hz, Mono
+
+
+root@freescale /zumi$ arecord -D plughw:0,0 -d 10 billa2.wav                                                                            
+Recording WAVE 'billa2.wav' : Unsigned 8 bit, Rate 8000 Hz, Mono 

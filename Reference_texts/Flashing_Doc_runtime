@@ -1,0 +1,9 @@
+//////////////Put in U-Boot////////////////
+mmc reset
+fatload mmc 0:1 0x11200000 imx6q-esip.dtb
+fatload mmc 0:1 0x12800000 uImage
+fatls mmc 0:1
+setenv bootcmd 'mmc start; fatload mmc 0:1 0x11200000 imx6q-esip.dtb; fatload mmc 0:1 0x12800000 uImage; bootm 0x12800000 - 0x11200000'
+saveenv
+boot
+////////////////////////////////

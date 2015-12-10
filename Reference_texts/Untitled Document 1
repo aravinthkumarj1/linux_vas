@@ -1,0 +1,80 @@
+=> pri
+baudrate=115200
+bootaddr_dl=0x12800000
+bootaddr_sys=0x12800000
+bootargs=rw
+bootargs_all=console=ttymxc0,115200
+bootargs_app=lpj=7905280 quiet maxcpus=1
+bootargs_mmc=setenv bootargs ${bootargs_all} root=/dev/mmcblk1p2 rootfstype=ext4 rootwait rw fixrtc
+bootargs_sys=rw root=/dev/mmcblk0p2 rootfstype=ext4 rootwait fixrtc
+bootcmd=run bootcmd_mmc
+bootcmd_mmc=run bootargs_mmc;mmc dev 0; fatload mmc 0:1 0x11200000 imx6q-esip.dtb; fatload mmc 0:1 0x12800000 uImage; bootm 0x12800000 - 0x11200
+bootdelay=1
+console=ttymxc0,115200
+dbootcmd=echo Dropping to bootloader prompt
+dbootcmd_app=run loadfdt
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=uInitrd-dtb
+fdtfile_sys=dtb
+filesize=5b4720
+initrd_file=uInitrd
+initrd_high=0xffffffff
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x12800000
+loadfdt=load mmc 0:1 0x11000000 dtb
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=edt
+rd_addr=0x11200000
+rdfile=uInitrd
+verify=n
+
+Environment size: 1204/8188 bytes
+=> env default -a
+## Resetting to default environment
+
+
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=mmc dev ${mmcdev};if mmc rescan; then dboot; run dbootcmd; fi
+bootdelay=0
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+initrd_file=uInitrd
+initrd_high=0xffffffff
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=HDMI
+rd_addr=0x11200000
+rdfile=uInitrd
+verify=n
+
+Environment size: 949/8188 bytes
+

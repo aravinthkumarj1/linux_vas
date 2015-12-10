@@ -1,0 +1,22 @@
+ # insmod /iwtest/g_file_storage.ko file=/dev/mmcblk1p1 removable=1            
+g_file_storage: disagrees about version of symbol module_layout                 
+insmod: can't insert '/iwtest/g_file_storage.ko': invalid module format
+
+**********************************************************************************
+
+/ # insmod /iwtest/usb_f_mass_storage.ko file=/dev/mmcblk1p1 removable=1
+usb_f_mass_storage: Unknown symbol usb_interface_id (err 0)
+usb_f_mass_storage: Unknown symbol usb_assign_descriptors (err 0)
+usb_f_mass_storage: Unknown symbol config_ep_by_speed (err 0)
+usb_f_mass_storage: Unknown symbol usb_composite_setup_continue (err 0)
+usb_f_mass_storage: Unknown symbol usb_function_register (err 0)
+usb_f_mass_storage: Unknown symbol config_group_init_type_name (err 0)
+usb_f_mass_storage: Unknown symbol usb_ep_autoconfig (err 0)
+usb_f_mass_storage: Unknown symbol unregister_gadget_item (err 0)
+usb_f_mass_storage: Unknown symbol usb_put_function_instance (err 0)
+usb_f_mass_storage: Unknown symbol usb_function_unregister (err 0)
+usb_f_mass_storage: Unknown symbol config_item_put (err 0)
+usb_f_mass_storage: Unknown symbol usb_free_all_descriptors (err 0)
+usb_f_mass_storage: Unknown symbol usb_gstrings_attach (err 0)
+insmod: can't insert '/iwtest/usb_f_mass_storage.ko': unknown symbol in module or invalid parameter
+
