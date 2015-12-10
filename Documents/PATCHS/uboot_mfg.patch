@@ -1,0 +1,154 @@
+diff --git a/board/prevas/esip/mx6q_4x_mt41j128.cfg b/board/prevas/esip/mx6q_4x_mt41j128.cfg
+index 7a2657d..d31fc9f 100644
+--- a/board/prevas/esip/mx6q_4x_mt41j128.cfg
++++ b/board/prevas/esip/mx6q_4x_mt41j128.cfg
+@@ -24,7 +24,7 @@ IMAGE_VERSION 2
+  */
+ 
+ /* the same flash_offset as sd */
+-BOOT_FROM      sd
++BOOT_FROM      spi
+ 
+ #ifdef CONFIG_USE_PLUGIN
+ /*PLUGIN    plugin-binary-file    IRAM_FREE_START_ADDR*/
+@@ -85,18 +85,18 @@ DATA 4, 0x020e0510, 0x00000030
+ DATA 4, 0x020e05bc, 0x00000030
+ DATA 4, 0x020e05c4, 0x00000030
+ DATA 4, 0x021b0800, 0xa1390003
+-DATA 4, 0x021b080c, 0x003D0045
+-DATA 4, 0x021b0810, 0x003F0036
+-DATA 4, 0x021b480c, 0x001C0034
+-DATA 4, 0x021b4810, 0x00020010
+-DATA 4, 0x021b083c, 0x437C0400
+-DATA 4, 0x021b0840, 0x03600360
+-DATA 4, 0x021b483c, 0x435C035C
+-DATA 4, 0x021b4840, 0x0340031C
+-DATA 4, 0x021b0848, 0x403A383C
+-DATA 4, 0x021b4848, 0x3C403446
+-DATA 4, 0x021b0850, 0x3E3A443E
+-DATA 4, 0x021b4850, 0x42344440
++DATA 4, 0x021b080c, 0x002B002F
++DATA 4, 0x021b0810, 0x00290024
++DATA 4, 0x021b480c, 0x0018002B
++DATA 4, 0x021b4810, 0x0001000F
++DATA 4, 0x021b083c, 0x43080310
++DATA 4, 0x021b0840, 0x02600260
++DATA 4, 0x021b483c, 0x42780278
++DATA 4, 0x021b4840, 0x02640250
++DATA 4, 0x021b0848, 0x3C363236
++DATA 4, 0x021b4848, 0x3E3E3644
++DATA 4, 0x021b0850, 0x3838403C
++DATA 4, 0x021b4850, 0x48384A42
+ DATA 4, 0x021b081c, 0x33333333
+ DATA 4, 0x021b0820, 0x33333333
+ DATA 4, 0x021b0824, 0x33333333
+diff --git a/board/prevas/esip/plugin.S b/board/prevas/esip/plugin.S
+index 6e2a72a..7ed39ef 100644
+--- a/board/prevas/esip/plugin.S
++++ b/board/prevas/esip/plugin.S
+@@ -68,31 +68,34 @@
+ 	ldr r2, =0xa1390003
+ 	str r2, [r0, #0x800]
+ 
+-	ldr r2, =0x001F001F
++	ldr r2, =0x002B002F
+ 	str r2, [r0, #0x80c]
++	ldr r2, =0x00290024
+ 	str r2, [r0, #0x810]
+ 	ldr r1, =MMDC_P1_BASE_ADDR
++	ldr r2, =0x0018002B
+ 	str r2, [r1, #0x80c]
++	ldr r2, =0x0001000F
+ 	str r2, [r1, #0x810]
+ 
+-	ldr r2, =0x43270338
++	ldr r2, =0x43080310
+ 	str r2, [r0, #0x83c]
+-	ldr r2, =0x03200314
++	ldr r2, =0x02600260
+ 	str r2, [r0, #0x840]
+ 
+-	ldr r2, =0x431A032F
++	ldr r2, =0x42780278
+ 	str r2, [r1, #0x83c]
+-	ldr r2, =0x03200263
++	ldr r2, =0x02640250
+ 	str r2, [r1, #0x840]
+ 
+-	ldr r2, =0x4B434748
++	ldr r2, =0x3C363236
+ 	str r2, [r0, #0x848]
+-	ldr r2, =0x4445404C
++	ldr r2, =0x3E3E3644
+ 	str r2, [r1, #0x848]
+ 
+-	ldr r2, =0x38444542
++	ldr r2, =0x3838403C
+ 	str r2, [r0, #0x850]
+-	ldr r2, =0x4935493A
++	ldr r2, =0x48384A42
+ 	str r2, [r1, #0x850]
+ 
+ 	ldr r2, =0x33333333
+diff --git a/include/configs/esip.h b/include/configs/esip.h
+index d389549..8d65887 100644
+--- a/include/configs/esip.h
++++ b/include/configs/esip.h
+@@ -109,7 +109,7 @@
+ #define CONFIG_DBOOT_STATE_RAW_SF_SECT_SIZE 	0x1000
+ #define CONFIG_DBOOT_STATE_FORMAT_BIN	1
+ 
+-#define CONFIG_BOOT_RETRY_TIME          10
++#define CONFIG_BOOT_RETRY_TIME          1000
+ #define CONFIG_RESET_TO_RETRY           1
+ 
+ #define CONFIG_DEFAULT_FDT_FILE "dtb"
+@@ -121,7 +121,7 @@
+ 	"panel=HDMI\0" \
+         "fdtfile_sys=" CONFIG_DEFAULT_FDT_FILE "\0" \
+         "fdtfile=" CONFIG_DEFAULT_FDT_FILE "\0" \
+-        "fdt_addr=0x11000000\0" \
++        "fdt_addr=0x1A000000\0" \
+         "rdfile=uInitrd\0" \
+         "rd_addr=0x11200000\0" \
+         "console=ttymxc0,115200\0" \
+@@ -131,7 +131,7 @@
+         "mmcpart=1\0" \
+         "loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}\0" \
+         "loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}\0" \
+-        "kernel_file=uImage\0" \
++        "kernel_file=zImage\0" \
+         "kernel_file_dl=uImage-dl\0" \
+         "initrd_file=uInitrd\0" \
+         "bootaddr_dl=" __stringify(CONFIG_LOADADDR) "\0" \
+@@ -147,7 +147,21 @@
+         "dbootcmd_app=run loadfdt; " \
+                 "bootm $bootaddr - $fdt_addr\0" \
+         "dbootcmd_dl=run loadfdt; run loadrd; " \
+-               "bootm $bootaddr $rd_addr $fdt_addr\0"
++               "bootm $bootaddr $rd_addr $fdt_addr\0" \
++	"bootcmd_mfg=run mfgtool_args;bootz ${loadaddr} ${initrd_addr} ${fdt_addr}; " \
++	"fdt_addr=0x18000000 \0" \
++	"fdt_file=imx6q-sabresd.dtb\0" \
++	"image=zImage \0" \
++	"initrd_addr=0x12C00000 \0" \
++	"initrd_high=0xffffffff \0" \
++	"loadaddr=0x12000000 \0" \
++	"loadbootscript=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script}; " \
++	"loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file} \0" \
++	"loadimage=fatload mmc ${mmcdev}:${mmcpart} ${loadaddr} ${image} \0" \
++	"mfgtool_args=setenv bootargs console=ttymxc0,115200 rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storage.iSerialNumber="" enable_wait_mode=off \0" \
++	"mmcargs=setenv bootargs console=${console},${baudrate} ${smp} root=${mmcroot} \0" \
++	"mmcboot=echo Booting from mmc ...; run mmcargs; if test ${boot_fdt} = yes || test ${boot_fdt} = try; then if run loadfdt; then bootz ${loadaddr} - ${fdt_addr}; else if test ${boot_fdt} = try; then bootz; else echo WARN: Cannot load the DT; fi; fi; else bootz; fi; " \
++
+ 
+ #define CONFIG_BOOTCOMMAND \
+         "mmc dev ${mmcdev};" \
+@@ -226,6 +240,7 @@
+ #define CONFIG_LIBATA
+ #endif
+ 
++#define CONFIG_SPI
+ #ifdef CONFIG_SYS_USE_SPINOR
+ #define CONFIG_CMD_SF
+ #define CONFIG_SPI_FLASH
