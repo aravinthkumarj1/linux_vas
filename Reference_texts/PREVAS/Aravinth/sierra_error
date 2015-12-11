@@ -1,0 +1,6 @@
+root@freescale /$ insmod sierra.ko 
+sierra: Unknown symbol usb_serial_port_softint (err 0)
+sierra: Unknown symbol usb_serial_deregister_drivers (err 0)
+sierra: Unknown symbol usb_serial_register_drivers (err 0)
+insmod: can't insert 'sierra.ko': unknown symbol in module, or unknown parameter
+
