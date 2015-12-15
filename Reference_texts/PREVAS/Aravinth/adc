@@ -1,0 +1,27 @@
+ConnectCore 6 Linux BSP Reference Manual                                                                                                                       7
+Devices and interfaces
+ADC
+The Dialog DA9063 PMIC provides a 10bit ADC with nine channels. Six of these channels measure 
+different PMIC voltages and the in
+ternal temperature of the PMIC. The three remaining channels are 
+analog inputs (0 ~2.5V).
+The driver supports the reading 
+of the following
+ ADC channels:
+# cd /sys/class/hwmon/hwmon0/device/
+# cat temp1_input
+36 <- temperature in Celsius
+# cat in0_label in0_input
+VSYS
+4523 <- VSYS voltage in mV
+# cat in1_label in1_input
+ADCIN1
+889 <- ADC input 1 voltage in mV
+# cat in2_label in2_input
+ADCIN2
+938 <- ADC input 2 voltage in mV
+# cat in3_label in3_input
+ADCIN3
+897 <- ADC input 3 voltage in mV
+# cat in4_label in4_input
+VBBA

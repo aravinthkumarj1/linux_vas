@@ -1,0 +1,161 @@
+root@freescale /$ ip link set can0 up type can bitrate 500000
+flexcan 2090000.can can0: writing ctrl=0x03292005
+root@freescale /$ ip link set can1 up type can bitrate 500000
+flexcan 2094000.can can1: writing ctrl=0x03292005
+root@freescale /$ cansend can1 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can1 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ candump can0 &
+root@freescale /$   can0  5A1   [2]  11 24
+  can0  5A1   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  123   [2]  33 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  50 24
+  can0  122   [2]  51 24
+  can0  122   [2]  51 24
+  can0  122   [2]  51 24
+  can0  122   [2]  51 24
+  can0  122   [2]  51 24
+  can0  122   [2]  51 24
+
+root@freescale /$ cansend can0 111#11.2233.44556677.88
+  can0  111   [8]  11 22 33 44 55 66 77 88
+root@freescale /$ cansend can0 111#11.2233.44556677.88
+  can0  111   [8]  11 22 33 44 55 66 77 88
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$   can0  111   [7]  11 22 33 44 55 66 77
+
+root@freescale /$ 
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+root@freescale /$ cansend can0 111#11.2233.44556677
+write: No buffer space available
+root@freescale /$   can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+  can0  111   [7]  11 22 33 44 55 66 77
+
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ cansend can0 111#11.2233.44556677
+  can0  111   [7]  11 22 33 44 55 66 77
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ ip link set can0 up type can bitrate 500000
+root@freescale /$ cat /proc/net/can/stats
+
+       49 transmitted frames (TXF)
+       86 received frames (RXF)
+       73 matched frames (RXMF)
+
+       84 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+      100 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+      100 % max match ratio (MRXMR)
+        3 frames/s max tx rate (MTXR)
+       11 frames/s max rx rate (MRXR)
+
+        1 current receive list entries (CRCV)
+        1 maximum receive list entries (MRCV)
+
+root@freescale /$
+************************************
+######CAN1 TESTED###################
+*************************************

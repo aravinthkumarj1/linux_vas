@@ -1,0 +1,334 @@
+root@freescale /$ ifconfig -a
+can0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:16  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:10 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:142 
+
+can1      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:16  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:10 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:143 
+
+eth0      Link encap:Ethernet  HWaddr 00:11:22:33:44:55  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo        Link encap:Local Loopback  
+          LOOPBACK  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+sit0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-48-00-00-00-00-00-00-00-00-00  
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@freescale /$ root@freescale /$ cat /proc/net/can/stats 
+-sh: root@freescale: not found
+root@freescale /$ cat /proc/net/can/stats 
+
+        0 transmitted frames (TXF)
+        0 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        0 frames/s max tx rate (MTXR)
+        0 frames/s max rx rate (MRXR)
+
+        0 current receive list entries (CRCV)
+        0 maximum receive list entries (MRCV)
+
+root@freescale /$ ip link set can0 up type can bitrate 125000
+flexcan 2090000.can can0: writing ctrl=0x0e312005
+root@freescale /$ ip link set can1 up type can bitrate 125000
+flexcan 2094000.can can1: writing ctrl=0x0e312005
+root@freescale /$ cat /proc/net/can/stats 
+
+        0 transmitted frames (TXF)
+        0 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        0 frames/s max tx rate (MTXR)
+        0 frames/s max rx rate (MRXR)
+
+        0 current receive list entries (CRCV)
+        0 maximum receive list entries (MRCV)
+
+root@freescale /$ candump can0 &
+root@freescale /$ cat /proc/net/can/stats 
+
+        0 transmitted frames (TXF)
+        0 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        0 frames/s max tx rate (MTXR)
+        0 frames/s max rx rate (MRXR)
+
+        1 current receive list entries (CRCV)
+        1 maximum receive list entries (MRCV)
+
+root@freescale /$ cansend can1 5A1#11.2233.44556677.88
+root@freescale /$ cat /proc/net/can/stats 
+
+        1 transmitted frames (TXF)
+        1 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        1 current receive list entries (CRCV)
+        1 maximum receive list entries (MRCV)
+
+root@freescale /$ candump can0 &
+root@freescale /$ cat /proc/net/can/stats 
+
+        1 transmitted frames (TXF)
+        1 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        2 current receive list entries (CRCV)
+        2 maximum receive list entries (MRCV)
+
+root@freescale /$ cansend can1 5A1#11.2233.44556677.88
+root@freescale /$ cat /proc/net/can/stats 
+
+        2 transmitted frames (TXF)
+        1 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        2 current receive list entries (CRCV)
+        2 maximum receive list entries (MRCV)
+
+root@freescale /$ cat /proc/net/can/stats 
+
+        2 transmitted frames (TXF)
+        1 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        2 current receive list entries (CRCV)
+        2 maximum receive list entries (MRCV)
+
+root@freescale /$ candump can0 &
+root@freescale /$ cansend can1 5A1#11.2233.44556677.88
+root@freescale /$ cat /proc/net/can/stats 
+
+        3 transmitted frames (TXF)
+        1 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        3 current receive list entries (CRCV)
+        3 maximum receive list entries (MRCV)
+
+root@freescale /$ ifconfig
+can0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          UP RUNNING NOARP  MTU:16  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:10 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:142 
+
+can1      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          UP RUNNING NOARP  MTU:16  Metric:1
+          RX packets:1 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:10 
+          RX bytes:8 (8.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:143 
+
+root@freescale /$ 
+root@freescale /$ dmesg 
+flexcan 2090000.can can0: writing ctrl=0x0e312005
+flexcan 2090000.can can0: flexcan_set_bittiming: mcr=0x5980000f ctrl=0x0e312005
+flexcan 2090000.can can0: flexcan_chip_start: writing mcr=0x7de2020d
+flexcan 2090000.can can0: flexcan_chip_start: writing ctrl=0x0e31ac55
+flexcan 2090000.can can0: flexcan_chip_start: reading mcr=0x64e2020d ctrl=0x0e31ac55
+flexcan 2094000.can can1: writing ctrl=0x0e312005
+flexcan 2094000.can can1: flexcan_set_bittiming: mcr=0x5980000f ctrl=0x0e312005
+flexcan 2094000.can can1: flexcan_chip_start: writing mcr=0x7de2020d
+flexcan 2094000.can can1: flexcan_chip_start: writing ctrl=0x0e31ac55
+flexcan 2094000.can can1: flexcan_chip_start: reading mcr=0x64e2020d ctrl=0x0e31ac55
+flexcan 2094000.can can1: Error Warning IRQ
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ candump can1 &
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cat /proc/net/can/stats 
+
+        4 transmitted frames (TXF)
+        2 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        4 current receive list entries (CRCV)
+        4 maximum receive list entries (MRCV)
+
+root@freescale /$ dmesg 
+flexcan 2090000.can can0: writing ctrl=0x0e312005
+flexcan 2090000.can can0: flexcan_set_bittiming: mcr=0x5980000f ctrl=0x0e312005
+flexcan 2090000.can can0: flexcan_chip_start: writing mcr=0x7de2020d
+flexcan 2090000.can can0: flexcan_chip_start: writing ctrl=0x0e31ac55
+flexcan 2090000.can can0: flexcan_chip_start: reading mcr=0x64e2020d ctrl=0x0e31ac55
+flexcan 2094000.can can1: writing ctrl=0x0e312005
+flexcan 2094000.can can1: flexcan_set_bittiming: mcr=0x5980000f ctrl=0x0e312005
+flexcan 2094000.can can1: flexcan_chip_start: writing mcr=0x7de2020d
+flexcan 2094000.can can1: flexcan_chip_start: writing ctrl=0x0e31ac55
+flexcan 2094000.can can1: flexcan_chip_start: reading mcr=0x64e2020d ctrl=0x0e31ac55
+flexcan 2094000.can can1: Error Warning IRQ
+flexcan 2090000.can can0: Error Warning IRQ
+root@freescale /$ candump can1 &
+root@freescale /$ cat /proc/net/can/stats 
+
+        4 transmitted frames (TXF)
+        2 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        5 current receive list entries (CRCV)
+        5 maximum receive list entries (MRCV)
+
+root@freescale /$ cansend can0 5A1#11.2233.44556677.88
+root@freescale /$ cat /proc/net/can/stats 
+
+        5 transmitted frames (TXF)
+        2 received frames (RXF)
+        0 matched frames (RXMF)
+
+        0 % total match ratio (RXMR)
+        0 frames/s total tx rate (TXR)
+        0 frames/s total rx rate (RXR)
+
+        0 % current match ratio (CRXMR)
+        0 frames/s current tx rate (CTXR)
+        0 frames/s current rx rate (CRXR)
+
+        0 % max match ratio (MRXMR)
+        1 frames/s max tx rate (MTXR)
+        1 frames/s max rx rate (MRXR)
+
+        5 current receive list entries (CRCV)
+        5 maximum receive list entries (MRCV)
+
+root@freescale /$
+
