@@ -1,0 +1,1119 @@
+U-Boot 2014.04 (Dec 11 2015 - 15:30:38)
+
+CPU:   Freescale i.MX6Q rev1.2 at 792 MHz
+CPU:   Temperature 29 C, calibration data: 0x55a4ab7d
+Reset cause: POR
+Board: MOVIS-PREVAS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Display: HDMI (640x480)
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Normal Boot
+Hit any key to stop autoboot:  0 
+AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+flags: ncq stag pm led clo only pmp pio slum part 
+SATA Device Info:
+S/N: 141545400590
+Product model number: SanDisk SD6SB1M-032G-1006
+Firmware version: X231706
+Capacity: 62533296 sectors
+reading imx6q-movis.dtb
+40057 bytes read in 7 ms (5.5 MiB/s)
+reading uImage
+6430856 bytes read in 70 ms (87.6 MiB/s)
+## Booting kernel from Legacy Image at 12800000 ...
+   Image Name:   Linux-3.14.28
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    6430792 Bytes = 6.1 MiB
+   Load Address: 12700000
+   Entry Point:  12700000
+## Flattened Device Tree blob at 11200000
+   Booting using the fdt blob at 0x11200000
+   Loading Kernel Image ... OK
+   Using Device Tree in place at 11200000, end 1120cc78
+switch to ldo_bypass mode!
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0
+Linux version 3.14.28 (extinremo@bans4) (gcc version 4.6.2 20110630 (prerelease) (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) ) #14 SMP PREEMPT Wed Dec 16 12:26:41 IST 2015
+CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c53c7d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Machine model: Prevas A/S
+cma: CMA: reserved 320 MiB at 6a000000
+Memory policy: Data cache writealloc
+PERCPU: Embedded 8 pages/cpu @ee71f000 s8896 r8192 d15680 u32768
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 520720
+Kernel command line: console=ttymxc0,115200 rdinit=/linuxrc g_mass_storage.stall=0 g_mass_storage.removable=1 g_mass_storage.idVendor=0x066F g_mass_storage.idProduct=0x37FF g_mass_storage.iSerialNumber= et
+PID hash table entries: 4096 (order: 2, 16384 bytes)
+Dentry cache hash table entries: 262144 (order: 8, 1048576 bytes)
+Inode-cache hash table entries: 131072 (order: 7, 524288 bytes)
+Memory: 1735252K/2097152K available (7735K kernel code, 426K rwdata, 6396K rodata, 328K init, 434K bss, 361900K reserved, 270336K highmem)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+    lowmem  : 0x80000000 - 0xef800000   (1784 MB)
+    pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+    modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+      .text : 0x80008000 - 0x80dd50ac   (14133 kB)
+      .init : 0x80dd6000 - 0x80e282c0   ( 329 kB)
+      .data : 0x80e2a000 - 0x80e94b20   ( 427 kB)
+       .bss : 0x80e94b2c - 0x80f01728   ( 435 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Preemptible hierarchical RCU implementation.
+NR_IRQS:16 nr_irqs:16 16
+L310 cache controller enabled
+l2x0: 16 ways, CACHE_ID 0x410000c7, AUX_CTRL 0x32070000, Cache size: 1024 kB
+Switching to timer-based delay loop
+sched_clock: 32 bits at 3000kHz, resolution 333ns, wraps every 1431655765682ns
+Console: colour dummy device 80x30
+Calibrating delay loop (skipped), value calculated using timer frequency.. 6.00 BogoMIPS (lpj=30000)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Mountpoint-cache hash table entries: 4096 (order: 2, 16384 bytes)
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x10758aa0 - 0x10758af8
+CPU1: Booted secondary processor
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU2: Booted secondary processor
+CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+CPU3: Booted secondary processor
+CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+Brought up 4 CPUs
+SMP: Total of 4 processors activated.
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+pinctrl core: initialized pinctrl subsystem
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+cpuidle: using governor menu
+CPU identified as i.MX6Q, silicon rev 1.2
+Use WDOG1 as reset source
+syscon 20c8000.anatop: regmap [mem 0x020c8000-0x020c8fff] registered
+vdd1p1: 800 <--> 1375 mV at 1100 mV 
+vdd3p0: 2800 <--> 3150 mV at 3000 mV 
+vdd2p5: 2000 <--> 2750 mV at 2400 mV 
+vddarm: 725 <--> 1450 mV 
+vddpu: 725 <--> 1450 mV 
+vddsoc: 725 <--> 1450 mV 
+syscon 20e0000.iomuxc-gpr: regmap [mem 0x020e0000-0x020e0037] registered
+syscon 21bc000.ocotp-ctrl: regmap [mem 0x021bc000-0x021bffff] registered
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+imx6q-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+bio: create slab <bio-0> at 0
+mxs-dma 110000.dma-apbh: initialized
+2P5V: 2500 mV 
+3P3V: 3300 mV 
+usb_otg_vbus: 5000 mV 
+usb_h1_vbus: 5000 mV 
+mipi_dsi_pwr_on: no parameters
+sensor-supply: 3300 mV 
+sd2_pwr: 3300 mV 
+CAN XCVR: 3300 mV 
+vgaarb: loaded
+i2c-core: driver [max17135] using legacy suspend method
+i2c-core: driver [max17135] using legacy resume method
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+usbphy_nop1.12 supply vcc not found, using dummy regulator
+usbphy_nop2.13 supply vcc not found, using dummy regulator
+pca953x 0-0032: failed reading register
+pca953x: probe of 0-0032 failed with error -5
+i2c i2c-0: IMX I2C adapter registered
+i2c i2c-1: IMX I2C adapter registered
+i2c i2c-2: IMX I2C adapter registered
+Linux video capture interface: v2.00
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+imx-ipuv3 2400000.ipu: IPU DMFC NORMAL mode: 1(0~1), 5B(4,5), 5F(6,7)
+imx-ipuv3 2800000.ipu: IPU DMFC NORMAL mode: 1(0~1), 5B(4,5), 5F(6,7)
+mxc_mipi_csi2 21dc000.mipi_csi: i.MX MIPI CSI2 driver probed
+mxc_mipi_csi2 21dc000.mipi_csi: i.MX MIPI CSI2 dphy version is 0x3130302a
+MIPI CSI2 driver module loaded
+Advanced Linux Sound Architecture Driver Initialized.
+cfg80211: Calling CRDA to update world regulatory domain
+Switched to clocksource mxc_timer1
+NET: Registered protocol family 2
+TCP established hash table entries: 16384 (order: 4, 65536 bytes)
+TCP bind hash table entries: 16384 (order: 5, 131072 bytes)
+TCP: Hash tables configured (established 16384 bind 16384)
+TCP: reno registered
+UDP hash table entries: 1024 (order: 3, 32768 bytes)
+UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+hw perfevents: enabled with ARMv7 Cortex-A9 PMU driver, 7 counters available
+imx6_busfreq busfreq.16: DDR medium rate not supported.
+Bus freq driver module loaded
+futex hash table entries: 1024 (order: 4, 65536 bytes)
+bounce pool size: 64 pages
+VFS: Disk quotas dquot_6.5.2
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+jffs2: version 2.2. (NAND) �© 2001-2006 Red Hat, Inc.
+fuse init (API version 7.22)
+msgmni has been set to 3501
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+imx-weim 21b8000.weim: Driver registered.
+backlight.27 supply power not found, using dummy regulator
+mxc_mipi_dsi 21e0000.mipi: i.MX MIPI DSI driver probed
+MIPI DSI driver module loaded
+mxc_sdc_fb fb.25: registered mxc display driver ldb
+imx-ipuv3 2800000.ipu: IPU DMFC DP HIGH RESOLUTION: 1(0,1), 5B(2~5), 5F(6,7)
+Console: switching to colour frame buffer device 128x48
+mxc_hdmi 20e0000.hdmi_video: Detected HDMI controller 0x13:0xa:0xa0:0xc1
+fbcvt: 1920x1080@60: CVT Name - 2.073M9
+mxc_sdc_fb fb.26: registered mxc display driver hdmi
+imx-sdma 20ec000.sdma: no iram assigned, using external mem
+imx-sdma 20ec000.sdma: no event needs to be remapped
+imx-sdma 20ec000.sdma: loaded firmware 3.1
+imx-sdma 20ec000.sdma: initialized
+pfuze100-regulator 2-0008: Full layer: 1, Metal layer: 1
+pfuze100-regulator 2-0008: FAB: 0, FIN: 0
+pfuze100-regulator 2-0008: pfuze100 found.
+SW1AB: 300 <--> 1875 mV at 1150 mV 
+SW1C: 300 <--> 1875 mV at 1175 mV 
+SW2: 800 <--> 3300 mV at 3300 mV 
+SW3A: 400 <--> 1975 mV at 1500 mV 
+SW3B: 400 <--> 1975 mV at 1500 mV 
+SW4: 800 <--> 3300 mV at 3150 mV 
+SWBST: 5000 <--> 5150 mV at 5000 mV 
+VSNVS: 1000 <--> 3000 mV at 3000 mV 
+VREFDDR: 750 mV 
+VGEN1: 800 <--> 1550 mV at 1500 mV 
+VGEN2: 800 <--> 1550 mV at 1500 mV 
+VGEN3: 1800 <--> 3300 mV at 2500 mV 
+VGEN4: 1800 <--> 3300 mV at 1800 mV 
+VGEN5: 1800 <--> 3300 mV at 3000 mV 
+VGEN6: 1800 <--> 3300 mV at 3300 mV 
+Serial: IMX driver
+2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 58, base_baud = 5000000) is a IMX
+console [ttymxc0] enabled
+serial: Freescale lpuart driver
+imx sema4 driver is registered.
+[drm] Initialized drm 1.1.0 20060810
+[drm] Initialized vivante 1.0.0 20120216 on minor 0
+brd: module loaded
+loop: module loaded
+ahci-imx 2200000.sata: fsl,transmit-level-mV not specified, using 00000024
+ahci-imx 2200000.sata: fsl,transmit-boost-mdB not specified, using 00000480
+ahci-imx 2200000.sata: fsl,transmit-atten-16ths not specified, using 00002000
+ahci-imx 2200000.sata: fsl,receive-eq-mdB not specified, using 05000000
+ahci-imx 2200000.sata: SSS flag set, parallel bus scan disabled
+ahci-imx 2200000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+ahci-imx 2200000.sata: flags: ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+scsi0 : ahci_platform
+ata1: SATA max UDMA/133 mmio [mem 0x02200000-0x02203fff] port 0x100 irq 71
+m25p80 spi3.0: unrecognized JEDEC id ffffff
+spi_imx 2014000.ecspi: probed
+vcan: Virtual CAN interface driver
+CAN device driver interface
+flexcan 2090000.can: device registered (reg_base=f0268000, irq=142)
+flexcan 2094000.can: device registered (reg_base=f0270000, irq=143)
+2188000.ethernet supply phy not found, using dummy regulator
+pps pps0: new PPS source ptp0
+libphy: fec_enet_mii_bus: probed
+fec 2188000.ethernet eth0: registered PHC device 0
+usbcore: registered new interface driver rtl8187
+usbcore: registered new interface driver rtl8192cu
+pegasus: v0.9.3 (2013/04/25), Pegasus/Pegasus II USB Ethernet driver
+usbcore: registered new interface driver pegasus
+usbcore: registered new interface driver rtl8150
+usbcore: registered new interface driver r8152
+usbcore: registered new interface driver asix
+usbcore: registered new interface driver ax88179_178a
+usbcore: registered new interface driver cdc_ether
+usbcore: registered new interface driver cdc_eem
+usbcore: registered new interface driver cdc_subset
+usbcore: registered new interface driver cdc_ncm
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-pci: EHCI PCI platform driver
+ehci-mxc: Freescale On-Chip EHCI Host driver
+usbcore: registered new interface driver cdc_acm
+cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+usbcore: registered new interface driver cdc_wdm
+usbcore: registered new interface driver usb-storage
+2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
+ci_hdrc ci_hdrc.1: doesn't support gadget
+ci_hdrc ci_hdrc.1: EHCI Host Controller
+ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
+ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: EHCI Host Controller
+usb usb1: Manufacturer: Linux 3.14.28 ehci_hcd
+usb usb1: SerialNumber: ci_hdrc.1
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+mousedev: PS/2 mouse device common for all mice
+i2c-core: driver [isl29023] using legacy suspend method
+i2c-core: driver [isl29023] using legacy resume method
+snvs_rtc 20cc034.snvs-rtc-lp: rtc core: registered 20cc034.snvs-rtc-lp as rtc0
+i2c /dev entries driver
+IR NEC protocol handler initialized
+IR RC5(x) protocol handler initialized
+IR RC6 protocol handler initialized
+IR JVC protocol handler initialized
+IR Sony protocol handler initialized
+IR RC5 (streamzap) protocol handler initialized
+IR SANYO protocol handler initialized
+IR MCE Keyboard/mouse protocol handler initialized
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video16
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video17
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video18
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video19
+i2c-core: driver [mag3110] using legacy suspend method
+i2c-core: driver [mag3110] using legacy resume method
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+mmc1: no vmmc regulator found
+mmc1: SDHCI controller on 2194000.usdhc [2194000.usdhc] using ADMA
+mmc3: no vqmmc regulator found
+mmc3: no vmmc regulator found
+mmc3: SDHCI controller on 219c000.usdhc [219c000.usdhc] using ADMA
+Galcore version 5.0.11.25762
+PU: Power-on latency exceeded, new value 2338000 ns
+ata1: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+ata1.00: ATA-9: SanDisk SD6SB1M-032G-1006, X231706, max UDMA/100
+usb 1-1: new high-speed USB device number 2 using ci_hdrc
+mmc3: BKOPS_EN bit is not set
+ata1.00: 62533296 sectors, multi 1: LBA48 NCQ (depth 31/32)
+ata1.00: configured for UDMA/100
+mmc3: new high speed DDR MMC card at address 0001
+scsi 0:0:0:0: Direct-Access     ATA      SanDisk SD6SB1M- 706  PQ: 0 ANSI: 5
+sd 0:0:0:0: [sda] 62533296 512-byte logical blocks: (32.0 GB/29.8 GiB)
+sd 0:0:0:0: [sda] Write Protect is off
+sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+mmcblk3: mmc3:0001 P1XXXX 3.60 GiB 
+mmcblk3boot0: mmc3:0001 P1XXXX partition 1 2.00 MiB
+mmcblk3boot1: mmc3:0001 P1XXXX partition 2 2.00 MiB
+mmcblk3rpmb: mmc3:0001 P1XXXX partition 3 128 KiB
+ mmcblk3: p1
+ sda: sda1 sda2 sda3
+ mmcblk3boot1: unknown partition table
+sd 0:0:0:0: [sda] Attached SCSI disk
+ mmcblk3boot0: unknown partition table
+usb 1-1: New USB device found, idVendor=0424, idProduct=2514
+usb 1-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+hub 1-1:1.0: USB hub found
+hub 1-1:1.0: 4 ports detected
+usb 1-1.2: new high-speed USB device number 3 using ci_hdrc
+mxc_vdoa 21e4000.vdoa: i.MX Video Data Order Adapter(VDOA) driver probed
+mxc_vpu 2040000.vpu: VPU initialized
+usb 1-1.2: New USB device found, idVendor=0bda, idProduct=8192
+usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1.2: Product: RTL8191S WLAN Adapter 
+usb 1-1.2: Manufacturer: Manufacturer Realtek 
+usb 1-1.2: SerialNumber: 00e04c000001
+caam 2100000.caam: Instantiated RNG4 SH0
+caam 2100000.caam: Instantiated RNG4 SH1
+caam 2100000.caam: device ID = 0x0a160100 (Era 4)
+caam 2100000.caam: job rings = 2, qi = 0
+caam algorithms registered in /proc/crypto
+caam_jr 2101000.jr0: registering rng-caam
+platform caam_sm: blkkey_ex: 4 keystore units available
+platform caam_sm: 64-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: 64-bit black key:
+platform caam_sm: [0000] 7f 3d c9 65 13 ec b9 2e
+platform caam_sm: [0008] cb 12 5a 5e 58 cf a6 7a
+platform caam_sm: 128-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: 128-bit black key:
+platform caam_sm: [0000] e1 29 e7 05 34 ae 08 52
+platform caam_sm: [0008] f7 68 cb 05 6f 06 e3 d4
+platform caam_sm: 192-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: [0016] 10 11 12 13 14 15 16 17
+platform caam_sm: 192-bit black key:
+platform caam_sm: [0000] f8 fa 71 ee 4d b7 60 e7
+platform caam_sm: [0008] fe 8f d6 48 ba 9e ca 9e
+platform caam_sm: [0016] 0f 61 52 39 86 10 79 bb
+platform caam_sm: [0024] a8 6e ed 90 40 26 ec d2
+platform caam_sm: 256-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: [0016] 10 11 12 13 14 15 16 17
+platform caam_sm: [0024] 18 19 1a 1b 1c 1d 1e 1f
+platform caam_sm: 256-bit black key:
+platform caam_sm: [0000] 22 7d 0b 22 17 3b 6e ae
+platform caam_sm: [0008] b2 6f fb e3 1b a5 57 50
+platform caam_sm: [0016] 85 c7 f9 c8 a9 20 6c 74
+platform caam_sm: [0024] da 18 5c 47 f3 51 1f c2
+platform caam_sm: 64-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 128-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 196-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 256-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 64-bit black key in blob:
+platform caam_sm: [0000] 50 6c 76 13 69 f0 ea 47
+platform caam_sm: [0008] 18 48 7f 4d b0 46 f2 f1
+platform caam_sm: [0016] 53 3f 77 26 ee cf 8e 41
+platform caam_sm: [0024] 29 bc 3b 56 d0 1c 58 27
+platform caam_sm: [0032] 82 38 12 99 06 f3 f3 97
+platform caam_sm: [0040] 6c ca 51 3d cd 65 ab 51
+platform caam_sm: [0048] 8e 8e 57 f1 5f 1a 16 8c
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 128-bit black key in blob:
+platform caam_sm: [0000] af 08 af 86 f0 72 31 1c
+platform caam_sm: [0008] d6 5e 82 2d 3f c2 de e8
+platform caam_sm: [0016] 5a 54 33 27 e1 83 73 59
+platform caam_sm: [0024] 3a 85 44 4b b2 63 12 f5
+platform caam_sm: [0032] 01 9b d0 97 ff c6 e9 8a
+platform caam_sm: [0040] ef c9 cd 02 da 85 74 b1
+platform caam_sm: [0048] e5 8c 5b 2a 00 08 89 ee
+platform caam_sm: [0056] 95 71 99 39 23 47 8a 33
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 192-bit black key in blob:
+platform caam_sm: [0000] 17 0e ba 4f f6 eb fb 25
+platform caam_sm: [0008] 40 db f9 f6 cb e4 ec 0f
+platform caam_sm: [0016] 5d 8b 3e 5c 53 f9 e0 11
+platform caam_sm: [0024] b8 f5 d2 18 b1 c0 5e fc
+platform caam_sm: [0032] 5c 92 e5 5f 67 47 11 cb
+platform caam_sm: [0040] db 34 65 7c 77 4e 74 bd
+platform caam_sm: [0048] fd 71 b4 4b 07 de 22 be
+platform caam_sm: [0056] de e2 10 0f 5c ce 40 79
+platform caam_sm: [0064] 7a db 26 e5 d2 8e 84 ee
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 256-bit black key in blob:
+platform caam_sm: [0000] f0 40 2b 3f 8b fa 02 b4
+platform caam_sm: [0008] 76 4f fb 98 ae ce 62 b4
+platform caam_sm: [0016] 20 5c cd 0d 36 54 3f 91
+platform caam_sm: [0024] f1 05 91 1a ae e2 2e 6d
+platform caam_sm: [0032] 4e d4 b3 8d 93 5b ca 89
+platform caam_sm: [0040] 29 c1 ef 6f 91 41 e2 20
+platform caam_sm: [0048] 40 e2 4b 83 44 aa c8 9f
+platform caam_sm: [0056] 33 0f ea ef af 46 f8 69
+platform caam_sm: [0064] 72 b9 7b 41 c9 8d 43 4b
+platform caam_sm: [0072] 65 21 a5 67 40 8b 8e 26
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: restored 64-bit black key:
+platform caam_sm: [0000] c5 18 fe 3e 8f 24 91 5b
+platform caam_sm: [0008] eb 32 83 36 b6 42 5c 58
+platform caam_sm: restored 128-bit black key:
+platform caam_sm: [0000] e1 29 e7 05 34 ae 08 52
+platform caam_sm: [0008] f7 68 cb 05 6f 06 e3 d4
+platform caam_sm: restored 192-bit black key:
+platform caam_sm: [0000] f8 fa 71 ee 4d b7 60 e7
+platform caam_sm: [0008] fe 8f d6 48 ba 9e ca 9e
+platform caam_sm: [0016] f2 c3 42 5e 5d e4 9c b9
+platform caam_sm: [0024] 9c a3 77 2c c0 7c 5a 4b
+platform caam_sm: restored 256-bit black key:
+platform caam_sm: [0000] 22 7d 0b 22 17 3b 6e ae
+platform caam_sm: [0008] b2 6f fb e3 1b a5 57 50
+platform caam_sm: [0016] 85 c7 f9 c8 a9 20 6c 74
+platform caam_sm: [0024] da 18 5c 47 f3 51 1f c2
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+usbip_core: usbip_core_init:805: USB/IP Core v1.0.0
+vhci_hcd vhci_hcd: USB/IP Virtual Host Controller
+vhci_hcd vhci_hcd: new USB bus registered, assigned bus number 2
+usb usb2: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb2: Product: USB/IP Virtual Host Controller
+usb usb2: Manufacturer: Linux 3.14.28 vhci_hcd
+usb usb2: SerialNumber: vhci_hcd
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 8 ports detected
+vhci_hcd: vhci_hcd_init:1149: USB/IP 'Virtual' Host Controller (VHCI) Driver v1.0.0
+usbip-host 1-1.2:1.0: 1-1.2 is not in match_busid table... skip!
+usbcore: registered new interface driver usbip-host
+usbip_host: usbip_host_init:270: USB/IP Host Driver v1.0.0
+r8712u: Staging version
+r8712u: register rtl8712_netdev_ops to netdev_ops
+usb 1-1.2: r8712u: USB_SPEED_HIGH with 4 endpoints
+usb 1-1.2: r8712u: Boot from EFUSE: Autoload OK
+vhci_hcd: vhci_hub_status:208: changed 0
+usb 1-1.2: r8712u: CustomerID = 0x0000
+usb 1-1.2: r8712u: MAC Address from efuse = 00:34:f1:80:0e:23
+usb 1-1.2: r8712u: Loading firmware from "rtlwifi/rtl8712u.bin"
+usb 1-1.2: Direct firmware load failed with error -2
+usb 1-1.2: Falling back to user helper
+usbcore: registered new interface driver r8712u
+ozwpan ozwpan: Ozmo Devices WPAN
+ozwpan ozwpan: new USB bus registered, assigned bus number 3
+usb usb3: New USB device found, idVendor=1d6b, idProduct=0001
+usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb3: Product: Ozmo Devices WPAN
+usb usb3: Manufacturer: Linux 3.14.28 Ozmo WPAN
+usb usb3: SerialNumber: ozwpan
+hub 3-0:1.0: USB hub found
+hub 3-0:1.0: 8 ports detected
+sgtl5000 2-000a: sgtl5000 revision 0x11
+fsl-asrc 2034000.asrc: driver registered
+2-000a: 1200 mV normal 
+sgtl5000 2-000a: Using internal LDO instead of VDDD
+imx-sgtl5000 sound.23: sgtl5000 <-> 2028000.ssi mapping ok
+imx-audio-hdmi sound-hdmi.24: hdmi-hifi <-> hdmi_audio.3 mapping ok
+NET: Registered protocol family 26
+TCP: cubic registered
+NET: Registered protocol family 10
+sit: IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+can: controller area network core (rev 20120528 abi 9)
+NET: Registered protocol family 29
+can: raw protocol (rev 20120528)
+can: broadcast manager protocol (rev 20120528 t)
+can: netlink gateway (rev 20130117) max_hops=1
+8021q: 802.1Q VLAN Support v1.8
+lib80211: common routines for IEEE802.11 drivers
+Key type dns_resolver registered
+VGEN2: disabling
+VGEN1: disabling
+SWBST: disabling
+SW4: disabling
+CAN XCVR: disabling
+sd2_pwr: disabling
+sensor-supply: disabling
+usb_otg_vbus: disabling
+regulator-dummy: disabling
+imx mcc test is registered.
+snvs_rtc 20cc034.snvs-rtc-lp: setting system clock to 1970-01-01 00:00:03 UTC (3)
+ALSA device list:
+  #0: imx6q-movis-sgtl5000
+  #1: imx-hdmi-soc
+EXT4-fs (sda3): recovery complete
+EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) on device 8:3.
+devtmpfs: mounted
+Freeing unused kernel memory: 328K (80dd6000 - 80e28000)
+starting pid 174, tty '': '/etc/rc.d/rcS'
+Mounting /proc and /sys 
+Starting the hotplug events dispatcher udevd
+udevd (185): /proc/185/oom_adj is deprecated, please use /proc/185/oom_score_adj instead.
+Synthesizing initial hotplug events
+Setting the hostname to freescale
+Mounting filesystems
+EXT4-fs (sda3): re-mounted. Opts: (null)
+mount: mounting usbfs on /proc/bus/usb failed: No such file or directory
+Starting the dropbear ssh server: 
+random: dropbear urandom read with 121 bits of entropy available
+random: nonblocking pool is initialized
+D-Bus per-session daemon address is: unix:abstract=/tmp/dbus-WNFLwebcEJ,guid=60979c32efde3017012bb7b500000007
+gtk: creating gdk-pixbuf.loaders
+pango: creating module list
+starting pid 1604, tty '': '/etc/rc.d/rc_gpu.S'
+/etc/rc.d/rc_gpu.S: line 6: /sys/module/galcore/parameters/gpu3DMinClock: Permission denied
+starting pid 1612, tty '': '/etc/rc.d/rc_mxc.S'
+
+(EE) XKB: Couldn't open rules file /usr/share/X11/xkb/rules/base
+(EE) XKB: No components provided for device Virtual core keyboard
+arm-none-linux-gnueabi-gcc (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) 4.6.2 20110630 (prerelease)
+root filesystem built on Fri, 16 Aug 2013 20:23:44 +0800
+Freescale Semiconductor, Inc.
+
+freescale login: matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>n=next
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>p=prev
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>c=close
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>d=desktop
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>m=!matchbox-remote -mbmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>x=!xterm
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>r=!rxvt
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>e=!!gpe-calender
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>Tab=next
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt><shift>Tab=prev
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>space=taskmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>escape=!matchbox-remote -mbmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>f4=close
+
+matchbox: Cant find a keycode for keysym 65480
+matchbox: ignoring key shortcut f11=fullscreen
+
+Failed to get root pixmap id
+matchbox-desktop: loading /usr/lib/matchbox/desktop/tasks.so with args ( None )
+matchbox-desktop: loading /usr/lib/matchbox/desktop/dotdesktop.so with args ( None )
+mb-applet-menu-launcher: bonobo-browser.desktop has no icon, png or name
+user_overides is (nil)
+mb-applet-menu-launcher: failed to open /usr/local/share/applications
+mb-applet-menu-launcher: failed to open //.applications
+mb-desktop-dotdesktop: failed to open /usr/local/share/applications
+mb-desktop-dotdesktop: failed to open //.applications
+mb-applet-menu-launcher: bonobo-browser.desktop has no icon, png or name
+mb-applet-menu-launcher: failed to open /usr/local/share/applications
+mb-applet-menu-launcher: failed to open //.applications
+
+arm-none-linux-gnueabi-gcc (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) 4.6.2 20110630 (prerelease)
+root filesystem built on Fri, 16 Aug 2013 20:23:44 +0800
+Freescale Semiconductor, Inc.
+
+freescale login: root
+login[1614]: root login on 'ttymxc0'
+
+
+BusyBox v1.20.2 () built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+root@freescale ~$ cd /
+root@freescale /$ ifconfig wlan0 up
+r8712u 1-1.2:1.0 wlan0: 1 RCR=0x153f00e
+r8712u 1-1.2:1.0 wlan0: 2 RCR=0x553f00e
+IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+root@freescale /$ iwlist wlan0 scan
+wlan0     Scan completed :
+          Cell 01 - Address: 98:FC:11:AB:39:65
+                    ESSID:"PrevasIndiaWifi"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:rsn_ie=30140100000fac040100000fac040100000fac020c00
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD0E0050F204104A0001101044000102
+                    Signal level=48/100  
+          Cell 02 - Address: 78:44:76:66:8D:10
+                    ESSID:"Creed_Global"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:wpa_ie=dd1a0050f20101000050f20202000050f2020050f20401000050f202
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    Extra:rsn_ie=30180100000fac020200000fac02000fac040100000fac020000
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    Signal level=42/100  
+root@freescale /$ 
+root@freescale /$ ifconfig 
+root@freescale /$ ifconfig wlan0 up
+IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ iwconfig wlan0 essid "Aravinth"
+root@freescale /$ IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Aravinth"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 94:01:C2:29:22:00   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=100/100  Signal level=22/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Aravinth"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 94:01:C2:29:22:00   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=100/100  Signal level=22/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ ifconfig 
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:172.16.20.117  Bcast:172.16.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4188 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:46 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:604806 (590.6 KiB)  TX bytes:4524 (4.4 KiB)
+
+root@freescale /$ ifconfig 
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:172.16.20.117  Bcast:172.16.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4188 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:46 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:604806 (590.6 KiB)  TX bytes:4524 (4.4 KiB)
+
+root@freescale /$ ifconfig 
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:172.16.20.117  Bcast:172.16.255.255  Mask:255.255.0.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4188 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:46 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:604806 (590.6 KiB)  TX bytes:4524 (4.4 KiB)
+
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ ifconfig wlan0 down
+root@freescale /$ ifconfig 
+root@freescale /$ iwconfig
+wlan0     unassociated  Nickname:"rtl_wifi"
+          Mode:Managed  Access Point: Not-Associated   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ ifconfig wlan0 up
+IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+root@freescale /$ iwconfig wlan0 essid "Vishnu"
+root@freescale /$ iwlist wlan0 scan
+wlan0     Scan completed :
+          Cell 01 - Address: 98:FC:11:AB:39:65
+                    ESSID:"PrevasIndiaWifi"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.412 GHz (Channel 1)
+                    Encryption key:on
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:rsn_ie=30140100000fac040100000fac040100000fac020c00
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD8C0050F204104A00011010440001021041000100103B00010310470010DDD3BC9089CB4493BC3FDB1EE286583810210012436973636F2D4C696E6B7379732C204C4C4310230017576972656C6573732D4E20416366
+                    Signal level=48/100  
+          Cell 02 - Address: 78:44:76:66:8D:10
+                    ESSID:"Creed_Global"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.417 GHz (Channel 2)
+                    Encryption key:oniwconfig wlan0 essid Aravinth key 31323334353637383132333435
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s; 36 Mb/s
+                              48 Mb/s; 54 Mb/s
+                    Extra:wpa_ie=dd1a0050f20101000050f20202000050f2020050f20401000050f202
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    Extra:rsn_ie=30180100000fac020200000fac02000fac040100000fac020000
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    Signal level=42/100  
+          Cell 03 - Address: 94:01:C2:29:22:00
+                    ESSID:"Aravinth"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Signal level=22/100  
+          Cell 04 - Address: 78:24:AF:2F:AB:DB
+                    ESSID:"Vishnu"
+                    Protocol:IEEE 802.11bgn
+                    Mode:Master
+                    Frequency:2.437 GHz (Channel 6)
+                    Encryption key:off
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s; 6 Mb/s; 9 Mb/s
+                              12 Mb/s; 48 Mb/s
+                    Signal level=42/100  
+
+root@freescale /$ iwconfig wlan0 essid "Vishnu"
+root@freescale /$ IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready
+
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Vishnu"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 78:24:AF:2F:AB:DB   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=100/100  Signal level=44/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0iwconfig wlan0 essid Aravinth key 31323334353637383132333435
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ udhcpc -i wlan0
+udhcpc (v1.20.2) started
+Sending discover...
+Sending select for 192.168.43.40...
+Lease of 192.168.43.40 obtained, lease time 3600
+Deleting routers
+adding dns 192.168.43.1
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Vishnu"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 78:24:AF:2F:AB:DB   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=100/100  Signal level=46/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.iwconfig wlan0 essid Aravinth key 31323334353637383132333435
+
+root@freescale /$ ifconfig
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:192.168.43.40  Bcast:192.168.43.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4194 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:57 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:605696 (591.5 KiB)  TX bytes:6090 (5.9 KiB)
+
+root@freescale /$ ifconfig
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:192.168.43.40  Bcast:192.168.43.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4194 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:57 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:605696 (591.5 KiB)  TX bytes:6090 (5.9 KiB)
+
+root@freescale /$ ifconfig
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:192.168.43.40  Bcast:192.168.43.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4194 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:57 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:605696 (591.5 KiB)  TX bytes:6090 (5.9 KiB)
+
+root@freescale /$ ping 192.168.43.40
+PING 192.168.43.40 (192.168.43.40): 56 data bytes
+
+--- 192.168.43.40 ping statistics ---
+12 packets transmitted, 0 packets received, 100% packet loss
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ ifconfig
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:192.168.43.40  Bcast:192.168.43.255  Mask:255.255.255.0
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:4194 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:57 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:605696 (591.5 KiB)  TX bytes:6090 (5.9 KiB)
+
+root@freescale /$ iwconfig
+wlan0     unassociated  Nickname:"rtl_wifi"
+          Mode:Managed  Access Point: Not-Associated   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality:0  Signal level:0  Noise level:0
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ iwconfig wlan0 essid "Aravinth"
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Aravinth"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 94:01:C2:29:22:00   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=100/100  Signal level=28/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ ifconfig
+wlan0     Link encap:Ethernet  HWaddr 00:34:F1:80:0E:23  
+          inet addr:192.168.43.40  Bcast:192.168.43.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4194 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:57 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:605696 (591.5 KiB)  TX bytes:6090 (5.9 KiB)
+
+root@freescale /$ udhcpc -i wlan0
+udhcpc (v1.20.2) started
+Sending discover...
+Sending discover...
+Sending select for 192.168.43.67...
+Lease of 192.168.43.67 obtained, lease time 3600
+Deleting routers
+adding dns 192.168.43.1
+root@freescale /$ udhcpc -i wlan0
+udhcpc (v1.20.2) started
+Sending discover...
+Sending select for 192.168.43.67...
+Sending select for 192.168.43.67...
+Lease of 192.168.43.67 obtained, lease time 3600
+Deleting routers
+adding dns 192.168.43.1
+root@freescale /$ iwconfig wlan0 essid "Aravinth"
+root@freescale /$ ping google.com
+ping: bad address 'google.com'
+root@freescale /$ ping 216.58.196.110
+PING 216.58.196.110 (216.58.196.110): 56 data bytes
+
+--- 216.58.196.110 ping statistics ---
+11 packets transmitted, 0 packets received, 100% packet loss
+root@freescale /$ udhcpc -i wlan0
+udhcpc (v1.20.2) started
+Sending discover...
+Sending discover...
+Sending discover...
+
+root@freescale /$ iwconfig wlan0 essid "Aravinth"
+root@freescale /$ iwconfig
+wlan0     IEEE 802.11bgn  ESSID:"Aravinth"  Nickname:"rtl_wifi"
+          Mode:Managed  Frequency:2.437 GHz  Access Point: 94:01:C2:29:22:00   
+          Bit Rate:150 Mb/s   Sensitivity:0/0  
+          Retry:off   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:off
+          Link Quality=97/100  Signal level=42/100  Noise level=0/100
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+sit0      no wireless extensions.
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+can0      no wireless extensions.
+
+can1      no wireless extensions.
+
+root@freescale /$ udhcpc -i wlan0
+udhcpc (v1.20.2) started
+Sending discover...
+Sending select for 192.168.43.67...
+Lease of 192.168.43.67 obtained, lease time 3600
+Deleting routers
+adding dns 192.168.43.1
+root@freescale /$ ping 216.58.196.110
+PING 216.58.196.110 (216.58.196.110): 56 data bytes
+64 bytes from 216.58.196.110: seq=0 ttl=54 time=64.680 ms
+64 bytes from 216.58.196.110: seq=1 ttl=54 time=44.501 ms
+64 bytes from 216.58.196.110: seq=2 ttl=54 time=55.167 ms
+
+--- 216.58.196.110 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 44.501/54.782/64.680 ms
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ ping www.google.com
+PING www.google.com (64.233.189.106): 56 data bytes
+64 bytes from 64.233.189.106: seq=0 ttl=44 time=193.098 ms
+64 bytes from 64.233.189.106: seq=1 ttl=44 time=197.939 ms
+64 bytes from 64.233.189.106: seq=2 ttl=44 time=171.113 ms
+64 bytes from 64.233.189.106: seq=3 ttl=44 time=184.847 ms
+64 bytes from 64.233.189.106: seq=4 ttl=44 time=239.636 ms
+64 bytes from 64.233.189.106: seq=5 ttl=44 time=210.102 ms
+64 bytes from 64.233.189.106: seq=6 ttl=44 time=299.523 ms
+64 bytes from 64.233.189.106: seq=7 ttl=44 time=190.715 ms
+64 bytes from 64.233.189.106: seq=8 ttl=44 time=523.405 ms
+64 bytes from 64.233.189.106: seq=9 ttl=44 time=150.959 ms
+64 bytes from 64.233.189.106: seq=10 ttl=44 time=147.390 ms
+64 bytes from 64.233.189.106: seq=11 ttl=44 time=142.978 ms
+64 bytes from 64.233.189.106: seq=12 ttl=44 time=151.787 ms
+64 bytes from 64.233.189.106: seq=13 ttl=44 time=141.346 ms
+64 bytes from 64.233.189.106: seq=14 ttl=44 time=191.294 ms
+64 bytes from 64.233.189.106: seq=15 ttl=44 time=310.859 ms
+64 bytes from 64.233.189.106: seq=16 ttl=44 time=160.798 ms
+64 bytes from 64.233.189.106: seq=17 ttl=44 time=191.757 ms
+64 bytes from 64.233.189.106: seq=18 ttl=44 time=140.444 ms
+64 bytes from 64.233.189.106: seq=19 ttl=44 time=129.857 ms
+64 bytes from 64.233.189.106: seq=20 ttl=44 time=261.807 ms
+64 bytes from 64.233.189.106: seq=21 ttl=44 time=140.506 ms
+64 bytes from 64.233.189.106: seq=22 ttl=44 time=189.699 ms
+64 bytes from 64.233.189.106: seq=23 ttl=44 time=288.866 ms
+64 bytes from 64.233.189.106: seq=24 ttl=44 time=169.079 ms
+64 bytes from 64.233.189.106: seq=25 ttl=44 time=179.023 ms
+64 bytes from 64.233.189.106: seq=26 ttl=44 time=380.460 ms
+64 bytes from 64.233.189.106: seq=27 ttl=44 time=328.672 ms
+64 bytes from 64.233.189.106: seq=28 ttl=44 time=147.383 ms
+64 bytes from 64.233.189.106: seq=29 ttl=44 time=158.067 ms
+64 bytes from 64.233.189.106: seq=30 ttl=44 time=138.127 ms
+64 bytes from 64.233.189.106: seq=31 ttl=44 time=127.072 ms
+64 bytes from 64.233.189.106: seq=32 ttl=44 time=148.011 ms
+64 bytes from 64.233.189.106: seq=33 ttl=44 time=187.098 ms
+64 bytes from 64.233.189.106: seq=34 ttl=44 time=138.020 ms
+
+--- www.google.com ping statistics ---
+35 packets transmitted, 35 packets received, 0% packet loss
+round-trip min/avg/max = 127.072/201.478/523.405 ms
+
+
