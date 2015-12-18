@@ -1,0 +1,1 @@
+Please rename the PCIEditSetup.ex_ to PCIEditSetup.exe then execute the file in MS Windows.

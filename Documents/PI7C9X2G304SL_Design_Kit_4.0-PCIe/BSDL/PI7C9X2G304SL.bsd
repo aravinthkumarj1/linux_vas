@@ -1,0 +1,220 @@
+-----------------------------------------------------------------------------------
+-- DATE & TIME    :  Wed Sep 21 18:00:11 2011
+-- File Type      :  BSDL Description for Top-Level Entity PI7C9X2G304SL
+-----------------------------------------------------------------------------------
+
+ entity PI7C9X2G304SL is 
+
+    generic(PHYSICAL_PIN_MAP : string := "QFP128"); 
+
+    port (
+              TEST3            		: inout        	bit;
+              VC1_EN          		: inout        	bit;
+              PRSNT          		: inout        	bit_vector(2 downto 1);          
+              TEST4          		: inout        	bit;
+              RXPOLINV_DIS        	: inout        	bit;
+              TEST5          		: inout        	bit;
+              SMBCLK          	: inout        	bit;
+              SMBDATA          	: inout        	bit;
+              PWR_SAV         	: inout        	bit;
+              SLOTCLK         	: inout        	bit;
+              SLOT_IMP         	: inout        	bit_vector(2 downto 1);             
+              TEST6         		: inout        	bit;
+              PL_512B         		: inout        	bit;
+              CLKBUF_PD         	: inout        	bit;
+              TEST1                 	: in           	bit;
+              EECLK                	: out         	bit;
+              EEPD                 	: inout        	bit;
+              GPIO                 	: inout        	bit_vector(7 downto 0);           
+              DWNRST_L             	: out          	bit_vector(2 downto 1);
+              PERST_L              	: in           	bit;
+              TEST2               	: in           	bit;
+              VDDC                 	: linkage      	bit_vector(8 downto 0);
+              VSS                  	: linkage      	bit_vector(20 downto 0);
+              VDDR                 	: linkage      	bit_vector(4 downto 0);
+              CVDDR                	: linkage      	bit_vector(2 downto 0);
+              VDDCAUX              	: linkage      	bit_vector(1 downto 0);
+              AGND                 	: linkage      	bit_vector(4 downto 0);
+              AVDD                 	: linkage      	bit_vector(4 downto 0);
+              AVDDH                	: linkage      	bit;
+              VAUX                 	: linkage      	bit;
+              REFCLKP               	: linkage      	bit;
+              REFCLKN               	: linkage      	bit;
+              PERN			: linkage	bit_vector(3 downto 0);
+	  PERP			: linkage	bit_vector(3 downto 0);
+	  PETN			: linkage	bit_vector(3 downto 0);
+	  PETP			: linkage	bit_vector(3 downto 0);            
+              REXT                 	: linkage      	bit;
+              REXT_GND             	: linkage      	bit;           
+              REFCLKI_P               	: linkage      	bit;
+              REFCLKI_N          	: linkage      	bit;
+              REFCLKO_P0    	: linkage      	bit;
+              REFCLKO_N0            	: linkage      	bit;
+              REFCLKO_P1            	: linkage      	bit;
+              REFCLKO_N1            	: linkage      	bit;
+              REFCLKO_P2            	: linkage      	bit;
+              REFCLKO_N2            	: linkage      	bit;          
+              IREF                 	: linkage      	bit;
+              SCAN_EN              	: linkage      	bit;
+              TDI              		: in           	bit;
+              TMS              		: in           	bit;
+              TCK              		: in           	bit;
+              TDO              		: out          	bit;
+              TRST_L           	: in           	bit
+         ); 
+
+    use STD_1149_1_1994.all; -- Get IEEE 1149.1-1994 attributes and definitions 
+
+    attribute COMPONENT_CONFORMANCE of PI7C9X2G304SL : entity is "STD_1149_1_1993";
+
+    attribute PIN_MAP of PI7C9X2G304SL : entity is PHYSICAL_PIN_MAP; 
+
+    constant QFP128 : PIN_MAP_STRING := 
+       "TEST3: 17," &
+       "VC1_EN: 18," &
+       "PRSNT: (20,19)," &
+       "TEST4: 22," &
+       "RXPOLINV_DIS: 24," &
+       "TEST5: 25," &
+       "SMBCLK: 26," &
+       "SMBDATA: 27," &
+       "PWR_SAV: 28," &
+       "SLOTCLK: 33," &
+       "SLOT_IMP: (46,45)," &
+       "TEST6: 51," &
+       "PL_512B: 53," &
+       "CLKBUF_PD: 60," &
+       "VDDC: (3,23,29,31,40,55,62,65,91)," &     
+       "VSS: (2,4,11,12,30,32,34,41,50,56,61,63,66,87,90,95,104,109,112,120,126)," &
+       "VDDR: (1,8,49,64,96)," & 
+       "CVDDR: (79,82,84), " &
+       "VDDCAUX: (13,14)," &   
+       "AVDD: (99,105,108,119,125)," & 
+       "AVDDH: 113," & 
+       "VAUX: 15," & 
+       "REFCLKP: 110," & 
+       "REFCLKN: 111," & 
+       "PERN: (121,103,98,127)," &
+       "PERP: (122,102,97,128)," &
+       "PETN: (117,107,101,123)," &
+       "PETP: (118,106,100,124)," & 
+       "REXT: 116," & 
+       "REXT_GND: 115," &       
+       "REFCLKI_P: 74," & 
+       "REFCLKI_N: 73," & 
+       "REFCLKO_P0: 85," & 
+       "REFCLKO_N0: 83," & 
+       "REFCLKO_P1: 81," & 
+       "REFCLKO_N1: 80," & 
+       "REFCLKO_P2: 78," & 
+       "REFCLKO_N2: 77," &   
+       "IREF: 86," & 
+       "TEST1: 9," & 
+       "DWNRST_L: (6,5)," & 
+       "EECLK: 70," & 
+       "EEPD: 71," & 
+       "SCAN_EN: 72," & 
+       "GPIO: (44,43,42,39,38,37,35,36)," &   
+       "PERST_L: 10," & 
+       "TEST2: 16," & 
+       "TDI: 93," & 
+       "TMS: 92," & 
+       "TCK: 89," & 
+       "TDO: 88," & 
+       "TRST_L: 94";
+
+
+    attribute TAP_SCAN_IN of TDI : signal is true; 
+    attribute TAP_SCAN_MODE of TMS : signal is true; 
+    attribute TAP_SCAN_OUT of TDO : signal is true; 
+    attribute TAP_SCAN_CLOCK of TCK : signal is (20.0e6, BOTH); 
+    attribute TAP_SCAN_RESET of TRST_L : signal is true; 
+
+    attribute INSTRUCTION_LENGTH of PI7C9X2G304SL : entity is 5;
+    attribute INSTRUCTION_OPCODE of PI7C9X2G304SL : entity is 
+        "extest (00000),"  & 
+        "bypass (11111),"  & 
+        "sample (00001),"  & 
+        "mem_bist (01010),"  & 
+        "phy_test_sig (01001),"  & 
+        "int_scan (00010),"  & 
+        "idcode (01100),"  & 
+        "clamp (00100),"  & 
+        "highz (00101)"; 
+
+    attribute INSTRUCTION_CAPTURE of PI7C9X2G304SL : entity is "00001";
+    attribute IDCODE_REGISTER of PI7C9X2G304SL : entity is 
+        "0001"  &                -- Version Number 
+        "0000010100001000"  &    -- Part Number 
+        "01000111111"  &         -- Manufacturer ID 
+        "1";                     -- Required by IEEE Std. 1149.1-1990 
+
+    attribute INSTRUCTION_PRIVATE of PI7C9X2G304SL : entity is
+     "int_scan, mem_bist, phy_test_sig";
+
+    attribute REGISTER_ACCESS of PI7C9X2G304SL : entity is 
+        "BOUNDARY (extest, sample), " & 
+        "DEVICE_ID (idcode), " & 
+        "BYPASS (bypass, clamp, highz)"; 
+    attribute BOUNDARY_LENGTH of PI7C9X2G304SL : entity is 54;
+    attribute BOUNDARY_REGISTER of PI7C9X2G304SL : entity is
+      --- num            cell                 port      function   safe  [ccell  disval  rslt]
+       "0    (           BC_1,         DWNRST_L(1),      output2,     X)," &
+       "1    (           BC_1,         DWNRST_L(2),      output2,     X)," &
+       "2    (           BC_1,                   *,     internal,     X)," &
+       "3    (           BC_4,                TEST1,        input,     X)," &
+       "4    (           BC_4,             PERST_L,        input,     X)," &
+       "5    (           BC_4,              TEST2,        input,     X)," &
+       "6    (           BC_7,         TEST3,        bidir,     X,     12,      0,    Z)," &
+       "7    (           BC_7,         VC1_EN,        bidir,     X,     12,      0,    Z)," &
+       "8    (           BC_7,         PRSNT(1),        bidir,     X,     12,      0,    Z)," &
+       "9    (           BC_7,         PRSNT(2),        bidir,     X,     12,      0,    Z)," &
+       "10   (           BC_1,                   *,     internal,     X)," &
+       "11   (           BC_7,         TEST4,        bidir,     X,     12,      0,    Z)," &
+       "12   (           BC_2,                   *,      control,     0)," &
+       "13   (           BC_7,         RXPOLINV_DIS,        bidir,     X,     12,      0,    Z)," &
+       "14   (           BC_7,         TEST5,        bidir,     X,     12,      0,    Z)," &
+       "15   (           BC_7,         SMBCLK,        bidir,     X,     12,      0,    Z)," &
+       "16   (           BC_7,         SMBDATA,        bidir,     X,     12,      0,    Z)," &
+       "17   (           BC_7,        PWR_SAV,        bidir,     X,     12,      0,    Z)," &
+       "18   (           BC_7,        SLOTCLK,        bidir,     X,     12,      0,    Z)," &
+       "19   (           BC_7,             GPIO(0),        bidir,     X,     20,      0,    Z)," &
+       "20   (           BC_2,                   *,      control,     0)," &
+       "21   (           BC_7,             GPIO(1),        bidir,     X,     22,      0,    Z)," &
+       "22   (           BC_2,                   *,      control,     0)," &
+       "23   (           BC_7,             GPIO(2),        bidir,     X,     24,      0,    Z)," &
+       "24   (           BC_2,                   *,      control,     0)," &
+       "25   (           BC_7,             GPIO(3),        bidir,     X,     26,      0,    Z)," &
+       "26   (           BC_2,                   *,      control,     0)," &
+       "27   (           BC_7,             GPIO(4),        bidir,     X,     28,      0,    Z)," &
+       "28   (           BC_2,                   *,      control,     0)," &
+       "29   (           BC_7,             GPIO(5),        bidir,     X,     30,      0,    Z)," &
+       "30   (           BC_2,                   *,      control,     0)," &
+       "31   (           BC_7,             GPIO(6),        bidir,     X,     32,      0,    Z)," &
+       "32   (           BC_2,                   *,      control,     0)," &
+       "33   (           BC_7,             GPIO(7),        bidir,     X,     34,      0,    Z)," &
+       "34   (           BC_2,                   *,      control,     0)," &
+       "35   (           BC_7,        SLOT_IMP(1),        bidir,     X,     45,      0,    Z)," &
+       "36   (           BC_7,        SLOT_IMP(2),        bidir,     X,     45,      0,    Z)," &
+       "37   (           BC_1,                   *,     internal,     X)," &
+       "38   (           BC_1,                   *,     internal,     X)," &
+       "39   (           BC_7,        TEST6,        bidir,     X,     45,      0,    Z)," &
+       "40   (           BC_1,                   *,     internal,     X)," &
+       "41   (           BC_7,        PL_512B,        bidir,     X,     45,      0,    Z)," &
+       "42   (           BC_1,                   *,     internal,     X)," &
+       "43   (           BC_1,                   *,     internal,     X)," &
+       "44   (           BC_1,                   *,     internal,     X)," &
+       "45   (           BC_2,                   *,      control,     0)," &
+       "46   (           BC_1,                   *,     internal,     X)," &
+       "47   (           BC_7,        CLKBUF_PD,        bidir,     X,     45,      0,    Z)," &
+       "48   (           BC_1,          	 *,     internal,     X)," &
+       "49   (           BC_1,          	 *,     internal,     X)," &
+       "50   (           BC_1,          	 *,     internal,     X)," &     
+       "51   (           BC_1,               EECLK,      output2,     X)," &
+       "52   (           BC_7,                EEPD,        bidir,     X,     53,      0,    Z)," &
+       "53   (           BC_2,                   *,      control,     0)";
+
+
+ end PI7C9X2G304SL;
+
+        
