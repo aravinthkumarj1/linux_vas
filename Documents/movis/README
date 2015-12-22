@@ -1,0 +1,31 @@
+AUTHOR : ZUMI SOLUTIONS PVT LTD
+FILE   : Movis_peripherals_test.sh
+
+README FOR :- Movis_peripherals_test script
+	
+	step 1: Copy this "movis" directory into Movis board file system location.   
+
+	step 2: After Booting, Change directory into movis (ie: cd /movis)
+
+	step 3: run the script (ie: sh ./Movis_peripherals_test.sh)		
+
+
+
+USER GUIDE FOR THE SCRIPT :-
+	
+	step 4: If test all peripherals automatically press "1" (OR) For separate peripheral test press "2"  
+		Note:  If you press "2", Available peripherals are shown, you can select and test separately.
+
+	step 5: For SATA/eMMC/USB-OTG/USB-HOST test you should enter corresponding mount point. 
+		When ever you plug these storage device it automatically shows the mount point.(ie:sdb1,sdc1)
+	
+	step 6: For Audio-out, set headphone volume as high using alsamixer, For Line-In set capture as LINE_IN using alsamixer.
+		Note: Make sure these changes made before running script.
+ 
+	step 7: For CAN test use one more CAN device connect with this. And follow instructions showed from script.
+
+	step 8: For USB-WiFi test create access point name: "movis" ,without password. And turn on internet in access point side.
+
+	step 9: If script finished. you can view the peripherals Test result.(ie: cat /movis/TestResult_log.txt)
+	 	Note: Every results are shown in same console, and stored in text file inside movis directory. 
+		      Every time it stored in separate new file alone with number so you can easily find latest result file.	  
