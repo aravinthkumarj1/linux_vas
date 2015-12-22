@@ -1,0 +1,5 @@
+######## [1m Movis Peripherals Test [0m########
+#### Manual peripherals test started ####
+Audio-Out Test [32m successful [0m
+Audio-In Test [32m successful [0m
+[32m Movis Peripherals Test Done [0m
