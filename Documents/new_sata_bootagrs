@@ -1,0 +1,47 @@
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs=console=ttymxc0,115200 rw mxcfb0:dev=lcd,CLAA-WVGA,if=RGB666
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_movis=setenv bootargs console=ttymxc0,115200 rw mxcfb2:dev=lcd,CLAA-WVGA,if=RGB666
+bootargs_sata=setenv bootargs ${bootargs} root=/dev/sda3 rw rootwait
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait
+bootcmd=run bootcmd_sata
+bootcmd_movis=setenv ipaddr 10.0.0.187; setenv serverip 10.0.0.40; setenv ethaddr 70:B3:D5:B6:D0:01; tftpboot 0x10008000 movis/uImage; tftpboot 0x14000000 movis/imx6q-movis.dtb; tftpboot 0x12000000 movis/s
+bootcmd_sata=run bootargs_sata; sata init ; fatload sata 0:1 0x11200000 imx6q-movis.dtb; fatload sata 0:1 0x12800000 uImage; bootm 0x12800000 - 0x11200000
+bootdelay=2
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethaddr=70:B3:D5:B6:D0:01
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+fileaddr=10006000
+filesize=be7
+initrd_file=uInitrd
+initrd_high=0xffffffff
+ipaddr=10.0.0.187
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=lcd
+rd_addr=0x11200000
+rdfile=uInitrd
+serverip=10.0.0.40
+verify=n
+
+Environment size: 1664/8188 bytes
+

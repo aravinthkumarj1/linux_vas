@@ -1,0 +1,718 @@
+U-Boot 2014.04 (Dec 11 2015 - 15:30:38)
+
+CPU:   Freescale i.MX6Q rev1.5 at 792 MHz
+CPU:   Temperature 23 C, calibration data: 0x58a4db7d
+Reset cause: POR
+Board: MOVIS-PREVAS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+unsupported panel lcd
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Normal Boot
+Hit any key to stop autoboot:  0 
+AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+flags: ncq stag pm led clo only pmp pio slum part 
+SATA Device Info:
+S/N: 141545400590
+Product model number: SanDisk SD6SB1M-032G-1006
+Firmware version: X231706
+Capacity: 62533296 sectors
+reading imx6q-movis.dtb
+40053 bytes read in 8 ms (4.8 MiB/s)
+reading uImage
+6152584 bytes read in 68 ms (86.3 MiB/s)
+## Booting kernel from Legacy Image at 12800000 ...
+   Image Name:   Linux-3.14.28
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    6152520 Bytes = 5.9 MiB
+   Load Address: 12700000
+   Entry Point:  12700000
+## Flattened Device Tree blob at 11200000
+   Booting using the fdt blob at 0x11200000
+   Loading Kernel Image ... OK
+   Using Device Tree in place at 11200000, end 1120cc74
+switch to ldo_bypass mode!
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0
+Linux version 3.14.28 (root@bans4) (gcc version 4.6.2 20110630 (prerelease) (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) ) #1 SMP PREEMPT Wed Feb 3 19:15:38 IST 2016
+CPU: ARMv7 Processor [412fc09a] revision 10 (ARMv7), cr=10c53c7d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+Machine model: Prevas A/S
+cma: CMA: reserved 320 MiB at 62000000
+Memory policy: Data cache writealloc
+PERCPU: Embedded 8 pages/cpu @d0f1f000 s8896 r8192 d15680 u32768
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 521024
+Kernel command line: console=ttymxc0,115200 root=/dev/sda3 rootwait rw video=mxcfb2:dev=hdmi,6400x480M@60,if=RGB24,bpp=24 vmalloc=400M fbmem=28M fbcon=28M
+PID hash table entries: 4096 (order: 2, 16384 bytes)
+Dentry cache hash table entries: 262144 (order: 8, 1048576 bytes)
+Inode-cache hash table entries: 131072 (order: 7, 524288 bytes)
+Memory: 1735776K/2097152K available (7351K kernel code, 399K rwdata, 6284K rodata, 328K init, 433K bss, 361376K reserved, 425984K highmem)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+    vmalloc : 0xe6800000 - 0xff000000   ( 392 MB)
+    lowmem  : 0x80000000 - 0xe6000000   (1632 MB)
+    pkmap   : 0x7fe00000 - 0x80000000   (   2 MB)
+    modules : 0x7f000000 - 0x7fe00000   (  14 MB)
+      .text : 0x80008000 - 0x80d591d4   (13637 kB)
+      .init : 0x80d5a000 - 0x80dac2c0   ( 329 kB)
+      .data : 0x80dae000 - 0x80e11e60   ( 400 kB)
+       .bss : 0x80e11e6c - 0x80e7e628   ( 434 kB)
+SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Preemptible hierarchical RCU implementation.
+NR_IRQS:16 nr_irqs:16 16
+L310 cache controller enabled
+l2x0: 16 ways, CACHE_ID 0x410000c7, AUX_CTRL 0x32070000, Cache size: 1024 kB
+Switching to timer-based delay loop
+sched_clock: 32 bits at 3000kHz, resolution 333ns, wraps every 1431655765682ns
+Console: colour dummy device 80x30
+Calibrating delay loop (skipped), value calculated using timer frequency.. 6.00 BogoMIPS (lpj=30000)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Mountpoint-cache hash table entries: 4096 (order: 2, 16384 bytes)
+CPU: Testing write buffer coherency: ok
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x106fa6f0 - 0x106fa748
+CPU1: Booted secondary processor
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU2: Booted secondary processor
+CPU2: thread -1, cpu 2, socket 0, mpidr 80000002
+CPU3: Booted secondary processor
+CPU3: thread -1, cpu 3, socket 0, mpidr 80000003
+Brought up 4 CPUs
+SMP: Total of 4 processors activated.
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+pinctrl core: initialized pinctrl subsystem
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+cpuidle: using governor ladder
+cpuidle: using governor menu
+CPU identified as i.MX6Q, silicon rev 1.5
+Use WDOG1 as reset source
+syscon 20c8000.anatop: regmap [mem 0x020c8000-0x020c8fff] registered
+vdd1p1: 800 <--> 1375 mV at 1100 mV 
+vdd3p0: 2800 <--> 3150 mV at 3000 mV 
+vdd2p5: 2000 <--> 2750 mV at 2400 mV 
+vddarm: 725 <--> 1450 mV 
+vddpu: 725 <--> 1450 mV 
+vddsoc: 725 <--> 1450 mV 
+syscon 20e0000.iomuxc-gpr: regmap [mem 0x020e0000-0x020e0037] registered
+syscon 21bc000.ocotp-ctrl: regmap [mem 0x021bc000-0x021bffff] registered
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+imx6q-pinctrl 20e0000.iomuxc: initialized IMX pinctrl driver
+bio: create slab <bio-0> at 0
+mxs-dma 110000.dma-apbh: initialized
+2P5V: 2500 mV 
+3P3V: 3300 mV 
+usb_otg_vbus: 5000 mV 
+usb_h1_vbus: 5000 mV 
+mipi_dsi_pwr_on: no parameters
+sensor-supply: 3300 mV 
+sd2_pwr: 3300 mV 
+CAN XCVR: 3300 mV 
+vgaarb: loaded
+i2c-core: driver [max17135] using legacy suspend method
+i2c-core: driver [max17135] using legacy resume method
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+usbphy_nop1.12 supply vcc not found, using dummy regulator
+usbphy_nop2.13 supply vcc not found, using dummy regulator
+pca953x 0-0032: failed reading register
+pca953x: probe of 0-0032 failed with error -5
+i2c i2c-0: IMX I2C adapter registered
+i2c i2c-1: IMX I2C adapter registered
+i2c i2c-2: IMX I2C adapter registered
+Linux video capture interface: v2.00
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+PTP clock support registered
+imx-ipuv3 2400000.ipu: IPU DMFC NORMAL mode: 1(0~1), 5B(4,5), 5F(6,7)
+imx-ipuv3 2800000.ipu: IPU DMFC NORMAL mode: 1(0~1), 5B(4,5), 5F(6,7)
+mxc_mipi_csi2 21dc000.mipi_csi: i.MX MIPI CSI2 driver probed
+mxc_mipi_csi2 21dc000.mipi_csi: i.MX MIPI CSI2 dphy version is 0x3130302a
+MIPI CSI2 driver module loaded
+Advanced Linux Sound Architecture Driver Initialized.
+cfg80211: Calling CRDA to update world regulatory domain
+Switched to clocksource mxc_timer1
+NET: Registered protocol family 2
+TCP established hash table entries: 16384 (order: 4, 65536 bytes)
+TCP bind hash table entries: 16384 (order: 5, 131072 bytes)
+TCP: Hash tables configured (established 16384 bind 16384)
+TCP: reno registered
+UDP hash table entries: 1024 (order: 3, 32768 bytes)
+UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+hw perfevents: enabled with ARMv7 Cortex-A9 PMU driver, 7 counters available
+imx6_busfreq busfreq.16: DDR medium rate not supported.
+Bus freq driver module loaded
+futex hash table entries: 1024 (order: 4, 65536 bytes)
+bounce pool size: 64 pages
+VFS: Disk quotas dquot_6.5.2
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+jffs2: version 2.2. (NAND) �© 2001-2006 Red Hat, Inc.
+fuse init (API version 7.22)
+msgmni has been set to 3198
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+imx-weim 21b8000.weim: Driver registered.
+backlight.27 supply power not found, using dummy regulator
+mxc_mipi_dsi 21e0000.mipi: i.MX MIPI DSI driver probed
+MIPI DSI driver module loaded
+mxc_sdc_fb fb.25: registered mxc display driver ldb
+imx-ipuv3 2800000.ipu: IPU DMFC DP HIGH RESOLUTION: 1(0,1), 5B(2~5), 5F(6,7)
+Console: switching to colour frame buffer device 128x48
+mxc_hdmi 20e0000.hdmi_video: Detected HDMI controller 0x13:0xa:0xa0:0xc1
+fbcvt: 640x480@60: CVT Name - .307M3
+mxc_sdc_fb fb.26: registered mxc display driver hdmi
+imx-sdma 20ec000.sdma: no iram assigned, using external mem
+imx-sdma 20ec000.sdma: no event needs to be remapped
+imx-sdma 20ec000.sdma: loaded firmware 3.1
+imx-sdma 20ec000.sdma: initialized
+pfuze100-regulator 2-0008: Full layer: 1, Metal layer: 1
+pfuze100-regulator 2-0008: FAB: 0, FIN: 0
+pfuze100-regulator 2-0008: pfuze100 found.
+SW1AB: 300 <--> 1875 mV at 1150 mV 
+SW1C: 300 <--> 1875 mV at 1175 mV 
+SW2: 800 <--> 3300 mV at 3300 mV 
+SW3A: 400 <--> 1975 mV at 1500 mV 
+SW3B: 400 <--> 1975 mV at 1500 mV 
+SW4: 800 <--> 3300 mV at 3150 mV 
+SWBST: 5000 <--> 5150 mV at 5000 mV 
+VSNVS: 1000 <--> 3000 mV at 3000 mV 
+VREFDDR: 750 mV 
+VGEN1: 800 <--> 1550 mV at 1500 mV 
+VGEN2: 800 <--> 1550 mV at 1500 mV 
+VGEN3: 1800 <--> 3300 mV at 2500 mV 
+VGEN4: 1800 <--> 3300 mV at 1800 mV 
+VGEN5: 1800 <--> 3300 mV at 3000 mV 
+VGEN6: 1800 <--> 3300 mV at 3300 mV 
+Serial: IMX driver
+2020000.serial: ttymxc0 at MMIO 0x2020000 (irq = 58, base_baud = 5000000) is a IMX
+mxc_hdmi 20e0000.hdmi_video: Read EDID again
+console [ttymxc0] enabled
+serial: Freescale lpuart driver
+imx sema4 driver is registered.
+[drm] Initialized drm 1.1.0 20060810
+[drm] Initialized vivante 1.0.0 20120216 on minor 0
+brd: module loaded
+loop: module loaded
+ahci-imx 2200000.sata: fsl,transmit-level-mV not specified, using 00000024
+ahci-imx 2200000.sata: fsl,transmit-boost-mdB not specified, using 00000480
+ahci-imx 2200000.sata: fsl,transmit-atten-16ths not specified, using 00002000
+ahci-imx 2200000.sata: fsl,receive-eq-mdB not specified, using 05000000
+ahci-imx 2200000.sata: SSS flag set, parallel bus scan disabled
+ahci-imx 2200000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+ahci-imx 2200000.sata: flags: ncq sntf stag pm led clo only pmp pio slum part ccc apst 
+scsi0 : ahci_platform
+ata1: SATA max UDMA/133 mmio [mem 0x02200000-0x02203fff] port 0x100 irq 71
+m25p80 spi3.0: unrecognized JEDEC id ffffff
+spi_imx 2014000.ecspi: probed
+vcan: Virtual CAN interface driver
+CAN device driver interface
+flexcan 2090000.can: device registered (reg_base=e6a68000, irq=142)
+flexcan 2094000.can: device registered (reg_base=e6a70000, irq=143)
+2188000.ethernet supply phy not found, using dummy regulator
+pps pps0: new PPS source ptp0
+libphy: fec_enet_mii_bus: probed
+fec 2188000.ethernet eth0: registered PHC device 0
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-pci: EHCI PCI platform driver
+ehci-mxc: Freescale On-Chip EHCI Host driver
+usbcore: registered new interface driver usb-storage
+2184800.usbmisc supply vbus-wakeup not found, using dummy regulator
+ci_hdrc ci_hdrc.1: doesn't support gadget
+ci_hdrc ci_hdrc.1: EHCI Host Controller
+ci_hdrc ci_hdrc.1: new USB bus registered, assigned bus number 1
+ci_hdrc ci_hdrc.1: USB 2.0 started, EHCI 1.00
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+mousedev: PS/2 mouse device common for all mice
+i2c-core: driver [isl29023] using legacy suspend method
+i2c-core: driver [isl29023] using legacy resume method
+snvs_rtc 20cc034.snvs-rtc-lp: rtc core: registered 20cc034.snvs-rtc-lp as rtc0
+i2c /dev entries driver
+IR NEC protocol handler initialized
+IR RC5(x) protocol handler initialized
+IR RC6 protocol handler initialized
+IR JVC protocol handler initialized
+IR Sony protocol handler initialized
+IR RC5 (streamzap) protocol handler initialized
+IR SANYO protocol handler initialized
+IR MCE Keyboard/mouse protocol handler initialized
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video16
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video17
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video18
+mxc_v4l2_output v4l2_out.30: V4L2 device registered as video19
+i2c-core: driver [mag3110] using legacy suspend method
+i2c-core: driver [mag3110] using legacy resume method
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+mmc1: no vmmc regulator found
+mmc1: SDHCI controller on 2194000.usdhc [2194000.usdhc] using ADMA
+mmc3: no vqmmc regulator found
+mmc3: no vmmc regulator found
+mxc_hdmi 20e0000.hdmi_video: create default modelist
+mmc3: SDHCI controller on 219c000.usdhc [219c000.usdhc] using ADMA
+Galcore version 5.0.11.25762
+mmc3: BKOPS_EN bit is not set
+mmc3: new high speed MMC card at address 0001
+mmcblk3: mmc3:0001 P1XXXX 3.60 GiB 
+mmcblk3boot0: mmc3:0001 P1XXXX partition 1 2.00 MiB
+mmcblk3boot1: mmc3:0001 P1XXXX partition 2 2.00 MiB
+mmcblk3rpmb: mmc3:0001 P1XXXX partition 3 128 KiB
+ mmcblk3: p1
+ mmcblk3boot1: unknown partition table
+ mmcblk3boot0: unknown partition table
+ata1: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+ata1.00: ATA-9: SanDisk SD6SB1M-032G-1006, X231706, max UDMA/100
+ata1.00: 62533296 sectors, multi 1: LBA48 NCQ (depth 31/32)
+ata1.00: configured for UDMA/100
+scsi 0:0:0:0: Direct-Access     ATA      SanDisk SD6SB1M- 706  PQ: 0 ANSI: 5
+sd 0:0:0:0: [sda] 62533296 512-byte logical blocks: (32.0 GB/29.8 GiB)
+sd 0:0:0:0: [sda] Write Protect is off
+sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+ sda: sda1 sda2 sda3
+sd 0:0:0:0: [sda] Attached SCSI disk
+mxc_vdoa 21e4000.vdoa: i.MX Video Data Order Adapter(VDOA) driver probed
+mxc_vpu 2040000.vpu: VPU initialized
+mxc_hdmi_cec hdmi_cec.4: HDMI CEC initialized
+caam 2100000.caam: Instantiated RNG4 SH0
+caam 2100000.caam: Instantiated RNG4 SH1
+caam 2100000.caam: device ID = 0x0a160100 (Era 4)
+caam 2100000.caam: job rings = 2, qi = 0
+caam algorithms registered in /proc/crypto
+caam_jr 2101000.jr0: registering rng-caam
+platform caam_sm: blkkey_ex: 4 keystore units available
+platform caam_sm: 64-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: 64-bit black key:
+platform caam_sm: [0000] 6c cd fd dd d4 cd b9 81
+platform caam_sm: [0008] ef fd 2c bd 3f f0 43 f9
+platform caam_sm: 128-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: 128-bit black key:
+platform caam_sm: [0000] a4 4a 79 60 39 69 ac f3
+platform caam_sm: [0008] d7 9c 12 ec b9 5a 8d 9a
+platform caam_sm: 192-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: [0016] 10 11 12 13 14 15 16 17
+platform caam_sm: 192-bit black key:
+platform caam_sm: [0000] 74 1d 10 bc 33 3a 17 76
+platform caam_sm: [0008] 9c 15 df 9a 8b 9e eb 68
+platform caam_sm: [0016] 22 2e bb c9 96 5b 44 d8
+platform caam_sm: [0024] 12 ae 82 29 59 0f 5c 8a
+platform caam_sm: 256-bit clear key:
+platform caam_sm: [0000] 00 01 02 03 04 0f 06 07
+platform caam_sm: [0008] 08 09 0a 0b 0c 0d 0e 0f
+platform caam_sm: [0016] 10 11 12 13 14 15 16 17
+platform caam_sm: [0024] 18 19 1a 1b 1c 1d 1e 1f
+platform caam_sm: 256-bit black key:
+platform caam_sm: [0000] a3 ff df db c0 bf b9 50
+platform caam_sm: [0008] b2 bc 1b 96 19 50 54 46
+platform caam_sm: [0016] 8b ef 5c f6 f6 de c3 de
+platform caam_sm: [0024] 3b ca 69 f4 4c 20 8f 3e
+platform caam_sm: 64-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 128-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 196-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 256-bit unwritten blob:
+platform caam_sm: [0000] 00 00 00 00 00 00 00 00
+platform caam_sm: [0008] 00 00 00 00 00 00 00 00
+platform caam_sm: [0016] 00 00 00 00 00 00 00 00
+platform caam_sm: [0024] 00 00 00 00 00 00 00 00
+platform caam_sm: [0032] 00 00 00 00 00 00 00 00
+platform caam_sm: [0040] 00 00 00 00 00 00 00 00
+platform caam_sm: [0048] 00 00 00 00 00 00 00 00
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 64-bit black key in blob:
+platform caam_sm: [0000] e7 8d 35 e0 6c a3 1b d4
+platform caam_sm: [0008] c3 57 7b 89 08 43 85 37
+platform caam_sm: [0016] 7a 88 03 29 68 d6 72 1c
+platform caam_sm: [0024] 79 08 61 9d 0c cc 7c 9d
+platform caam_sm: [0032] b9 f6 41 87 70 11 41 02
+platform caam_sm: [0040] 56 b9 66 7d 1e f3 9a af
+platform caam_sm: [0048] f5 f2 37 f0 26 f0 1c 3c
+platform caam_sm: [0056] 00 00 00 00 00 00 00 00
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 128-bit black key in blob:
+platform caam_sm: [0000] 05 28 02 5b d4 cd 17 29
+platform caam_sm: [0008] 0f 93 66 4f 69 29 c1 b0
+platform caam_sm: [0016] 4a 1c fa 40 fd 9e 2a 52
+platform caam_sm: [0024] e5 03 09 2d cb 0f c7 a8
+platform caam_sm: [0032] ad 60 7b 1e 69 ed da 2d
+platform caam_sm: [0040] f3 8f a9 5b 57 74 15 63
+platform caam_sm: [0048] f1 a7 ac 6f 3b ea 68 6f
+platform caam_sm: [0056] 4a 98 b3 c2 e2 cb 29 36
+platform caam_sm: [0064] 00 00 00 00 00 00 00 00
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 192-bit black key in blob:
+platform caam_sm: [0000] 3d ae d9 f0 a2 1c 65 c3
+platform caam_sm: [0008] 88 1c 16 d0 6c 1c e5 70
+platform caam_sm: [0016] 3f 9d 8e 94 26 f5 75 82
+platform caam_sm: [0024] 02 b2 38 0a a6 ee 02 f2
+platform caam_sm: [0032] 33 0e 94 e2 8a c2 17 95
+platform caam_sm: [0040] 2b 97 af a0 29 6d e4 bb
+platform caam_sm: [0048] 3f 71 b7 df 41 eb 93 15
+platform caam_sm: [0056] a9 1d bd 23 14 7c 5f 97
+platform caam_sm: [0064] 9f 2f 1d 48 9c 16 21 16
+platform caam_sm: [0072] 00 00 00 00 00 00 00 00
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: 256-bit black key in blob:
+platform caam_sm: [0000] f0 22 6a e7 6d 0e 1d e6
+platform caam_sm: [0008] 6b 0a 5b 8b 1a 22 9a 39
+platform caam_sm: [0016] ba 0b 92 c6 51 cb 2e ea
+platform caam_sm: [0024] 61 97 1f ef 8f 4d 5a 96
+platform caam_sm: [0032] 93 4c 5b d6 e0 ad c4 df
+platform caam_sm: [0040] ff 23 f2 4b 75 a8 db f6
+platform caam_sm: [0048] 83 6f 13 5e af ed 48 11
+platform caam_sm: [0056] be 79 de 8e 01 33 7d ec
+platform caam_sm: [0064] 13 7b 93 a0 d6 3d f2 ec
+platform caam_sm: [0072] 6c 25 95 a0 be 15 c7 a5
+platform caam_sm: [0080] 00 00 00 00 00 00 00 00
+platform caam_sm: [0088] 00 00 00 00 00 00 00 00
+platform caam_sm: restored 64-bit black key:
+platform caam_sm: [0000] 3c 9f 3e 8d 9d 32 25 d2
+platform caam_sm: [0008] af b7 9e c1 cf ed 2a 86
+platform caam_sm: restored 128-bit black key:
+platform caam_sm: [0000] a4 4a 79 60 39 69 ac f3
+platform caam_sm: [0008] d7 9c 12 ec b9 5a 8d 9a
+platform caam_sm: restored 192-bit black key:
+platform caam_sm: [0000] 74 1d 10 bc 33 3a 17 76
+platform caam_sm: [0008] 9c 15 df 9a 8b 9e eb 68
+platform caam_sm: [0016] 69 83 b9 c9 42 98 2f f5
+platform caam_sm: [0024] cd 43 b1 96 16 ba ed fc
+platform caam_sm: restored 256-bit black key:
+platform caam_sm: [0000] a3 ff df db c0 bf b9 50
+platform caam_sm: [0008] b2 bc 1b 96 19 50 54 46
+platform caam_sm: [0016] 8b ef 5c f6 f6 de c3 de
+platform caam_sm: [0024] 3b ca 69 f4 4c 20 8f 3e
+snvs-secvio 20cc000.caam-snvs: violation handlers armed - non-secure state
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+usbcore: registered new interface driver r8712u
+sgtl5000 2-000a: sgtl5000 revision 0x11
+fsl-asrc 2034000.asrc: driver registered
+2-000a: 1200 mV normal 
+sgtl5000 2-000a: Using internal LDO instead of VDDD
+imx-sgtl5000 sound.23: sgtl5000 <-> 2028000.ssi mapping ok
+imx-audio-hdmi sound-hdmi.24: hdmi-hifi <-> hdmi_audio.3 mapping ok
+NET: Registered protocol family 26
+TCP: cubic registered
+NET: Registered protocol family 10
+sit: IPv6 over IPv4 tunneling driver
+NET: Registered protocol family 17
+can: controller area network core (rev 20120528 abi 9)
+NET: Registered protocol family 29
+can: raw protocol (rev 20120528)
+can: broadcast manager protocol (rev 20120528 t)
+can: netlink gateway (rev 20130117) max_hops=1
+8021q: 802.1Q VLAN Support v1.8
+lib80211: common routines for IEEE802.11 drivers
+Key type dns_resolver registered
+VGEN2: disabling
+VGEN1: disabling
+SWBST: disabling
+SW4: disabling
+CAN XCVR: disabling
+sd2_pwr: disabling
+sensor-supply: disabling
+usb_otg_vbus: disabling
+regulator-dummy: disabling
+imx mcc test is registered.
+snvs_rtc 20cc034.snvs-rtc-lp: setting system clock to 1970-01-01 00:00:02 UTC (2)
+ALSA device list:
+  #0: imx6q-movis-sgtl5000
+  #1: imx-hdmi-soc
+EXT3-fs (sda3): error: couldn't mount because of unsupported optional features (240)
+EXT2-fs (sda3): error: couldn't mount because of unsupported optional features (240)
+EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+VFS: Mounted root (ext4 filesystem) on device 8:3.
+devtmpfs: mounted
+Freeing unused kernel memory: 328K (80d5a000 - 80dac000)
+starting pid 164, tty '': '/etc/rc.d/rcS'
+udhcpc (v1.20.2) started
+fec 2188000.ethernet eth0: Freescale FEC PHY driver [Generic PHY] (mii_bus:phy_addr=2188000.ethernet:07, irq=-1)
+IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+Sending discover...
+libphy: 2188000.ethernet:07 - Link is Up - 100/Full
+IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+Sending discover...
+Sending select for 172.16.20.123...
+Lease of 172.16.20.123 obtained, lease time 691200
+Deleting routers
+adding dns 172.16.20.3
+adding dns 172.16.8.12
+Mounting /proc and /sys 
+Starting the hotplug events dispatcher udevd
+udevd (184): /proc/184/oom_adj is deprecated, please use /proc/184/oom_score_adj instead.
+Synthesizing initial hotplug events
+Setting the hostname to freescale
+Mounting filesystems
+EXT4-fs (sda3): re-mounted. Opts: (null)
+mount: mounting usbfs on /proc/bus/usb failed: No such file or directory
+Starting the dropbear ssh server: 
+random: dropbear urandom read with 86 bits of entropy available
+D-Bus per-session daemon address is: unix:abstract=/tmp/dbus-Xpa1ilT532,guid=773ba42dcd6db0d936d068520000000a
+random: nonblocking pool is initialized
+gtk: creating gdk-pixbuf.loaders
+pango: creating module list
+starting pid 1562, tty '': '/etc/rc.d/rc_gpu.S'
+/etc/rc.d/rc_gpu.S: line 6: /sys/module/galcore/parameters/gpu3DMinClock: Permission denied
+starting pid 1570, tty '': '/etc/rc.d/rc_mxc.S'
+(EE) XKB: Couldn't open rules file /usr/share/X11/xkb/rules/base
+(EE) XKB: No components provided for device Virtual core keyboard
+
+arm-none-linux-gnueabi-gcc (Freescale MAD -- Linaro 2011.07 -- Built at 2011/08/10 09:20) 4.6.2 20110630 (prerelease)
+root filesystem built on Fri, 16 Aug 2013 20:23:44 +0800
+Freescale Semiconductor, Inc.
+
+freescale login: root
+login[1572]: root login on 'ttymxc0'
+
+
+BusyBox v1.20.2 () built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+root@freescale ~$ 
+root@freescale ~$ 
+root@freescale ~$ 
+root@freescale ~$ cd /
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>n=next
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>p=prev
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>c=close
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>d=desktop
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <Alt>m=!matchbox-remote -mbmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>x=!xterm
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>r=!rxvt
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <ctrl><alt>e=!!gpe-calender
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>Tab=next
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt><shift>Tab=prev
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>space=taskmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>escape=!matchbox-remote -mbmenu
+
+matchbox: keyboard does not appear to have a <alt> key.
+matchbox: ignoring key shortcut <alt>f4=close
+
+matchbox: Cant find a keycode for keysym 65480
+matchbox: ignoring key shortcut f11=fullscreen
+
+
+root@freescale /$ Failed to get root pixmap id
+matchbox-desktop: loading /usr/lib/matchbox/desktop/tasks.so with args ( None )
+matchbox-desktop: loading /usr/lib/matchbox/desktop/dotdesktop.so with args ( None )
+user_overides is (nil)
+mb-desktop-dotdesktop: failed to open /usr/local/share/applications
+mb-desktop-dotdesktop: failed to open //.applications
+mb-applet-menu-launcher: bonobo-browser.desktop has no icon, png or name
+mb-applet-menu-launcher: failed to open /usr/local/share/applications
+mb-applet-menu-launcher: failed to open //.applications
+mb-applet-menu-launcher: bonobo-browser.desktop has no icon, png or name
+mb-applet-menu-launcher: failed to open /usr/local/share/applications
+mb-applet-menu-launcher: failed to open //.applications
+
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ 
+root@freescale /$ echo 0 > /sys/class/graphics/fb2/blank
+cat /sys/class/graphics/fb2/mode
+root@freescale /$ 
+root@freescale /$ cat /sys/class/graphics/fb2/mode
+U:640x480p-59
+root@freescale /$ 
+root@freescale /$ cd /zumi/
+root@freescale /zumi$ ls
+1080p1.bin                    mc50sd2.wav
+720p1.bin                     mlan.ko
+Converted_file_42d5b724.wav   munb-rec.wav
+LCD1.bin                      munb-rec1.wav
+LCD2.bin                      munb-rec2.wav
+LCD3.bin                      munb.wav
+Sounds                        mx6q_touch_calibrate.sh
+dip-switch.out                mx6q_touch_test.sh
+dip_sw.sh                     sd8787.ko
+g_file_storage.ko             snd-soc-imx-3stack-rt5610.ko
+i2cdetect                     snd-soc-imx-mx2.ko
+i2cdump                       snd-soc-rt5610.ko
+im.bin                        sss3.sh
+im.jpeg                       svga1.bin
+imx-ssi.ko                    test.wav
+in.bin                        test1.wav
+in.jpg                        test2.wav
+india-flag.bin                test3.wav
+india-flag.jpg                test4.wav
+led.out                       theri-rec1.wav
+led.sh                        theri.wav
+root@freescale /zumi$ cat im.bin >/dev/fb2
+root@freescale /zumi$ cat in.bin >/dev/fb2
+cat: write error: No space left on device
+root@freescale /zumi$ cat in.jpg  >/dev/fb2
+cat: write error: No space left on device
+root@freescale /zumi$ cat 720p1.bin   >/dev/fb2
+cat: write error: No space left on device
+root@freescale /zumi$ 
+
+U-Boot 2014.04 (Dec 11 2015 - 15:30:38)
+
+CPU:   Freescale i.MX6Q rev1.5 at 792 MHz
+CPU:   Temperature 29 C, calibration data: 0x58a4db7d
+Reset cause: POR
+Board: MOVIS-PREVAS
+I2C:   ready
+DRAM:  2 GiB
+MMC:   FSL_SDHC: 0
+SF: Detected S25FL128S_64K with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+unsupported panel lcd
+In:    serial
+Out:   serial
+Err:   serial
+Found PFUZE100 deviceid=10,revid=11
+Net:   FEC [PRIME]
+Normal Boot
+Hit any key to stop autoboot:  0 
+=> 
+=> pri
+baudrate=115200
+bootaddr_dl=0x10008000
+bootaddr_sys=0x10008000
+bootargs=console=ttymxc0,115200
+bootargs_all=console=ttymxc0,115200
+bootargs_app=quiet 
+bootargs_movis=setenv bootargs console=ttymxc0,115200 rw mxcfb2:dev=lcd,CLAA-WVGA,if=RGB666
+bootargs_sata=setenv bootargs ${bootargs} root=/dev/sda3 rootwait rw video=mxcfb2:dev=hdmi,6400x480M@60,if=RGB24,bpp=24 vmalloc=400M fbmem=28M fbcon=28M
+bootargs_srv= 
+bootargs_sys=rw root=/dev/mmcblk1p2 rootfstype=ext4 rootwait mxcfb2:dev=hdmi,1920x1080M@60,if=RGB24
+bootcmd=run bootcmd_sata
+bootcmd_movis=setenv ipaddr 10.0.0.187; setenv serverip 10.0.0.40; setenv ethaddr 70:B3:D5:B6:D0:01; tftpboot 0x10008000 movis/uImage; tftpboot 0x14000000 movis/imx6q-movis.dtb; tftpboot 0x12000000 movis/s
+bootcmd_sata=run bootargs_sata; sata init ; fatload sata 0:1 0x11200000 imx6q-movis.dtb; fatload sata 0:1 0x12800000 uImage; bootm 0x12800000 - 0x11200000
+bootdelay=2
+console=ttymxc0,115200
+dbootcmd_app=run loadfdt; bootm $bootaddr - $fdt_addr
+dbootcmd_dl=run loadfdt; run loadrd; bootm $bootaddr $rd_addr $fdt_addr
+dbootcmd_srv=run loadfdt; bootm $bootaddr - $fdt_addr
+ethact=FEC
+ethaddr=70:B3:D5:B6:D0:01
+ethprime=FEC
+fdt_addr=0x11000000
+fdt_high=0xffffffff
+fdtfile=dtb
+fdtfile_dl=dtb-dl
+fdtfile_sys=dtb
+fileaddr=10006000
+filesize=be7
+hdmi=video=mxcfb2:dev=hdmi,1920x1080M@60,if=RGB24,bpp=24
+initrd_file=uInitrd
+initrd_high=0xffffffff
+ipaddr=10.0.0.187
+kernel_file=uImage
+kernel_file_dl=uImage-dl
+loadaddr=0x10008000
+loadfdt=fatload mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdtfile}
+loadrd=fatload mmc ${mmcdev}:${mmcpart} ${rd_addr} ${rdfile}
+mmcdev=0
+mmcpart=1
+panel=lcd
+rd_addr=0x11200000
+rdfile=uInitrd
+serverip=10.0.0.40
+verify=n
+
+Environment size: 1808/8188 bytes
+=> 
