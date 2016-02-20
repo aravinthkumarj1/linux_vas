@@ -54,8 +54,10 @@ peripherals()
 		echo -e "\t 5.USB-WiFi"	
 		echo -e "\t 6.USB-OTG"	
 		echo -e "\t 7.USB-Host"	
-		echo -e "\t 8.Exit"
-		echo ""			
+		echo -e "\t 8.Ethernet"
+		echo -e "\t 9.HDMI"
+		echo -e "\t 10.Exit"
+		echo ""
 	}
 
 while true; do
@@ -301,7 +303,82 @@ if [ "$p_no" == "7" ] || [ "$auto" == "1" ]; then
                         echo -e "USB-HOST Read \e[31m Failure \e[0m"        			| tee -a $name.txt
                 fi
 fi
-if [ $auto == 1 ] || [ $p_no == 8 ]; then
+
+		############## Ethernet TEST ##############
+		
+if [ "$p_no" == "8" ] || [ "$auto" == "1" ]; then
+        echo -e "\n### Ethernet(eth0) Test started ###"
+        	
+        	ifconfig eth0 up
+        	export ethernet=`cat /sys/class/net/eth0/carrier`
+        	if [ $ethernet -eq 0 ]
+        	then
+        		echo -e  "\e[5m\e[93m Connect the Ethernet cable \e[0m"
+			echo -e "After the connection press \e[1m ENTER \e[0m"
+			read -s -n 1  key
+			export ethernet=`cat /sys/class/net/eth0/carrier`
+			if [ $ethernet -eq 1 ]
+			then
+				udhcpc -i eth0
+        			ping -I eth0 google.com -c 1
+        			export e_test=`echo $?`
+        			if [ $e_test -eq 0 ]
+        			then
+                		echo "Ethernet test successful" 				| tee -a $name.txt
+        			else
+                		echo "Ethernet test Failure"  					| tee -a $name.txt
+        			fi
+        		else
+        			echo "Cable not connected. Try again.."				| tee -a $name.txt
+        		fi	
+        	else
+        		udhcpc -i eth0
+        		ping -I eth0 google.com -c 1
+        		export e_test=`echo $?`
+        		if [ $e_test -eq 0 ]
+        		then
+                	echo "Ethernet test successful" 					| tee -a $name.txt
+        		else
+                	echo "Ethernet test Failure"  						| tee -a $name.txt
+        		fi
+        	fi
+fi
+
+		############## HDMI TEST ##############
+		
+if [ "$p_no" == "9" ] || [ "$auto" == "1" ]; then
+        echo -e "\n### HDMI(fb2) Test started ###"
+
+#Resolution, bpp, device details should be same in u-boot,kernel and bootargs
+#HDMI Working bootargs mentioned below
+#bootargs_sata 'setenv bootargs ${bootargs} root=/dev/sda3 rootwait rw video=mxcfb2:dev=hdmi,6400x480M@60,if=RGB24,bpp=24'
+
+          	echo -e  "\e[5m\e[93m Connect to HDMI \e[0m"
+		echo -e "After the connection press \e[1m ENTER \e[0m"
+		read -s -n 1  key
+        	echo 0 > /sys/class/graphics/fb2/blank
+        	cat /movis/720p1.bin   >/dev/fb2
+
+        	hdmi_display()
+                        {
+                                read -p "If image show or not in HDMI.? press Y/N " ans
+                        }
+                while true; do
+                        hdmi_display
+
+                                if [ $ans == "Y" ] || [ $ans == "y" ]; then
+                                        echo -e "HDMI Test \e[32m successful \e[0m"		| tee -a $name.txt
+                                        break
+                                elif [ $ans == "N" ] || [ $ans == "n" ]; then
+                                        echo -e "HDMI Test \e[31m Failure \e[0m"	 	| tee -a $name.txt
+                                        break
+                                else
+                                        echo -e "\e[31m Invalid Input, Try again... \e[0m"
+                                fi
+                done
+fi        	
+
+if [ $auto == 1 ] || [ $p_no == 10 ]; then
 	echo -e "\e[32m Movis Peripherals Test Done \e[0m"					| tee -a $name.txt
 	exit
 fi
