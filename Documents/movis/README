@@ -26,6 +26,11 @@ USER GUIDE FOR THE SCRIPT :-
 
 	step 8: For USB-WiFi test create access point name: "movis" ,without password. And turn on internet in access point side.
 
-	step 9: If script finished. you can view the peripherals Test result.(ie: cat /movis/TestResult_log.txt)
+	step 9: For Ethernet test, board can ping with the server.
+	
+	step 10: For HDMI test, Image show in display if bootargs are properly given.(resolution, bpp and other thinigs should be
+		  same in u-boot, kernel and bootargs).
+	
+	step 10: If script finished. you can view the peripherals Test result.(ie: cat /movis/TestResult_log.txt)
 	 	Note: Every results are shown in same console, and stored in text file inside movis directory. 
 		      Every time it stored in separate new file alone with number so you can easily find latest result file.	  
